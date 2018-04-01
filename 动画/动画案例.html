@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画案例</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		div{
+			width: 500px;
+			height: 300px;
+			border: 1px solid;
+			margin:50px auto;
+			overflow: hidden;
+		}
+		ul{
+			width: 2500px;
+			height: 300px;
+		}
+		ul li{
+		    width: 500px;
+		    height: 300px;
+		    list-style: none;
+		    float: left;
+		    animation: sport 30s;
+		    animation-timing-function: linear;
+		    animation-iteration-count: infinite;
+		    animation-direction: normal;
+		} 
+		@keyframes sport{
+			from{
+				margin-left: 0px;
+			}
+			to{
+				margin-left: -2000px;
+			}
+		}
+		ul li img{
+			width: 500px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	    <ul>
+		    <li><img src="1.jpg"></li>
+		    <li><img src="2.jpg"></li>
+		    <li><img src="3.jpg"></li>
+		    <li><img src="4.jpg"></li>
+		    <li><img src="1.jpg"></li>
+	   </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正方体案例</title>
+	 <style type="text/css">
+	 	*{
+	 		margin: 0px;
+	 		padding: 0px;
+	 	}
+	 	ul{
+	 		width: 200px;
+	 		height: 200px;
+	 		border: 1px solid;
+	 		margin: 20px auto;s
+	 		position: relative;
+	 		transform-style: preserve-3d; 
+	 	}
+	 	li{
+	 		width: 200px;
+	 		height: 200px;
+	 		list-style: none;
+	 		position: absolute;
+	 		text-align: center;
+	 		margin: 0 auto;
+	 		left: 0px;
+	 		top: 0px;
+	 	}
+	 	li:nth-child(1){
+	 		background-color: red;
+	 		transform:  translateX(-100px)  rotateY(90deg) ;
+	 	}
+	 	li:nth-child(2){
+	 		background-color: yellow;
+	 		transform: translateX(100px) rotateY(90deg);
+	 	}
+	 	li:nth-child(3){
+	 		background-color: green;
+	 		transform:translateY(100PX) rotateX(90deg) ;
+	 	}
+	 	li:nth-child(4){
+	 		background-color: blue;
+	 		transform:translateY(-100px) rotateX(90deg) ;
+	 	}
+	 	li:nth-child(5){
+	 		background-color: skyblue;
+	 		transform: translateZ(100px);
+	 	}
+	 	li:nth-child(6){
+	 		background-color: purple;
+	 		transform: translateZ(-100PX);
+	 	}
+	 </style>
+</head>
+<body>
+	<ul>
+		<li>我</li>
+		<li>喜</li>
+		<li>欢</li>
+		<li>写</li>
+		<li>代</li>
+		<li>码</li>
+	</ul>
+</body>
+</html>
