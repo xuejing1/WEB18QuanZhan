@@ -2,16 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>动画</title>
+	<title>动画的基本应用</title>
 	<style type="text/css">
 		div{
 			width: 200px;
 			height: 200px;
 			background: red;
-			animation: sport 2s;
-			/*animation-delay: 1s;
+			/*动画的运动名称*/
+			animation-name: sport;
+			/*动画的运动时间*/
+			animation-duration: 2s;
+			/*动画的延迟时间*/
+			animation-delay: 1s;
+			/*动画的执行速度：取值与过渡的取值一样，linear|ease|默认的|ease-in|ease-out|ease-in-out|cublic-bezier(x1,y1,x2,y2)*/
 			animation-timing-function: linear;
-			animation-iteration-count: 2;*/
+			/*执行的次数：数字或者infinite(无限循环)*/
+			animation-iteration-count: 2;
+			/*是否执行往返动画：normal(不执行)，alternative（执行）*/
+			animation-direction: normal;
 		}
 		@keyframes sport {from{
             width:200px; 

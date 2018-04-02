@@ -12,9 +12,10 @@
 	 		width: 200px;
 	 		height: 200px;
 	 		border: 1px solid;
-	 		margin: 20px auto;s
+	 		margin: 20px auto;
 	 		position: relative;
 	 		transform-style: preserve-3d; 
+	 		transform: rotateX(0deg) rotateY(0deg);
 	 	}
 	 	li{
 	 		width: 200px;
@@ -22,33 +23,34 @@
 	 		list-style: none;
 	 		position: absolute;
 	 		text-align: center;
-	 		margin: 0 auto;
+	 		line-height: 200px;
 	 		left: 0px;
 	 		top: 0px;
+	 		font-size: 36px;
 	 	}
 	 	li:nth-child(1){
 	 		background-color: red;
-	 		transform:  translateX(-100px)  rotateY(90deg) ;
+	 		transform: rotateX(90deg) translateZ(100PX);
 	 	}
 	 	li:nth-child(2){
 	 		background-color: yellow;
-	 		transform: translateX(100px) rotateY(90deg);
+	 		transform: rotateX(180deg) translateZ(100PX);
 	 	}
 	 	li:nth-child(3){
 	 		background-color: green;
-	 		transform:translateY(100PX) rotateX(90deg) ;
+	 		transform: rotateX(270deg) translateZ(100PX);
 	 	}
 	 	li:nth-child(4){
 	 		background-color: blue;
-	 		transform:translateY(-100px) rotateX(90deg) ;
+	 		transform: rotateX(360deg) translateZ(100px);
 	 	}
 	 	li:nth-child(5){
 	 		background-color: skyblue;
-	 		transform: translateZ(100px);
+	 		transform:rotateY(90deg) translateZ(100px);
 	 	}
 	 	li:nth-child(6){
 	 		background-color: purple;
-	 		transform: translateZ(-100PX);
+	 		transform:rotateY(-90deg) translateZ(100PX);
 	 	}
 	 </style>
 </head>
