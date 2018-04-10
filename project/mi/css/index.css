@@ -1,0 +1,150 @@
+.top{
+	height: 40px;
+	background: #333333;
+}
+.top .nav{
+	width: 1228px;
+	margin:0 auto;
+}
+.top .navl a{
+	text-decoration: none;
+	color: #b0b0b0;
+	font-size: 13px;
+	z-index: 99;
+}
+.top .navl li{
+	list-style: none;
+	float: left;
+	line-height: 40px;
+	padding-right: 10px;
+}
+.top .navl span{
+	padding-left: 10px;
+}
+.top .navl a:hover,.top .navrr a:hover{
+	color: white;
+}
+.top .navr{
+	background: #424242;
+	color: #b0b0b0;
+	float: right;
+	width: 124px;
+	height: 40px;
+	line-height: 40px;
+}
+.top .navr i,.top .navr a{
+	text-decoration: none;
+	color: #b0b0b0;
+	font-size: 13px;
+	padding-left: 14px;
+}
+.top .navr:hover{
+	background: white;
+}
+.top .navr:hover a,.top .navr:hover i{
+	color: #ff6700;
+	
+}
+.top .navrr li{
+	list-style: none;
+	font-size: 14px;
+	float: right;
+	line-height: 40px;
+	padding-right: 10px;
+}
+.top .navrr span{
+	padding-left: 10px;
+}
+.top .navrr a{
+	text-decoration: none;
+	color: #b0b0b0;
+}
+/*top end*/
+/*header begin*/
+.header{
+	width: 1228px;
+	height: 100px;
+	margin:0 auto;
+	overflow: hidden;
+}
+.header .logo img{
+	width: 55px;
+	height: 55px;
+	float: left;
+	margin-top: 21px;
+}
+.header .sou input{
+	float: right;
+	width: 245px;
+	height: 50px;
+	border: 1px solid #e0e0e0;
+	margin-top: 24px;
+}
+.header .sou img{
+	float: right;
+	width: 52px;
+	height: 52px;
+	border: 1px solid #e0e0e0;
+	margin-top: 24px;
+}
+.header .sou{
+	position: relative;
+}
+.header .sou a:nth-of-type(1){
+	background: #eeeeee;
+	text-decoration: none;
+	color: #757575;
+	position: absolute;
+	left: 1025px;
+	margin-top: 41px;
+	font-size: 12px;
+}
+.header .sou a:nth-of-type(2){
+	background: #eeeeee;
+	text-decoration: none;
+	color: #757575;
+	position: absolute;
+	left: 1100px;
+	margin-top: 41px;
+	font-size: 12px;
+}
+.header .sou a:hover{
+	background: #ff6700;
+	color: white;
+}
+.header .sou img:hover{
+	color: #ff6b00;
+}
+.header .daohang{
+	margin-left: 190px;
+}
+.header .daohang li{
+	float: left;
+	margin-right: 21px;
+
+}
+.header .daohang ul li a{
+	color: #333333;
+	text-decoration: none;
+	line-height: 100px;
+}
+.hot{
+	width: 1228px;
+	height: 640px;
+	background: red;
+	margin:0 auto;
+}
+.main{
+	width: 1228px;
+	height: 7381px;
+	background: tomato;
+	margin:0 auto;
+}
+.footer{
+	height: 272px;
+	background: green;
+}
+.bottom{
+	height: 166px;
+	background: blue;
+}
