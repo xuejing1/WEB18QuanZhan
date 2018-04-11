@@ -135,84 +135,120 @@
 /*header end*/
 /*hot begin*/
 .hot{
-	width: 1228px;
-	height: 640px;
+	width: 1230px;
+	height: 648px;
 	margin:0 auto;
 }
-.hot .hot-topl ul li{
-	margin-top: 10px;
-		/*padding-bottom: 18px;*/
+.hot .hot-top{
+	width: 1230px;
+	height: 465px;
+	position: relative;
+	margin-bottom: 15px;
 }
-.hot .hot-top .hot-topl{
-	width: 235px;
-	height: 459px;
-	float: left;
-	background-color: #626262;
+.hot .hot-topl{
+	width: 230px;
+	height: 465px;
+	position: absolute;
+	left: 0px;
+	background: black;
+	opacity: 0.7;
 }
-.hot .hot-topl a{
+.hot .hot-topl li a{
 	text-decoration: none;
 	color: #ffffff;
-	display:block;
-	padding: 10px 0 10px 0;
 	font-size: 14px;
-	padding-left: 31px;
+	padding-left: 28px;
 	position: relative;
+	display: block;
 }
-.hot .hot-topl span{
-	color: #b8b5aa;
+.hot .hot-topl ul{
 	position: absolute;
-	right: 24px;
-	font-size: 18px;
-	font-weight: bold;
-	width: 8px;
-	height: 12px;
+	top: 20px;
+}
+.hot .hot-topl li{
+	padding-bottom: 11px;
+	padding-top: 11px;
+	width: 230px;
 }
 .hot .hot-topl li:hover{
-	background-color: #ff6700;
-}
-.hot .hot-topr{
-	width: 3908px;
-	height: 459px;
-	margin-left: 15px;
-	position: relative;
-	/*overflow: hidden;
-	text-overflow: clip;
-	white-space: nowrap;*/
-}
-.hot .hot-topr span{
-	position: absolute;
-}
-.hot .hot-topr span:nth-child(1){
-	top: 215px;
-}
-.hot .hot-topr span:nth-child(2){
-	top: 215px;
-	left: 950px;
-}
-.hot .hot-topr li:{
-	width: 977px;
-	height: 459px;
-	float: right;
+	background: #ff6700;
 }
 .hot .hot-topr img{
-	width: 993px;
-	height: 459px;
-	/*float: right;*/
+	width: 1230px;
+	height: 465px;
+}
+.hot .hot-topl span{
+	position: absolute;
+	right: 20px;
+}
+.hot .hot-bottoml a{
+	text-decoration: none;
+	color:#cdcac8; 
+	font-size: 12px;
+	padding-top: 50px;
+	display: block;
+	padding-left: 18px;
+	position: relative;
+}
+.hot .hot-bottoml i{
+	position: absolute;
+	font-size: 18px;
+	top: 22px;
+	right:22px;
 }
 .hot .hot-bottoml{
-	width: 235px;
-	height: 169px;
-	background-color: #5f5750;
+	width: 230px;
+	height: 172px;
+	background: #5f5750;
+	float: left;
 }
 .hot .hot-bottoml li{
+	width: 75px;
+	height: 84px;
 	float: left;
-	width: 79px;
-	height: 81px;
+	position: relative;
+	margin-bottom: 20px;
 }
-.hot .hot-bottom a{
-	text-decoration: none;
-	color: #cccdcb;
-	font-size: 12px;
+.hot .hot-bottoml a:hover{
+	color: white;
+}
+.hot .hot-bottoml ul{
+	position: relative}
+/*.hot .hot-bottoml .li1:after .hot-bottoml .li2,.hot-bottoml .li4,.hot-bottoml .li5{
+	background: white;
+	position: absolute;
+}*/
+.hot-bottoml .li5:after,.hot-bottoml .li4:after
+,.hot-bottoml .li2:after,.hot .hot-bottoml .li1:after
+{
+	content: "";
+	width: 1px;
+	background:#665e67;
+	height: 68px;
+	position: absolute;
+	left: 77px;
+	top: 15px;
+}
+.hot-bottoml .li3:before,.hot-bottom .li2:before,
+.hot-bottoml .li1:before,.hot-bottom .li4:before,
+.hot-bottom .li5:before,.hot-bottom .li6:before{
+	content: "";
+	width: 60px;
+	height: 1px;
+	background:#665e67;
+	position: absolute;
+	left: 8px;
+}
+.hot .hot-bottomr{
+	width: 980px;
+	height: 172px;
+	float: right;
+	/*float: right;*/
+}
+.hot .hot-bottomr li{
+    width: 316px;
+    height: 172px;
+    float: right;
 }
 /*hot end*/
 /*main begin*/
