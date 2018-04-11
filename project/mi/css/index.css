@@ -1,3 +1,4 @@
+/*top begin*/
 .top{
 	height: 40px;
 	background: #333333;
@@ -128,23 +129,109 @@
 	text-decoration: none;
 	line-height: 100px;
 }
+.header .daohang a:hover{
+	color: #ff6700;
+}
+/*header end*/
+/*hot begin*/
 .hot{
 	width: 1228px;
 	height: 640px;
-	background: red;
 	margin:0 auto;
 }
+.hot .hot-topl ul li{
+	margin-top: 10px;
+		/*padding-bottom: 18px;*/
+}
+.hot .hot-top .hot-topl{
+	width: 235px;
+	height: 459px;
+	float: left;
+	background-color: #626262;
+}
+.hot .hot-topl a{
+	text-decoration: none;
+	color: #ffffff;
+	display:block;
+	padding: 10px 0 10px 0;
+	font-size: 14px;
+	padding-left: 31px;
+	position: relative;
+}
+.hot .hot-topl span{
+	color: #b8b5aa;
+	position: absolute;
+	right: 24px;
+	font-size: 18px;
+	font-weight: bold;
+	width: 8px;
+	height: 12px;
+}
+.hot .hot-topl li:hover{
+	background-color: #ff6700;
+}
+.hot .hot-topr{
+	width: 3908px;
+	height: 459px;
+	margin-left: 15px;
+	position: relative;
+	/*overflow: hidden;
+	text-overflow: clip;
+	white-space: nowrap;*/
+}
+.hot .hot-topr span{
+	position: absolute;
+}
+.hot .hot-topr span:nth-child(1){
+	top: 215px;
+}
+.hot .hot-topr span:nth-child(2){
+	top: 215px;
+	left: 950px;
+}
+.hot .hot-topr li:{
+	width: 977px;
+	height: 459px;
+	float: right;
+}
+.hot .hot-topr img{
+	width: 993px;
+	height: 459px;
+	/*float: right;*/
+}
+.hot .hot-bottoml{
+	width: 235px;
+	height: 169px;
+	background-color: #5f5750;
+}
+.hot .hot-bottoml li{
+	float: left;
+	width: 79px;
+	height: 81px;
+}
+.hot .hot-bottom a{
+	text-decoration: none;
+	color: #cccdcb;
+	font-size: 12px;
+}
+/*hot end*/
+/*main begin*/
 .main{
 	width: 1228px;
 	height: 7381px;
 	background: tomato;
 	margin:0 auto;
 }
+/*main end*/
+/*footer begin*/
 .footer{
 	height: 272px;
 	background: green;
 }
+/*footer end*/
+/*bottom begin*/
 .bottom{
 	height: 166px;
 	background: blue;
 }
+/*bottom end*/
