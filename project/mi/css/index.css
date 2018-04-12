@@ -1,3 +1,10 @@
+/*common*/
+.col1{
+	width: 235px;
+}
+.col4{
+	width: 9982px;
+}
 /*top begin*/
 .top{
 	height: 40px;
@@ -143,7 +150,6 @@
 	width: 1230px;
 	height: 465px;
 	position: relative;
-	margin-bottom: 15px;
 }
 .hot .hot-topl{
 	width: 230px;
@@ -181,6 +187,9 @@
 	position: absolute;
 	right: 20px;
 }
+.hot .hot-bottom{
+	margin-top: 12px;
+}
 .hot .hot-bottoml a{
 	text-decoration: none;
 	color:#cdcac8; 
@@ -201,19 +210,35 @@
 	height: 172px;
 	background: #5f5750;
 	float: left;
+	margin-right: 12px;
 }
 .hot .hot-bottoml li{
 	width: 75px;
 	height: 84px;
 	float: left;
-	position: relative;
-	margin-bottom: 20px;
+	position: absolute;
+}
+.hot .hot-bottoml li:nth-child(2){
+	left: 0px;
+	bottom: -180px;
+}.hot .hot-bottoml li:nth-child(3){
+	left: 145px;
+	bottom: -180px;
+}.hot .hot-bottoml li:nth-child(4){
+	bottom:-180px;
+	left: 80px;
+}.hot .hot-bottoml li:nth-child(5){
+	bottom: -80px;
+	left: 80px;
+}.hot .hot-bottoml li:nth-child(6){
+	left: 145px;
 }
 .hot .hot-bottoml a:hover{
 	color: white;
 }
 .hot .hot-bottoml ul{
-	position: relative}
+	position: relative;
+}
 /*.hot .hot-bottoml .li1:after .hot-bottoml .li2,.hot-bottoml .li4,.hot-bottoml .li5{
 	background: white;
 	position: absolute;
@@ -227,28 +252,40 @@
 	height: 68px;
 	position: absolute;
 	left: 77px;
-	top: 15px;
+	top: 10px;
 }
-.hot-bottoml .li3:before,.hot-bottom .li2:before,
-.hot-bottoml .li1:before,.hot-bottom .li4:before,
-.hot-bottom .li5:before,.hot-bottom .li6:before{
+
+.hot-bottoml .li1:before,.hot-bottom .li5:before,.hot-bottom .li6:before{
 	content: "";
 	width: 60px;
 	height: 1px;
 	background:#665e67;
 	position: absolute;
 	left: 8px;
+	bottom:-10px;
 }
 .hot .hot-bottomr{
 	width: 980px;
-	height: 172px;
+	height: 190px;
 	float: right;
+	/*margin-left: 12px;*/
 	/*float: right;*/
 }
 .hot .hot-bottomr li{
     width: 316px;
     height: 172px;
     float: right;
+    margin-left: 16px;
+    transition: all 1s;
+}
+.hot .hot-bottomr li:nth-child(3){
+	margin-left: 0px;
+}
+.hot .hot-bottomr li:hover{
+	box-shadow: 5px 5px 20px;
+}
+.hot .hot-bottomr img{
+	height: 172px;
 }
 /*hot end*/
 /*main begin*/
@@ -257,6 +294,234 @@
 	height: 7381px;
 	background: tomato;
 	margin:0 auto;
+	
+}
+.main .maint{
+	margin-top: 22px;
+	line-height: 64px;
+	height: 64px;
+}
+.main .maintl h3{
+	font-size: 20px;
+	color: #333333;
+	float: left;
+}
+/*.main .maintr{
+	float: right;
+	height: 64px;
+
+}*/
+.main  .maintl span{
+	display: inline-block;
+    color: #333333;
+    font-weight: bold;
+    width: 34px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    border: 1px solid #e0e0e0;
+    color: #b0b4bd;
+    float: right;
+    margin-top: 22px;
+}
+.main  span:nth-child(2){
+	border-left: none;
+}
+.main .mainb li{
+	float: left;
+	height: 340px;
+	margin-right: 13px;
+}
+.main .mainb li:nth-child(5){
+	margin-right: 0px;
+}
+.mainb li:nth-child(1){
+	background: #f1eded;
+	text-align: center;
+}
+.mainb li:nth-child(1) .num{
+	font-size: 20px;
+	margin-top: 50px;
+}
+.main .mainbl .des{
+	margin-bottom: 25px;
+	color: #706f6f;
+}
+.main .mainbl .timer span:nth-child(odd){
+	display: inline-block;
+	background-color: #605751;
+	color: white;
+	text-align: center;
+	line-height: 46px;
+	width: 46px;
+	height: 46px;
+}
+.main .mainbl .timer span:nth-child(even){
+	display: inline-block;
+	color: #605751;
+	font-weight: bold;
+}
+.mainbr{
+	background: #fafafa;
+}
+.mainbr a{
+	text-decoration: none;
+}
+.mainb img{
+	margin: 50px 0px 38px 0px;
+}
+.mainbr{
+	text-align: center;
+}
+.mainbr img{
+	width: 111px;
+	height: 142px;
+	margin-top: 50px;
+/*	background: #fafafa;*/
+}
+.mainbr .p1{
+	color: black;
+	font-size: 13px;
+}
+.mainbr .p2{
+	color: #adadad;
+	font-size: 12px;
+	margin-top: 10px;
+}
+.mainbr .p3{
+	color: #fa6509;
+	font-size: 12px;
+	margin-top: 15px;
+}
+.mainbr .p3 del{
+	color: #adadad;
+	font-size: 12px;
+}
+.adc1 img{
+	width: 1228px;
+	height: 120px;
+	margin-top: 38px;
+}
+.biaoti{
+	margin-top: 45px;
+	height: 65px;
+	line-height: 65px;
+}
+.biaoti .biaol{
+	height: 65px;
+	float: left;
+}
+.biaoti .biaor{
+	float: right;
+}
+.biaor span:hover{
+	color: #ff6700;
+}
+.aside{
+	height: 618px;
+	background: #38ab9c;
+	width: 233px;
+	float: left;
+	text-align: center;
+	margin-top: 10px;
+}
+.aside p:nth-child(1){
+	margin-top: 43px;
+	color: white;
+	font-size: 22px;
+}
+.aside p:nth-child(2){
+	margin-bottom: 37px;
+	color: white;
+	font-size: 14px;
+}
+.aside p:nth-child(3){
+	margin-bottom: 80px;
+	color: #fad168;
+	font-size: 24px;
+}
+.aside p:nth-child(3) span{
+	font-size: 14px;
+}
+.asider{
+	float: right;
+	width: 969px;
+	height: 618px;
+}
+.asider li{
+	background: #ffffff;
+	width: 232px;
+	height: 299px;
+	float: right;
+	margin-left: 13px;
+	margin-top: 14px;
+	text-align: center;
+	transition: all 0.5s;
+}
+.asider li:nth-child(8),.asider li:nth-child(4){
+	margin-left: 0px;
+}
+.asider li:hover{
+	box-shadow: 10px 10px 10px gray;
+	transform: translateY(-5px);
+}
+.asider img{
+	width: 118px;
+	height: 143px;
+	margin-top: 30px;
+	margin-bottom: 29px;
+}
+.asider a{
+	text-decoration: none;
+}
+.asider a:nth-child(1){
+	font-size: 14px;
+	color: black;
+}
+.asider a:nth-child(2){
+	font-size: 12px;
+	color: #b0b0b0;
+	margin-bottom: 15px;
+	display: inline-block;
+}
+.asider a:nth-child(3){
+	font-size: 14px;
+	color: #ff6700;
+}
+.asider .p0{
+	width: 50px;
+	background: red;
+	color: white;
+	font-weight: bolder;
+	margin-left: 83px;
+}
+.asider .list img{
+	margin-top: 10px;
+}
+.adc2 img{
+	width: 1228px;
+	height: 120px;
+	margin-top: 28px;
+	margin-bottom: 20px;
+}
+.jiadian{
+	height: 50px;
+	line-height: 50px;
+}
+.jiadian .jial{
+	float: left;
+	font-size: 22px;
+	height: 50px;
+}
+.jiadian .jiar{
+	float: right;
+}
+.jiadian .jiar li{
+	float: right;
+	margin-left: 24px;
+}
+.jiadian .jiar li:hover{
+	color: #ff6700;
 }
 /*main end*/
 /*footer begin*/
