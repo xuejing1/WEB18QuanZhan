@@ -136,7 +136,7 @@
 /*hot begin*/
 .hot{
 	width: 1230px;
-	height: 648px;
+	height: 643px;
 	margin:0 auto;
 }
 .hot .hot-top{
@@ -232,10 +232,6 @@
 .hot .hot-bottoml ul{
 	position: relative;
 }
-/*.hot .hot-bottoml .li1:after .hot-bottoml .li2,.hot-bottoml .li4,.hot-bottoml .li5{
-	background: white;
-	position: absolute;
-}*/
 .hot-bottoml .li5:after,.hot-bottoml .li4:after
 ,.hot-bottoml .li2:after,.hot .hot-bottoml .li1:after
 {
@@ -247,7 +243,12 @@
 	left: 77px;
 	top: 10px;
 }
-
+.main li{
+	background-color: #ffffff;
+}
+body{
+	background-color: #f5f5f5;
+}
 .hot-bottoml .li1:before,.hot-bottom .li5:before,.hot-bottom .li6:before{
 	content: "";
 	width: 60px;
@@ -283,36 +284,23 @@
 /*hot end*/
 /*main begin*/
 .main{
-	width: 1228px;
-	height: 1228px;
-	background: tomato;
+	width: 1230px;
+	height: 7350px;
 	margin:0 auto;
 }
 .main .maint{
+	width: 1230px;
 	margin-top: 22px;
 	line-height: 64px;
 	height: 64px;
 }
+.main .mainl{
+	float: left;
+}
 .main .maintl h3{
 	font-size: 20px;
 	color: #333333;
-	float: left;
-}
-.main  .maintl span{
-	display: inline-block;
-    color: #333333;
-    font-weight: bold;
-    width: 34px;
-    height: 22px;
-    text-align: center;
-    line-height: 22px;
-    border: 1px solid #e0e0e0;
-    color: #b0b4bd;
-    float: right;
-    margin-top: 22px;
-}
-.main  span:nth-child(2){
-	border-left: none;
+	float:left;
 }
 .main .mainb li{
 	width: 232px;
@@ -1077,6 +1065,43 @@
 	color: black;
 	font-size: 22px;
 }
+.de8{
+	width: 1230px;
+	height: 177px;
+	float: left;
+}
+.de8 .fl8{
+	width: 294px;
+	height: 286px;
+	float: left;
+	margin-left: 18px;
+	text-align: center;
+	background: #ffffff;
+}
+.fl9{
+	transition: 0.5s;
+}
+.de8 .fl8:nth-child(1){
+	margin-left: 0px;
+}
+.de8 .fl8 .pi{
+	font-size: 14px;
+	color: black;
+	margin-top: 30px;
+}
+.de8 .fl8 .po{
+	font-size: 12px;
+	color:#cebbc5;
+	margin-top: 15px;
+}
+.de8 .fl8 img{
+	width: 294px;
+	height: 177px;
+}
+.fl9:hover{
+    transform: translateY(-10px);
+    box-shadow: 10px 10px 10px gray;
+}
 /*.clearfix{
 	content: "";
 	height: 0px;
@@ -1087,15 +1112,148 @@
 /*main end*/
 /*footer begin*/
 .footer{
-	width: 1225px;
-	height: 166px;
+	width: 1230px;
+	height: 270px;
 	background: green;
+	margin: 0 auto;
+}
+.footer .ful{
+	width: 1230px;
+	height: 78px;
+	float:left;
+	background-color: #ffffff;
+	border-bottom: 1px solid #e0e0e0;
+	/*margin-top: 65px;*/
+}
+.footer .iconfont{
+	font-size: 18px;
+}
+.footer .ful .fli1{
+	width: 240px;
+	float: left;
+	line-height: 78px;
+	height: 78px;
+	font-size: 16px;
+	/*padding-left: 54px;*/
+	text-align: center;
+	/*position: relative;*/
+}
+.footer .fli1 span{
+    /*margin-left: 40px;*/
+   /* padding-left: : 40px;*/
+   position: relative;
+   left: 54px;
+}
+/*.footer .ful2{
+	width: 100%;
+	height: 190px;
+	/*float: left;*/
+/*	box-sizing: border-box;
+	padding-top: 40px;
+}*/
+/*.ful2 .ful2-left{*/
+	/*width: 60px;
+	height: 190px;*/
+	/*height: 100%;
+	width: 930px;
+	float: left;
+	background-color: yellow;
+}
+dl{
+	float: left;
+	margin-right: 90px;
+}
+dt{
+	font-size: 16px;
+	width: 60px;
+	height: 22px;*/
+	/*float: left;*/
+/*}
+.footer .ful2 .ful2-right{
+	width: 254px;
+	height: 115px;
+	float: right;
+	background-color: orange;
+}
+dd{
+	color: #424242;
+	width: 609px;
+	height: 76px;
+	float: left;
+}*/
+/*.ful2 dl,.ful2 dt,.ful2 dd{
+	float: left;
+}*/
+.ful2{
+	width: 1230px;
+	height: 298px;
+	background-color:#ffffff;
+	margin-top: 65px;
+	/*box-sizing: border-box;*/
+}
+.ful2-left{
+	width: 860px;
+	height: 100%;
+	float: left;
+}
+.ful2-left dl{
+	float: left;
+	margin-right: 95px;
+	margin-top: 40px;
+}
+.ful2-left dl dt{
+	margin-bottom: 24px;
+}
+.ful2-left dl dd{
+	padding-bottom: 10px;
+	font-size: 12px;
+	color: #757575;
+}
+.ful2-left dl:nth-child(6){
+	margin-right: 0px;
+}
+.ful2-right{
+	width: 250px;
+	height: 100%;
+	float: right;
+	text-align: center;
+}
+.ful2-right .tel{
+	font-size: 22px;
+	color: #ff6700;
+	margin-top: 40px;
+}
+.work-time,.desc{
+	font-size: 12px;
+	color: #616161;
+}
+.desc{
+	margin-bottom: 20px;
+}
+.ful2-right a{
+	text-decoration: none;
+	color: #ff6700;
+	font-size: 14px;
+}
+.ful2-right a p{
+	border: 1px solid #ff6700;
+	width: 119px;
+	height: 30px;
+	margin-left: 66px;
+	padding-top: 4px;
+	box-sizing: border-box;
+}
+.ful li:hover,.ful2 .ful2-left dd:hover{
+	color: #ff6700;
+}
+.ful2-right a p:hover{
+	background-color: #ff6700;
+	color: white;
 }
 /*footer end*/
 /*bottom begin*/
 .bottom{
-	width: 1220px;
-	height: 166px;
+	height: 168px;
 	background: blue;
 }
 /*bottom end
