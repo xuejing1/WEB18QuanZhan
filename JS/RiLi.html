@@ -5,57 +5,100 @@
 	<title>日历案例</title>
 	<style type="text/css">
 		.div1{
-			width: 300px;
+			width: 260px;
 			height: 450px;
 			margin: 100px auto;
+			/*background: red;*/
 		}
 		.div0{
-			width: 100%;
+			width: 300;
 			height: 350px;
 			background-color: gray;
 		}
 		.div0 table{
 			width: 260px;
-			height: 300px;
+			height:280px;
 			background-color: gray;
 			/*margin:50px;*/
 			/*border:1px solid;*/
 		}
 		table tr td{
-			width: 50px;
-			height: 50px;
+			width: 60px;
+			height: 60px;
 			background: black;
-			margin: 20px 20px;
+			color: white;
+			text-align: center;
+		}
+		.div2{
+			width: 100%;
+			height: 60px;
+			background: #ece4e4;
+		}
+		p{
+			display: none;
+		}
+		p:nth-child(1){
+			display: block;
+		}
+		.div3{
+			width: 100%;
+			height: 40px;
+			background: gray;
 		}
 	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var aid = document.getElementById('aid');
+			var adiv = document.getElementsByTagName('div') ;
+			var adv= document.getElementByclassName('div2');
+			aid.anmouseover = function(){
+				for (var i = 0; i <.length; i++) {
+					
+				}
+			}
+		}
+	</script>
 </head>
 <body>
 	<div class="div1">
 		<div class="div0">
-			<table>
+			<table cellspacing="15px">
 				<tr>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
+					<td id="aid">1</td>
+					<td id="aid">2</td>
+					<td id="aid">3</td>
 				</tr>
 				<tr>
-					<td>4</td>
-					<td>5</td>
-					<td>6</td>
+					<td id="aid">4</td>
+					<td id="aid">5</td>
+					<td id="aid">6</td>
 				</tr>
 				<tr>
-					<td>7</td>
-					<td>8</td>
-					<td>9</td>
+					<td id="aid">7</td>
+					<td id="aid">8</td>
+					<td id="aid">9</td>
 				</tr>
 				<tr>
-					<td>10</td>
-					<td>11</td>
-					<td>12</td>
+					<td id="aid">10</td>
+					<td id="aid">11</td>
+					<td id="aid">12</td>
 				</tr>
 			</table>
 		</div>
-		<div class="div2"></div>
+		<div class="div2">
+			<p>一月</p>
+			<p>二月</p>
+			<p>三月</p>
+			<p>四月</p>
+			<p>五月</p>
+			<p>六月</p>
+			<p>七月</p>
+			<p>八月</p>
+			<p>九月</p>
+			<p>十月</p>
+			<p>十一月</p>
+			<p>十二月</p>
+		</div>
 		<div class="div3"></div>
 	</div>
 </body>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择案例</title>
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		window.onload=function(){
+           var oBtn1=document.getElementById('oBtn1')
+           var oBtn2=document.getElementById('oBtn2')
+           var oBtn3=document.getElementById('oBtn3')
+           var dV1=document.getElementById('dV1')
+           var input1=dV1.getElementsByTagName('input')
+           	oBtn1.onclick=function(){
+           		for (var i = 0; i < input1.length; i++){
+           			input1[i].checked =true;
+           		}
+
+           }
+           	oBtn2.onclick=function(){
+           		for (var i = 0; i <input1.length; i++){
+           			input1[i].checked =false;
+           	    }
+           }
+           // oBtn3.onclick=function(){
+           // 	     for(var i = 0; i < input1.length; i++) {
+           // 	     	if (true) {
+           // 	     		input1[i].checked=false;
+           // 	     	}
+           // 	     }
+           // 	     else{
+           // 	     	input1[i].checked=true;
+           // 	     }
+           // 	 }
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="button" value="全选" id="oBtn1">
+	<input type="button" name="button" value="全不选" id="oBtn2">
+	<input type="button" name="button" value="反选" id="oBtn3"><br>
+	<div id="dV1">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	</div>
+</body>
+</html>
