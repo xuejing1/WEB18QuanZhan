@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点</title>
+	<style type="text/css">
+		#oUl{
+			width: 300px;
+			height: 300px;
+			border: 1px solid;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oUl=document.getElementById('ul')
+			var aLi=oUl.childNodes;
+			for(var i=0;i<aLi.length;i++){
+				if(aLi[i].nodeType==1){
+					aLi[i].style.background='red'
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="oUl">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>
