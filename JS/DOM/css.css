@@ -1,0 +1,21 @@
+#box{
+	width: 1230px;
+	height: 645px;
+}
+#box img{
+	width: 1230px;
+	height: 465px;
+}
+li{
+	list-style: none;
+	float: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: clip;
+}
+#ul1{
+	float: left;
+	width: 4920px;
+	height: 465px;
+
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数码时钟</title>
+	<style type="text/css">
+		#box{
+			width: 500px;
+			height: 200px;
+			margin:100px auto;
+			color: white;
+			font-size: 25px;
+		}
+		body{
+			background: black;
+		}
+	</style>
+	<script type="text/javascript">
+		function toStr(n){
+			if(n<10){
+				return '0'+n;
+			}else{
+				return ''+n;
+			}
+		}
+		window.onload=function(){
+			var oBox=document.getElementById('box');
+			var imgs=oBox.getElementsByTagName('img');
+			setInterval(function timer(){
+				var now=new Date();
+				var h=now getHours();
+				var m=now getMinutes();
+				var s=now getSeconds();
+				var str=toStr(h)+toStr(m)+toStr(s);
+			}
+
+			for(var i=0;i<imgs.length;i++){
+				imgs[i].src='img/'+str.charAt(i)+'.png';
+			}
+		},1000)
+	</script>
+</head>
+<body>
+	<div id="box">
+		<img src="img/1.png">
+		<img src="img/0.png">
+		:
+		<img src="img/5.png">
+		<img src="img/0.png">
+		:
+		<img src="img/3.png">
+		<img src="img/0.png">
+	</div>
+</body>
+</html>

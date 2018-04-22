@@ -1,4 +1,7 @@
 /*top begin*/
+body{
+	min-width: 1228px;
+}
 .top{
 	height: 40px;
 	background: #333333;
