@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>减速动画</title>
+	<style type="text/css">
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 100px;
+			left: 0px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+			var oDiv1=document.getElementById('div1');
+			var timer=null;
+			timer=setInterval(function(){
+				var iSpeed=(300-oDiv1.offsetLeft)/10;
+				iSpeed>0 ? Math.ceil(iSpeed):Math.floor(iSpeed);
+				if(300==oDiv1.left){
+				clearInterval(timer);
+				}else{
+				oDiv1.style.left=iSpeed+'px'+offsetLeft;
+			}
+			},30)
+	</script>
+</head>
+<body>
+	<input type="button" name="" id="btn" value='开始动画'>
+	<div id="div1"></div>
+</body>
+</html>

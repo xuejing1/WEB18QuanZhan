@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动顶部导航栏</title>
+	<style type="text/css">
+	    *{
+	    	margin:0px;
+	    	padding: 0px;
+	    }
+		#nav{
+			width: 100%;
+			background: red;
+			height: 100px;
+		}
+		#topnav{
+			width: 100%;
+		/*	height: 100px;*/
+			background: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		// 设置isshow的值为了只调用一次，初始值写在最外面
+		var isshow=false;
+		window.onscroll=function(){
+			var oNav=document.getElementById('nav');
+			var oTopnav=document.getElementById('topnav');
+			var oMain=document.getElementById('main');
+			var iTop=document.body.scrollTop||document.documentElement.scrollTop;
+			if(iTop>=100){
+			    if(!isshow){
+				
+				animation(oTopnav,'height',100px);
+				iTop=isshow;
+			}else{
+				if(isshow){
+					animation(oTopnav,'height',0px);
+					iTop=!isshow;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="nav"></div>
+	<div id="topnav"></div>
+	<div id="main">qqqqqqq</div>
+</body>
+</html>
+
+
