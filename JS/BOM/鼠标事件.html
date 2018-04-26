@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标事件(跟随鼠标移动的物体)</title>
+	<style type="text/css">
+		div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=funtion(){
+			var oBox=document.getElementById('box');
+			var iTop=document.body.scrollTop || document.documentElement.scrollTop;
+			var iLeft=document.body.scrollLeft || document.documentElement.scrollLeft;
+			var oEvent=ev || event;
+			var oPoint = getPoint(oEvent);
+			document.onmousemove=function(){
+				oBox.style.left=oPoint.X+'px';
+				oBox.style.top=oPoint.Y+'px';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>
