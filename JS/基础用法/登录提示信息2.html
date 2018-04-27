@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录用信息提示</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 50px;
+			border: 1px solid;
+			background-color: #ccc;
+			margin-top: 10px;
+			line-height: 50px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- 需要给要改变的元素设置id,用来获取。JS中对大小写敏感 -->
+	<input type="checkbox" name="" onmouseover="document.getElementById('box').style.display='block'" onmouseout="document.getElementById('box').style.display='none'">
+	<div id="box">为了您的信息安全......</div>
+</body>
+</html>
