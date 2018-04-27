@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>script的异步属性</title>
+	<style type="text/css">
+		#box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid;
+		}
+	</style>
+	<!-- async异步属性，脚本立即下载执行，相当于window.onload -->
+	<script type="text/javascript" async="async" src="js/js外部文件2.js"></script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>
