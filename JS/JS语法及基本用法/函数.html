@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS函数</title>
+	<style type="text/css">
+		div{
+			background: red;
+			width: 100px;
+		    height: 100px;
+		}
+		.class1{
+			height: 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		function towidth(){
+			// document.getElementById('box').style.width='200px';
+			var co=document.getElementById('box');
+			co.style.width='200px';			
+		}
+		function toheight(){
+			document.getElementById('box').className="class1";
+		}
+	</script>
+</head> 
+<body>
+	<div id="box" onmouseover=towidth() onclick=toheight()></div>
+</body>
+</html>
