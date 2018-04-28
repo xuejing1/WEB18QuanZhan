@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡案例</title>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 100px;
+			background-color: red;
+			border: 1px solid;
+			display: none;
+		}
+		.bt1{
+			background-color: green;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oDiv = document.getElementsByTagName('div')；
+			var aBtn = document.getElementsByTagName('input')；
+			for(var i=0;i<aBtn.length;i++){
+				// 给aBtn添加了一个属性，即index=i，就是把循环之前i的值先存起来了  
+				// index是自定义的名称,自己随便起
+				aBtn[i].index=i;
+				aBtn[i].onclick=function(){
+					for(var j=0;j<aBtn.length;j++){
+						// 应该先清空，防止都变成同一个颜色，无法变回原来的颜色
+						aBtn[j].className='';
+						oDiv[j].style.display='none';
+					}
+					// this是指当前点击的那个
+					this.className='bt1';
+					// 此处的index就上面所存的i
+					oDiv[this.index].style.display='block';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name=""  value="内容1" class="bt1">
+	<input type="button" name=""  value="内容2">
+	<input type="button" name=""  value="内容3">
+	<input type="button" name=""  value="内容4">
+	<div style="display: block;">内容1</div>
+	<div>内容2</div>
+	<div>内容3</div>
+	<div>内容4</div>
+</body>
+</html>

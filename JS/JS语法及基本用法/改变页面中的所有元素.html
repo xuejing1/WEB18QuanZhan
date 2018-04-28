@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变页面中的所有元素</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			border:1px solid;
+			margin-top: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			// 获取某类元素，oLi为一个数组
+			var oLi=document.getElementsByTagName('li')
+			// 在控制台中输入信息和查看信息的函数或方法
+			console.log(oLi);
+			// 数组的下标从0开始,下方也可用循环
+		/*  oLi[0].style.background='red';
+			oLi[1].style.background='green';
+			oLi[2].style.background='blue';   */
+
+			// 数组有length属性,oLi.length是个数，统计有多少个元素是li的总数
+			for(var i=0; i<oLi.length;i++){
+				oLi[i].style.background='red';
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>
