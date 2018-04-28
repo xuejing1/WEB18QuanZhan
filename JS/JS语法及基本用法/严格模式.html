@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>严格模式</title>
+	<script type="text/javascript">
+		// 写在函数外部,整个文件都使用严格模式
+		'use strict'
+		function sayHi(){
+			// 严格模式,写在函数内部，该函数一律使用严格模式
+			'use strict';
+			var hi='hi';
+			alert(hi);
+		}
+		sayHi();
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

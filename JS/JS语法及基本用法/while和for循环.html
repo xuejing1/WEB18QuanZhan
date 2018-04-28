@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>while和for循环</title>
+	<script type="text/javascript">
+		// 初始值
+		var i = 1;
+		// 当i<5时执行alert(i),再i=i+1，一直循环，直到不满足i<5时退出
+		// 括号里面为判断退出条件
+		while(i<5){
+			// 执行语句
+			alert(i);
+			// 改变退出条件 一定要有该条件,否则会进入死循环
+			i=i+1;
+		}
+		// for语句其含义与while含义相同
+		// 当i=1时符合i<5执行alert(i)之后再进行i++
+		for(var i=1;i<5;i++){
+			alert(i);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
