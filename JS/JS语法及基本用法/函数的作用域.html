@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的作用域</title>
+	<script type="text/javascript">
+		// 花括号括起来的叫一个块儿
+		// JS是一个函数级作用域
+		function show(){
+			if(true){
+				var a=-1;
+			}
+			alert(a);
+		}
+		show();
+		// 在函数当中任意一个地方定义的变量在该函数当中都可以被使用
+		function say(){	
+			for(i=0;i<5;i++){
+				alert(i);
+			}
+			alert(i);
+		}
+		say();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

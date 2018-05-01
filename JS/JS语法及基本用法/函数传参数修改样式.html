@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数传参数修改样式</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid;
+			margin-top: 30px;
+		}
+	</style>
+	<script type="text/javascript">
+		// obj接收修改的元素  attr接收修改元素的属性  value接收修改的具体值
+		function css(obj,attr,value){
+			// 注意此处必须用中括号，不能用点，用点必须有该属性
+			obj.style[attr]=value;
+		}
+		window.onload=function(){
+			var oBtn1 = document.getElementById('btn1');
+			var oBtn2 = document.getElementById('btn2');
+			var oBtn3 = document.getElementById('btn3');
+			var oBox1 = document.getElementById('box1');
+			var oBox2 = document.getElementById('box2');
+			oBtn1.onclick=function(){
+				// 调用以上的css函数
+				css(oBox1,'width','300px');
+				css(oBox2,'width','300px');
+			}
+			oBtn2.onclick=function(){
+				css(oBox1,'height','300px');
+				css(oBox2,'height','300px');
+			}
+			oBtn3.onclick=function(){
+				css(oBox1,'backgroundColor','red');
+				// 能用点的形式一定可以用中括号，反之不成立
+				oBox2.style['background']='yellow';
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="" id="btn1" value="变高">
+	<input type="button" name="" id="btn2" value="变宽">
+	<input type="button" name="" id="btn3" value="变背景色">
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+</html>

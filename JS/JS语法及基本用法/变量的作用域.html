@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量的作用域</title>
+	<script type="text/javascript">
+		// 全局变量，在函数外边，所有函数都可用
+		var b=2;
+		var a=12;
+		function show(){
+			// 在函数里面，局部变量，其作用域为该函数当中
+			var a=1;
+			alert(a);
+		}
+		// 该值在被定义的时候已经确定
+		alert(a);
+		show();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

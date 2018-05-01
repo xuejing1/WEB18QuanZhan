@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+	<script type="text/javascript">
+		function show(){
+			// 特殊！！！如果此处的 var a=1，改变为 a=1，那么就会把a当做整个页面当中所有函数的全局变量对待
+			// 此处的a也可以当做say()函数的全局变量
+			var a=1;
+			function say(){
+				// 结果是1
+				// 子函数可以用到父元素中的变量就是闭包
+				alert(a);
+			}
+			// 只有子函数和父函数都被调用，a才会被访问
+			say();
+		}
+		function fn(){
+
+			alert(a);
+		}
+		show();
+		// fn()此时调不出，因为a没有被定义
+		fn();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

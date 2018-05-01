@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取和设置样式2</title>
+	<style type="text/css">
+		#box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid;
+			margin-top: 20px;
+		}
+		.toYe{
+			background:yellow;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var oBtn1 = document.getElementById('btn1');
+			var oBtn2 = document.getElementById('btn2');
+			var oBtn3 = document.getElementById('btn3');
+			var oBox = document.getElementById('box');
+			oBtn1.onclick = function(){
+				// 通过style添加样式加到了行间，行间样式的优先级最高
+				oBox.style.background = 'red';
+			}
+			oBtn2.onclick = function(){
+				// 提前定义好类别名，通过class添加上，只能变一次，但获取不到
+				oBox.className ='toYe';
+			}
+			oBtn3.onclick=function(){
+				// 获取样式，false可以随便写，只要是JS当中的关键字即可
+			alert(getComputedStyle(oBox,false)['backgroundColor']);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id='btn1' value="变红">
+	<input type="button" id='btn2' value="变黄">
+	<input type="button" id='btn3' value="获取背景色">
+	<div id='box'></div>
+</body>
+</html>

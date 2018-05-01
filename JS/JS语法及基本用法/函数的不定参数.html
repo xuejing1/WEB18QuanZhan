@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的不定参数</title>
+	<script type="text/javascript">
+		// 求和
+		// function会自动创建一个arguments数组
+		function sum(){
+			// 定义初始值
+			var result=0;
+			// arguments是一个数组，用来接收在调用函数的时候传递的参数，也可以事先定义好要传什么数据
+			for(var i=0;i<arguments.length;i++){
+				result+=arguments[i];
+			}
+			alert(result);
+		}
+		// 调用函数，里面的参数传递给arguments数组
+		sum(1,21,123,111,12,3,13);
+		function suml(a,b){
+			return a+b;
+		}
+		// 结果是3，因为没有传递3对应的参数
+		alert(suml(1,2,3));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

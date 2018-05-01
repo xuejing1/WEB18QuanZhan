@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量的提升</title>
+	<script type="text/javascript">
+		function show(){
+			// 一般情况都是先定义变量再去执行
+			// 在函数体当中所有定义的变量，系统都会自动拉到函数的最上面
+	    /*  该种情况相当于：
+	        var a;
+	        alert(a);
+	        a=2      所以结果为underfined     */
+			alert(a);
+			var a=12;
+		}
+		show();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

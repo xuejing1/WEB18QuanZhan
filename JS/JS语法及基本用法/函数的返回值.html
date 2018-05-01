@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的返回值</title>
+	<script type="text/javascript">
+		// 参数可以有多个
+		function show(){
+			var a=1;
+			// 当函数执行到return,以下的函数就不会再被执行
+			// return返回值只能返回一个值，要想返回多个值，可以返回json
+			return a;
+			// 不会被执行
+			alert('abc');
+		}
+		// msg被定义，此处也是调用show()函数
+		var msg=show();
+		alert(msg);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

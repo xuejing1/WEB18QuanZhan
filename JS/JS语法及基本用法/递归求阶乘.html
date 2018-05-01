@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>求阶乘</title>
+	<script type="text/javascript">
+		// 相当于定义了一个求阶乘的函数，该函数就是用来求阶乘的，即 n！
+		function show(n){
+			if(n==1){
+				return 1;
+			}else{
+				return n*show(n-1);
+			}
+		}
+		alert(show(6));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
