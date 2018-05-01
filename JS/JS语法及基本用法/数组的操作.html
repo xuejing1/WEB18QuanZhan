@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组的操作</title>
+	<script type="text/javascript">
+		var arr=[1,12,13,14,2,13,13,34,213,313,1,13,123,2];
+		console.log(arr);
+		// 在数组末尾添加66
+		arr.push(66);
+		console.log(arr);
+		// 删除数组的末尾元素，不用建参数
+		arr.pop();
+		console.log(arr);
+		// 把元素添加到数组的头部
+		arr.unshift(88);
+		console.log(arr);
+		// 删除数组的第一个元素
+		arr.shift();
+		console.log(arr);
+		// splice(起始下标，删除个数，插入值1，插入值2......)
+		arr.splice(2,3,99);
+		console.log(arr);
+		// join会返回字符串，不会改变原来的数组，会把数组中的值进行连接
+		console.log(arr.join('##'));
+		// slice(起始下标，结束下标) 基于当前数组创建一个新的数组,不会影响原来的数组，新数组包含起始坐标，不包含结束下标
+		var arr2=arr.slice(2,5);
+		console.log(arr2);
+		// 查找项，index(查找项，起始下标)  没有的话就返回-1，有就返回下标
+		// 查找找的都是符合条件的第一个
+		console.log(arr.indexOf(4,5));
+		// 从后向前查找
+		console.log(arr.lastIndexOf(4,5))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去除重复元素</title>
+	<!-- 思路：
+	          1.空数组 2.两个数组进行比较 3.不一样的输入进去，一样的不输入-->
+	<script type="text/javascript">
+		var arr=[12,22,33,36,55,66,22,33,68,88,99];
+		console.log(arr);
+		// 里面的arr为下面调用函数时的值赋给了此处
+		function show(arr){
+			// 提前定义一个空数组，返回的数组
+			var result=[];
+			for(var i=0;i<arr.length;i++){
+				// 默认值，判断当前元素在数组中的有无
+				var isDup=false;
+				// 空数组进行循环
+				for(var j=0;j<result.length;j++){
+					// 两数组进行比较，又就是true
+					if(arr[i]==result[j]){
+						isDup=true;
+						break;
+					}
+				}
+				if (!isDup) {
+					result.push(arr[i]);
+				}
+			}
+			// 返回数组
+			return result;
+		}
+		// 里面的arr相当于调用函数用的参数
+		console.log(show(arr));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
