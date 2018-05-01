@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>秒转时间</title>
+	<script type="text/javascript">
+		// 时间显示格式：00:00:00
+		// 储存是按“秒”存的
+		var time=3490;
+		var h=parseInt(time/3600);
+		var m=parseInt((time%3600)/60);
+		var s=(time%3600)%60;
+		// 转换为两位数的字符串
+		if(h<10){
+			h='0'+h;
+		}else{
+			h=''+h;
+		}
+		if(m<10){
+			m='0'+h;
+		}else{
+			m=''+m;
+		}
+		if(s<10){
+			s='0'+s;
+		}else{
+			s=''+s;
+		};
+		// 字符串拼接
+		alert(h+":"+m+":"+s)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
