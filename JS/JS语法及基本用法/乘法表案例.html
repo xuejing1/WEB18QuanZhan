@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>乘法表案例</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			// 输入标签，标签出来的效果与html中一样
+			document.write("<table>");
+			for(var i=1;i<10;i++){
+				// 输入行
+				document.write("<tr>");
+				for(var j=1;j<=i;j++){
+					// 输入列和内容
+					// 有引号的是字符串，引号里面的内容是值
+					// + 是用来拼接的
+					document.write("<td>"+j+'*'+i+"="+i*j+"</td>")
+				}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>月历</title>
+	<style type="text/css">
+	    *{
+	    	margin:0px;
+	    	padding: 0px;
+	    }
+	    .clearfix:after{
+	    	content: "";
+	    	clear: both;
+	    	display: block;
+	    	height: 0px;
+	    	visibility: hidden;
+	    }
+		#box{
+			width: 310px;
+			height: 600px;
+			border: 1px solid;
+			margin: 50px auto;
+			background-color: gray;
+		}
+		li{
+			list-style: none;
+			width: 90px;
+			height: 90px;
+			background: black;
+			color: white;
+			font-size: 30px;
+			float: left;
+			margin-left: 10px;
+			text-align: center;
+			line-height: 90px;
+			margin-top: 10px;
+		}
+		#bt{
+			width: 100%;
+			height: 190px;
+			margin-top: 10px;
+		}
+		/*提前命一个类，给出要变的样式*/
+		.active{
+			background-color: white;
+			color: black;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBt=document.getElementById('bt');
+			var aLi=document.getElementsByTagName('li');
+			// 列一个数组以便下面使用
+			// 数组下标从0开始依次对应
+			var arr=['踏青','旅游'];
+			for(var i=0;i<aLi.length;i++){
+				// 应该把最原始的i给存起来
+				aLi[i].index=i;
+				aLi[i].onmouseover=function(){
+					for(var j=0;j<aLi.length;j++){
+						aLi[j].className='';
+					}
+					// 给onmouseover的元素变为active的样式
+					this.className='active';
+					// 因为数组小标从0开始，所以应该+1
+					// 动态加入oBt里面内容
+					oBt.innerHTML = "<h2>"+(this.index+1)+"月</h2><p>"+arr[this.index]+"</p>";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<ul class="clearfix">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+		<div id="bt">
+			<h2>1月</h2>
+			<p>写生</p>
+		</div>
+	</div>
+</body>
+</html>
