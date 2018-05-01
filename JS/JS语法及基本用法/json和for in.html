@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json和for in</title>
+	<script type="text/javascript">
+		// 遍历等同于迭代，意思是把数组中的每一个数据都拿出来做一个处理
+		var arr=[1,2,3,4];
+		// 数组可以用for循环遍历
+		for(var i=0;i<arr.length;i++){
+			console.log(arr[i]);
+		}
+		var arr0=[11,22,33,44];
+		// 数组也可用for in循环遍历，此处的i是数组下标
+		for(i in arr0){
+			console.log(arr0[i]);
+		}
+		// json是js的对象表示方法，一种数据格式
+		// json要用花括号
+		
+		
+		var obj = {
+		// 键(key):值(key);通过键访问值.   注意用逗号
+			'a':111,
+			'b':222,
+			'c':333,
+		} 
+		// 结果{a:111,b:122,c:133}属于object类型
+		console.log(obj);
+		// 访问a的值
+		console.log(obj.a);
+		console.log(['a']);
+		// json没有length属性，只能通过for in循环遍历
+		// 通过键访问值
+		for(key in obj){
+			console.log(obj[key]);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
