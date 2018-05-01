@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>求和(显示转换)</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oTxt1 = document.getElementById('txt1');
+			var oTxt2 = document.getElementById('txt2');
+			var oBtn = document.getElementById('btn');
+			oBtn.onclick=function(){
+				// input文本框里面输入的内容类型为string,所以需要转换为数字进行计算
+				// 显示转换parseInt,转换为数字整型,从左到右扫面字符串,遇到第一个非零数字停止转换
+				var value1 = parseInt(oTxt1.value);
+				var value2 = parseInt(oTxt2.value);
+				// 转换不成功会返回NaN，意思是not a number.
+				// 即便最后返回的都是NaN，但他们的NaN也是不相等的
+				// isNaN是不是不是数字，检查是不是数字
+				if(isNaN(value1)){
+					alert('你输入的第一个数字有误');
+				}else if(isNaN(value2)){
+					alert('你输入的第二个数字有误');
+				}else{
+					alert(value1+value2);
+				}
+			}
+			var a='1.23';
+			alert(a);
+			// parseFloat可以转化小数，用法与parseInt一样
+			alert(parseFloat(a));
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="txt1">
+	<input type="text" name="" id="txt2">
+	<input type="button" name="" value="求和" id="btn">
+</body>
+</html>
