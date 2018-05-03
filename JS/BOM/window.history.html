@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window.location</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn1=document.getElementById('btn1');
+			var oBtn2=document.getElementById('btn2');
+			oBtn1.onclick=function(){
+				// history上面有一个go方法，
+				// history.go(-1)==history.back()  history.go(1)==history.forward
+				// -1是指向上走一页   1是指向下走一页
+				window.history.go(-1)
+			}
+
+			oBtn2.onclick=function(){
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="上一页" id="btn1">
+	<input type="button" name="" value="下一页" id="btn2">
+</body>
+</html>

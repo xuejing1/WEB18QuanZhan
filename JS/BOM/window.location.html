@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window.location</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn1=document.getElementById('btn1');
+			var oBtn2=document.getElementById('btn2');
+			var oBtn3=document.getElementById('btn3');
+			// location代表当前页面的对象,可取值可赋值
+			// document.location与window.location一样
+			oBtn1.onclick=function(){
+				// 一般location前面加上window
+				//通过location的href改变页面的跳转地址 
+				window.location='http://www.baidu.com'
+			}
+
+			oBtn2.onclick=function(){
+				// location其他属性：host 主机，hostname 主机命名
+				// pathname 请求的一个地址(不包括传的参数)，port 端口
+				// search 传的参数
+				window.location.href='http://www.kuazhu.com'
+			}
+			oBtn3.onclick=function(){
+				// assign也可以跳转地址，在location上，注意用的是小括号
+				window.location.assign('http://www.kuazhu.com');
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="跳转百度" id="btn1">
+	<input type="button" name="" value="跳转跨猪" id="btn2">
+	<input type="button" name="" value="跳转跨猪" id="btn3">
+</body>
+</html>
