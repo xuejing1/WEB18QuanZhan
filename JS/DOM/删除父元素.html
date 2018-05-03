@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>删除元素</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oUl0=document.getElementById('ul0');
+			var aA=document.getElementsByTagName('a');
+			for(var i=0;i<aA.length;i++){
+				aA[i].onclick=function(){
+					// removeChild删除子元素
+					oUl0.removeChild(this.parentNode);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul0">
+		<li>11111<a href="#">删除1</a></li>
+		<li>11112<a href="#">删除2</a></li>
+		<li>11113<a href="#">删除3</a></li>
+		<li>11114<a href="#">删除4</a></li>
+		<li>11115<a href="#">删除5</a></li>
+	</ul>
+</body>
+</html>
