@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>运行代码案例</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oTxt=document.getElementById('txt');
+			var oBtn=document.getElementById('btn');
+			oBtn.onclick=function(){
+				var val=oTxt.value;
+				var oWi=window.open('about:blank','_blank');
+				// 新的在页面上输出文本中的值
+				oWi.document.write(val);
+			}
+		}
+	</script>
+</head>
+<body>
+	<textarea id="txt"></textarea>
+	<input type="button" name="" id="btn" value="运行">
+</body>
+</html>

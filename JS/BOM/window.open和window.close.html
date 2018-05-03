@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window.open和window.close</title>
+<script type="text/javascript">
+		window.onload=function(){
+			var oBtn1=document.getElementById('btn1');
+			oBtn1.onclick=function(){
+				// window.open新建窗口，接收四个参数，常用两个
+				// 第一个参数是地址，第二个参数是_blank(默认,不写也可)或者_self
+				// _blank新建一个页面，_self自身页面打开
+	    	/*	window.open('about:blank','_blank')
+				window.open('about:blank','_self')      */
+				window.open('http://www.kuazhu.com')
+			}
+			oBtn2.onclick=function(){
+				// window.close()不能关闭用户打开的窗口
+				// 只能关闭open程序打开的窗口
+				window.close();
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="新建窗口" id="btn1">
+	<input type="button" name="" value="关闭窗口" id="btn2">
+</body>
+</html>
