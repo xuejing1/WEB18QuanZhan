@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作属性</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+			var oTxt=document.getElementById('txt');
+			oBtn.onclick=function(){
+				// oTxt.value='ac';
+				// oTxt['value']='abc';
+				// setAttribute接收两个参数，第一个是属性，第二个是值
+				oTxt.setAttribute('value','abcde');
+				// getAttribute获取属性，必须有该属性才可以获取
+				alert(oTxt.getAttribute('value'));
+				// 删除属性
+				oTxt.removeAttribute('value');
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="" id="btn" value="设置">
+	<input type="text" name="" id="txt" value="123">
+</body>
+</html>
