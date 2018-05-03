@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			// body默认高度是0
+			document.body.onclick=function(){
+				alert('123');
+			}
+			// document指代整个页面，他的第一个儿子是<!DOCTYPE html>
+			document.onclick=function(){
+				alert('12');
+				// event事件对象
+				// 处理兼容性问题
+				var oEvent=ev||event
+				// 参考点为左上方，鼠标的X坐标
+				console.log('X:',event.clientX);
+				// 鼠标的Y坐标
+				console.log('Y:',event.clientY);
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

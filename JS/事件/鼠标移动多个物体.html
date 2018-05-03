@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动多个物体</title>
+	<style type="text/css">
+		div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		/*body{
+			height: 5000px;
+		}*/
+	</style>
+	<script type="text/javascript">
+		// 单独抽出来调用一下，封装成一个函数，以便以后使用
+		// 传入一个参数，需要使用
+		function getPoint(ev){
+			// 顶部滚动距离
+				var iTop=document.body.scrollTop || document.documentElement.scrollTop;
+				// 左边距离
+				var iLeft=document.body.scrollLeft || document.documentElement.scrollLeft;
+				// 返回json
+				return {x:ev.clientX+iLeft,y:ev.clientY+iTop}
+		}
+		window.onload=function(){
+			var oDiv=document.getElementsByTagName('div');
+			// 当鼠标移动的时候
+			document.onmousemove=function(ev){
+				var oEvent=ev || event;
+				// 调用上面函数
+				var oPoint=getPoint(oEvent);
+				// 先让第一个div跟着鼠标走
+				aDiv[0].style.left=oPoint.x + 'px';
+				aDiv[0].style.top=oPoint.y + 'px';
+				for(var i=oDiv.length-1;i>0;i--){
+					aDiv[i].style.left = aDiv[i-1].offsetLeft + 10+'px';
+					aDiv[i].style.top = aDiv[i-1].offsetTop + 10+'px';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

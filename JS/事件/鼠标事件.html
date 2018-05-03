@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标事件(跟随鼠标移动的物体)</title>
+	<style type="text/css">
+		div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		body{
+			height: 5000px;
+		}
+	</style>
+	<script type="text/javascript">
+		// 单独抽出来调用一下，封装成一个函数，以便以后使用
+		// 传入一个参数，需要使用
+		function getPoint(ev){
+			// 顶部滚动距离
+				var iTop=document.body.scrollTop || document.documentElement.scrollTop;
+				// 左边距离
+				var iLeft=document.body.scrollLeft || document.documentElement.scrollLeft;
+				// 返回json
+				return {x:ev.clientX+iLeft,y:ev.clientY+iTop}
+		}
+		window.onload=function(){
+			var oBox=document.getElementById('box');
+			// 当鼠标移动的时候
+			document.onmousemove=function(ev){
+				var oEvent=ev || event;
+				// 调用上面函数
+				var oPoint=getPoint(oEvent);
+				// 为了让其固定在可视区内，所以需要有滚动距离和左边距离
+				// 水平： 物体的左边等于鼠标左边
+				oBox.style.left=oPoint.x+'px';
+				// 垂直
+				oBox.style.top=oPoint.y+'px';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

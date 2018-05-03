@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单案例</title>
+	<style type="text/css">
+		#box{
+			width: 50px;
+			height: 300px;
+			background-color: yellow;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+			var oBox=document.getElementById('box');
+			// 阻止冒泡就要获取对象
+			oBtn.onclick=function(ev){
+				// 处理兼容性问题
+				var oEvent= ev || event;
+				oBox.style.display='block';
+				// stopPropagation阻止事件冒泡
+				oEvent.stopPropagation();
+			}
+			document.onclick=function(){
+				oBox.style.display='none';
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="" id="btn" value="菜单">
+	<div id="box"></div>
+</body>
+</html>
