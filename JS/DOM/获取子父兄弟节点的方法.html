@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取节点的其他方法</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oUl=document.getElementById('ul0');
+			// firstChild获取的是第一个节点，文本节点
+			// firstElementChild获取的是第一个元素节点
+			console.log(oUl.firstElementChild);
+			// lastElementChild获取的是最后一个元素节点
+			console.log(oUl.lastElementChild);
+			var oLi2=document.getElementById('li2');
+			// nextSibling获取下一个兄弟节点,nextElementSibling获取下一个兄弟元素节点
+			console.log(oLi2.nextSibling);
+			// 上一个兄弟元素节点
+			console.log(oLi2.previousElementSibling);
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul0">
+		<li>1</li>
+		<li id="li2">2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</body>
+</html>
