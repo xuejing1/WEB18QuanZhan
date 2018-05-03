@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加删除行(添加的元素具有删除的功能)</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+			var oTxt=document.getElementById('txt');
+			var oUl0=document.getElementById('ul0');
+			oBtn.onclick=function(){
+				var oLi=document.createElement('li');
+				oLi.innerHTML=oTxt.value;
+				var oA=document.createElement('a');
+				// 添加内容，字体
+				oA.innerHTML='删除';
+				// 设置a的属性
+				oA.href='javascript:';
+				oUl0.appendChild(oLi);
+				oLi.appendChild(oA);
+				oA.onclick=function(){
+					oUl0.removeChild(oLi);
+					
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="txt">
+	<input type="button" name="" id="btn" value="添加元素">
+	<ul id="ul0">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>
