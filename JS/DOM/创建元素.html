@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建元素</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oTxt=document.getElementById('txt');
+			var oBtn=document.getElementById('btn');
+			var oUl0=document.getElementById('ul0');
+			oBtn.onclick=function(){
+				// createElement('')创建元素
+				var oLi=document.createElement('li');
+				// 将文本框中的内容提交到li当中
+				oLi.innerHTML=oTxt.value;
+				// appendChild()追加子元素,括号里为创建的元素，意思是将创建的元素添加到父元素当中
+				oUl0.appendChild(oLi);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="txt">
+	<input type="button" name="" id="btn" value="创建">
+	<ul id="ul0">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>
