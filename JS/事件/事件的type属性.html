@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件的type属性</title>
+	<style type="text/css">
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBox=document.getElementById('box');
+			// 单独写一个函数判断事件
+			function show(ev){
+				var oEvent=ev || event;
+				// type是指事件的类型
+				if(oEvent.type=='mouseover'){
+					oBox.style.background='yellow';
+				}else if(oEvent.type=='click'){
+					oBox.style.background='blue';
+				}
+			}
+			// 执行函数
+			oBox.addEventListener('mouseover',show,false);
+			oBox.addEventListener('click',show,false);
+			
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

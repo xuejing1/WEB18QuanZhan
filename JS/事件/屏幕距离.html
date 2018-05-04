@@ -3,6 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>屏幕距离</title>
+	<style type="text/css">
+		body{
+			height: 3000px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			document.onclick=function(ev){
+				var oEvent=ev || event;
+				// clientX clientY是可视区鼠标的坐标，参考点是可视区左上角
+				console.log('clientX:'+oEvent.clientX);
+				console.log('clientY:'+oEvent.clientY);
+				// pageX pageY包括滚动距离
+				console.log('pageX:'+oEvent.pageX);
+				console.log('pageY:'+oEvent.pageY);
+				// screenX screenY是指到屏幕的距离
+				console.log('screenX:'+oEvent.screenX);
+				console.log('screenY:'+oEvent.screenY);
+			}
+		}
+	</script>
 </head>
 <body>
 	

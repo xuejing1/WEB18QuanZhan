@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象属性</title>
+	<style type="text/css">
+		#f{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+		}
+		#s{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oF=document.getElementById('f');
+			var oS=document.getElementById('s');
+			oF.addEventListener('click',function(ev){
+				var oEvent=ev || event;
+				// oEvent.target事件发生在谁的身上，触发了哪个元素
+				console.log(oEvent.target);
+				// oEvent.currentTarget事件绑定在谁的身上
+				console.log(oEvent.currentTarget);
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="f">
+		<div id="s"></div>
+	</div>
+</body>
+</html>
