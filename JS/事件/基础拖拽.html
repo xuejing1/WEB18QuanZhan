@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基础拖拽</title>
+	<style type="text/css">
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			// 定义初始值
+			var disX=0;
+			var disY=0;
+			// onmousedown当鼠标按下去的时候
+			oDiv.onmousedown = function(ev){
+				var oEvent=event || ev;
+				// 定义鼠标按下去的时候，鼠标与oDiv边框的距离
+				disX = oEvent.clientX - oDiv.offsetLeft;
+				disY = oEvent.clientY - oDiv.offsetTop;
+				// 应该把鼠标加在一个大的容器当中
+				document.onmousemove = function(ev){
+					var oEvent = ev || event;
+					// 移动之后oDiv的距离
+					oDiv.style.left = oEvent.clientX - disX + 'px';
+					oDiv.style.top = oEvent.clientY - disY + 'px';
+				}
+				// 当鼠标抬起的时候对onmousemove和onmouseup清除
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽吸附</title>
+	<style type="text/css">
+		#f{
+			width: 300px;
+			height: 300px;
+			background: red;
+			margin: 100px auto;
+			position: relative;
+		}
+		#s{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oF=document.getElementById('f');
+			var oS=document.getElementById('s');
+			// 定义初始值
+			var disX=0;
+			var disY=0;
+			// onmousedown当鼠标按下去的时候
+			oS.onmousedown=function(ev){
+				var oEvent=event || ev;
+				// 定义鼠标按下去的时候，鼠标与父亲边框的距离
+				disX=oEvent.clientX-oS.offsetLeft;
+				disY=oEvent.clientY-oS.offsetTop;
+				// 应该把鼠标加在一个大的容器当中
+				document.onmousemove=function(ev){
+					var oEvent=event || ev;
+					var l=oEvent.clientX-disX;
+					var t=oEvent.clientY-disY;
+					if(l<0){
+						l=0;
+						// 父元素与子元素的宽度之差
+					}else if(l>oF.offsetWidth-oS.offsetWidth){
+						l=oF.offsetWidth-oS.offsetWidth;
+					}
+					if(t<0){
+						t=0;
+					}else if(t>oF.offsetHeight-oS.offsetHeight){
+						t=oF.offsetHeight-oS.offsetHeight;
+					}
+					// 移动之后儿子到父亲的距离
+					oS.style.left=l+'px';
+					oS.style.top=t+'px';
+
+				}
+				// 当鼠标抬起的时候对onmousemove和onmouseup清除
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="f">
+		<div id="s"></div>
+	</div>
+</body>
+</html>

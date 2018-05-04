@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽虚线框</title>
+	<style type="text/css">
+	 	*{
+	 		margin:0px;
+	 		padding: 0px;
+	 	}
+		#div0{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		.box{
+			border: 1px dashed orange;
+			position: absolute;
+			box-sizing: border-box;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv=document.getElementById('div0');
+			disX=0;
+			disY=0;
+			oDiv.onmousedown=function(ev){
+				var oEvent=ev || event;
+				disX=oEvent.clientX-oDiv.offsetLeft;
+				disY=oEvent.clientY-oDiv.offsetTop;
+				// 创建元素，边框
+				var oBox=document.createElement('div');
+				oBox.className='box';
+				// 边框的大小与位置
+				oBox.style.width=oDiv.offsetWidth+'px';
+				oBox.style.height=oDiv.offsetHeight+'px';
+				oBox.style.top=oDiv.offsetTop+'px';
+				oBox.style.left=oDiv.offsetLeft+'px';
+				// 添加
+				document.body.appendChild(oBox);
+				document.onmousemove=function(ev){
+					var oEvent=ev || event;
+					oBox.style.left=oEvent.clientX-disX+'px';
+					oBox.style.top=oEvent.clientY-disY+'px';
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+					// 边框到达目的地之后，物体跟随移动过去
+					oDiv.style.left=oBox.offsetLeft+'px';
+					oDiv.style.top=oBox.offsetTop+'px';
+					// 删除虚线框
+					document.body.removeChild(oBox);
+				}
+			}	
+		}
+	</script>
+</head>
+<body>
+	<div id="div0"></div>
+</body>
+</html>
