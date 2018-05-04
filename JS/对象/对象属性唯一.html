@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象属性唯一</title>
+	<script>
+		var arr=[11,22,12,12,43,22,15];
+		function removeDup(arr){
+			var result=[];
+			var obj={};
+			for(var i=0;i<arr.length;i++){
+				obj[arr[i]]='';
+			}
+			for(key in obj){
+				result.push(key);
+			}
+			return result;
+		}
+		console.log(arr);
+		console.log(removeDup(arr));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
