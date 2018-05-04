@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>碰撞检测案例</title>
+	<style type="text/css">
+	 	*{
+	 		margin:0px;
+	 		padding: 0px;
+	 	}
+		#div0{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		#div1{
+			width: 300px;
+			height: 300px;
+			background-color: yellow;
+			position: absolute;
+			top: 200px;
+			left: 300px;
+		}
+	</style>
+	<script type="text/javascript">
+		// 两个物体碰撞函数
+		function checkKiss(oDiv,oDiv1){
+			if(
+				// 左上，右上，右下，左下进行比较判断
+				(oDiv.offsetTop+oDiv.offsetHeight)>oDiv1.offsetTop && 
+				(oDiv.offsetLeft+oDiv.offsetWidth)>oDiv1.offsetLeft &&
+				(oDiv1.offsetLeft+oDiv1.offsetWidth)>oDiv.offsetLeft &&
+				(oDiv1.offsetTop+oDiv1.offsetHeight)>oDiv.offsetTop
+				){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		window.onload=function(){
+			var oDiv=document.getElementById('div0');
+			var oDiv1=document.getElementById('div1');
+			disX=0;
+			disY=0;
+			oDiv.onmousedown=function(ev){
+				var oEvent=event || ev;
+				disX=oEvent.clientX-oDiv.offsetLeft;
+				disY=oEvent.clientY-oDiv.offsetTop;
+				document.onmousemove=function(ev){
+					var oEvent=event || ev;
+					var l=oEvent.clientX-disX;
+					var t=oEvent.clientY-disY;
+					if(l<0){
+						l=0;
+					}else if(l>window.innerWidth-oDiv.offsetWidth){
+						l=window.innerWidth-oDiv.offsetWidth;
+					}
+					if(t<0){
+						t=0;
+					}else if(t>window.innerHeight-oDiv.offsetHeight){
+						t=window.innerHeight-oDiv.offsetHeight;
+					}
+				oDiv.style.left=l+'px';
+				oDiv.style.top=t+'px';
+				// 调用函数，进行判断，输入参数
+				if(checkKiss(oDiv,oDiv1)){
+						oDiv1.style.background='blue';
+					}else{
+						oDiv1.style.background='yellow';
+					}
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div0"></div>
+	<div id="div1"></div>
+</body>
+</html>
