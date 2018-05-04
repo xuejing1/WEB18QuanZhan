@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>右键菜单和阻止默认</title>
+	<script type="text/javascript">
+		// oncontextmenu是右键菜单
+		document.oncontextmenu=function(ev){
+			alert('1');
+			var oEvent=ev || event;
+			// 法一：阻止默认菜单
+			// return false;
+			// 法二：阻止默认菜单
+			oEvent.preventDefault();
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
