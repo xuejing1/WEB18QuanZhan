@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			// onkeydown当键盘按下  onkeyup键盘抬起
+			document.onkeydown=function(ev){
+				var oEvent=ev || event;
+				// 键盘事件，接收到的event对象里面就会有keyCode
+				// keyCode查看键盘对应的数字，这个数字是十进制
+				console.log(oEvent.keyCode)
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

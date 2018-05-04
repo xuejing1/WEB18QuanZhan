@@ -35,11 +35,12 @@
 				// 调用上面函数
 				var oPoint=getPoint(oEvent);
 				// 先让第一个div跟着鼠标走
-				aDiv[0].style.left=oPoint.x + 'px';
-				aDiv[0].style.top=oPoint.y + 'px';
+				oDiv[0].style.left=oPoint.x+'px';
+				oDiv[0].style.top=oPoint.y+'px';
+				// 让后面的div跟着前面的div走，所以得倒着循环
 				for(var i=oDiv.length-1;i>0;i--){
-					aDiv[i].style.left = aDiv[i-1].offsetLeft + 10+'px';
-					aDiv[i].style.top = aDiv[i-1].offsetTop + 10+'px';
+					oDiv[i].style.left=oDiv[i-1].offsetLeft-10+'px';
+					oDiv[i].style.top=oDiv[i-1].offsetTop-10+'px';
 				}
 			}
 		}
