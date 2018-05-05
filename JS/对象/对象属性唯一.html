@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>对象属性唯一</title>
+	<title>去除重复元素</title>
 	<script>
 		var arr=[11,22,12,12,43,22,15];
 		function removeDup(arr){
+			// 定义空数组，最后返回
 			var result=[];
+			// 定义空对象
 			var obj={};
+			// 循环数组，让数组里面的元素作为对象的一个属性
 			for(var i=0;i<arr.length;i++){
+				// obj上添加了一个属性，对象上的属性唯一，系统自动去掉重复的
 				obj[arr[i]]='';
 			}
+			// 循环对象，让对象上的数推荐去定义的空数组当中
 			for(key in obj){
 				result.push(key);
 			}

@@ -3,8 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title>字面量创建对象</title>
+	<script type="text/javascript">
+		// 如果对象上的属性重复就会把前面的覆盖掉
+		var obj={
+			name:'Xue',
+			age:'20',
+			name:'Jing',
+			// 变量中可以写函数
+			 show:function(){
+			 	// 函数属于谁  this就是谁
+				console.log(this.name+'hello');
+			}
+		}
+		// 可以访问变量中的对象
+		console.log(obj.name);
+		obj.show();
+		// 查看object对象有什么属性，对象上的属性是唯一的
+		for(key in obj){
+			console.log(key);
+		}
+	</script>
 </head>
 <body>
+	
 	
 </body>
 </html>
