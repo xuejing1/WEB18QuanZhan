@@ -3,15 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>表单事件</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		li{
+			width: 100px;
+			height: 30px;
+			list-style: none;
+		}
+	</style>
 	<script type="text/javascript">
 		window.onload=function(){
 			var oTxt=document.getElementById('txt');
 			var oSpan=document.getElementById('span0');
-			var oBtn=document.getElementById('btn');
-
+			var oSub=document.getElementById('sub');
+			var oList=document.getElementById('list');
+			var oForm=document.getElementById('form1');
 			// 定义是否提交变量，默认不能提交false
-			// var isOk=false;
-
+			var isOk=false;
+			// 创建数组
+			var arr=['To','Am','Rm'];
+			// 定义是否加载完数组的变量，默认false
+			var isLoaded=false;
 			// 获取焦点
 			oTxt.onfocus=function(){
 				oSpan.innerHTML='输入小于五位用户名';
@@ -26,25 +41,60 @@
 				}else{
 					oSpan.innerHTML='输入正确';
 					oSpan.style.color='green';
-					// var isOk=true；				
+					isOk=true;				
 				}
 			}
-
+		/* 	onchange 内容改变的时候做出的变化 触发需要满足两点 		内容改变和失去焦点
+			onkeypress当键按下去的时候触发事件
+			onkeyup当键抬起的时候触发事件
+			oninput  内容改变的时候做出的变化,事件在元素值发生变化是立即触发										*/
+			oTxt.oninput=function(){
+				if(isLoaded){
+					return false;
+				}
+				for(var i=0;i<arr.length;i++){
+					var oLi=document.createElement('li');
+					// li里面的内容是创建的数组里面的内容
+					oLi.innerHTML=arr[i];
+					oList.appendChild(oLi);
+				}
+				isLoaded=true;
+			}
+			// 委托  循环耗费资源所以用委托
+			oList.onclick=function(ev){
+				var oEvent=ev || event;
+				oTxt.value=ev.target.innerHTML
+				oSpan.style.color='green';
+				oSpan.innerHTML='输入正确';
+				isOk=true;	
+			}
+			// onsubmit在form上提交的时候做什么
+			oForm.onsubmit=function(){
+				alert('提交');
+			}
+			// onreset在form上重置的时候做什么
+			oForm.onreset = function(){
+				alert('重置');
+			}
 			// 输入错误不提交
-			// if(!isOk){
-			// 	return false;
-			// 	alert('输入错误，请重新输入');
-			// }
+			oSub.onclick=function(){
+				if(!isOk){
+					alert('输入错误，请重新输入');
+					return false;
+				}
+			}
 
 		}
 	</script>
 </head>
 <body>
 	<!-- form提交地址 -->
-	<form action="http://www.baidu.com">
+	<form action="http://www.baidu.com" id="form1">
 		<input type="text" name="" id="txt">
 		<span id="span0"></span><br><br>
-		<input type="button" name="" value="提交" id="btn">
+		<ul id="list"></ul>
+		<input type="submit" name="" value="提交" id="sub">
+		<input type="reset" name="" value="清空">
 	</form>
 </body>
 </html>
