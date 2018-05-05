@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件常用属性</title>
+	<style type="text/css">
+		#f1{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+		}
+		#s1{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+		}
+		#f2{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+	        margin-top: 30px;
+		}
+		#s2{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oF1=document.getElementById('f1');
+			var oS1=document.getElementById('s1');
+			var oF2=document.getElementById('f2');
+			var oS2=document.getElementById('s2');
+
+			oF1.onmouseover=function(ev){
+				var oEvent=ev||event;
+				// onmouseover当鼠标移入 会影响子元素
+				console.log('onmouseover');
+				oEvent.stopPropagation();
+			}
+			// onmouseout当鼠标移出，子元素也会受影响
+			oF1.onmouseout=function(){
+				console.log('onmouseout');
+			}
+
+			oF2.onmouseenter=function(){
+				// onmouseenter当鼠标移入 onmouseleave只触发一次，跟子元素无关
+				console.log('onmouseenter');				
+			}
+			oF2.onmouseleave=function(){
+				console.log('onmouseleave');
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="f1">
+		<div id="s1"></div>
+	</div>
+	<div id="f2">
+		<div id="s2"></div>
+	</div>
+	onload页面加载时候用
+	onscroll当滚动条滚动商的时候
+	onresize页面可视区发生变化的时候用
+	 
+	
+</body>
+</html>

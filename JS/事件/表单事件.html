@@ -8,28 +8,43 @@
 			var oTxt=document.getElementById('txt');
 			var oSpan=document.getElementById('span0');
 			var oBtn=document.getElementById('btn');
+
+			// 定义是否提交变量，默认不能提交false
+			// var isOk=false;
+
 			// 获取焦点
 			oTxt.onfocus=function(){
+				oSpan.innerHTML='输入小于五位用户名';
+				oSpan.style.color='#ccc';
+			}
+			// 失去焦点
+			oTxt.onblur=function(){
 				if(oTxt.value.length>=5){
 					oSpan.innerHTML='输入错误，重新输入';
 					oSpan.style.color='red';
 					
 				}else{
-					oSpan.innerHTML='输入小于五位用户名';
-					oSpan.style.color='#ccc';
+					oSpan.innerHTML='输入正确';
+					oSpan.style.color='green';
+					// var isOk=true；				
 				}
 			}
-			// 失去焦点
-			oTxt.onblur=function(){
-				oSpan.innerHTML='';
-			}
+
+			// 输入错误不提交
+			// if(!isOk){
+			// 	return false;
+			// 	alert('输入错误，请重新输入');
+			// }
+
 		}
 	</script>
 </head>
 <body>
-	<form action="http://www.baidu.com"></form>
-	<input type="text" name="" id="txt">
-	<span id="span0"></span><br><br>
-	<input type="button" name="" value="提交" id="btn">
+	<!-- form提交地址 -->
+	<form action="http://www.baidu.com">
+		<input type="text" name="" id="txt">
+		<span id="span0"></span><br><br>
+		<input type="button" name="" value="提交" id="btn">
+	</form>
 </body>
 </html>
