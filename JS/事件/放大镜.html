@@ -64,6 +64,9 @@
 			overflow: hidden;
 			display: none;
 		}
+		#bi img{
+			position: absolute;
+		}
 	</style>
 	<script type="text/javascript">
 		window.onload=function(){
@@ -93,9 +96,34 @@
 				bi.style.display='block';
 				oFd.onmousemove=function(ev){
 					var oEvent=ev||event;
-					oFd.style.left=oFd.offsetLeft-oSi.offsetLeft
-					disX=oEvent.clientX-oSi.offsetLeft;
-					disY=oEvent.clientY-oSi.offsetTop;
+					// 让指针到放大镜的中间，所以需要乘以0.5
+					// -oBox.offsetLeft是为了当oBox的left为任何值的时候，指针都在放大镜中间
+					var l=oEvent.clientX-oBox.offsetLeft-oFd.offsetWidth*0.5;
+					var t=oEvent.clientY-oBox.offsetTop-oFd.offsetHeight*0.5;
+					// 在边框内拖动
+					if(l<0){
+						l=0;
+					}else if(l>oSi.offsetWidth-oFd.offsetWidth){
+						l=oSi.offsetWidth-oFd.offsetWidth;
+					}
+					if(t<0){
+						t=0;
+					}else if(t>oSi.offsetHeight-oFd.offsetHeight){
+						t=oSi.offsetHeight-oFd.offsetHeight;
+					}
+					
+					// 获取img图片
+					var oBiImg=oBi.children[0];
+					// 按照比例计算小图片和大图片的偏移量
+					var percentX=l/(oFd.offsetWidth-oSi.offsetWidth);
+					var percentY=t/(oFd.offsetHeight-oSi.offsetHeight);
+					oBiImg.style.left=percentX*(oBiImg.offsetWidth-oBi.offsetWidth)+'px';
+					
+					oBiImg.style.top=percentY*(oBiImg.offsetHeight-oBi.offsetHeight)+'px';
+					// 放大镜left和top值
+					oFd.style.left=l+'px';
+					oFd.style.top=t+'px';
+					
 				}
 			}
 			oSi.onmouseout=function(){
