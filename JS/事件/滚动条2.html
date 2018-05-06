@@ -20,6 +20,16 @@
 		}
 		#div1{
 			width: 500px;
+			height: 500px;
+			border: 1px solid yellow;
+			overflow: hidden;
+			position: relative;
+		}
+		#div2{
+			width: 100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
 		}
 	</style>
 	<script type="text/javascript">
@@ -39,13 +49,18 @@
 					}else if(l>oBox.offsetWidth-oBox1.offsetWidth){
 						l=oBox.offsetWidth-oBox1.offsetWidth;
 					}
-					
-					var scale=l/(oBox.offsetWidth-oBox1.offsetWidth);
 					oBox1.style.left=l+'px';
-					document.onmouseup=function(){
-						document.onmousemove=null;
-						document.onmouseup=null;
+
+					// 让文字随着滚动条滚动
+					var scale=l/(oBox.offsetWidth-oBox1.offsetWidth);
+					// 为了让字体往上面走，所以用负号
+					// 为了让最后滑动最后的内容在方框内，需要加oDiv1的offsetHeight
+					oDiv2.style.top=(-oDiv2.offsetHeight+oDiv1.offsetHeight)*scale+'px';
+					
 					}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
 				}
 			}
 		}
