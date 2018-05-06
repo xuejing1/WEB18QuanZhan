@@ -74,17 +74,25 @@
 			var oLi=document.getElementsByTagName('li');
 			var oBi=document.getElementById('bi');
 			for(var i=0;i<oLi.length;i++){
+				// 存起来i值
+				oLi[i].index=i;
 				oLi[i].onmouseover = function(){
 					// 设置之前需要先清空，防止所有的li都有了边框
 					for(var j=0;j<oLi.length;j++){
 						oLi[j].className='';
 					}
 					this.className='active';
+					// 需要i的值需要提前存起来
+					si.children[0].src="img/"+"s"+(this.index+1)+".jpg";
 					}
 			}
 			oSi.onmouseover=function(){
 				fd.style.display='block';
 				bi.style.display='block';
+			}
+			oSi.onmouseout=function(){
+				fd.style.display='none';
+				bi.style.display='none';
 			}
 
 		}

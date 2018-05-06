@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json和js的对象</title>
+	<script type="text/javascript">
+		var json='{"name":"Am","age":"20"}'
+		console.log(typeof json);
+		// JSON.parse将json转化为js的对象
+		var jsonobj=JSON.parse(json);
+		console.log(typeof jsonobj);
+
+		var obj={name:"Tom",age:"20"}
+		console.log(typeof obj);
+		// JSON将js对象转化为json
+		var objJSON=JSON.stringify(obj);
+		console.log(typeof objJSON);
+
+		// 在js对象中，合法变量不需要双引号，否则需要双引号，
+		var obj1={
+			"@":"Am"
+		}
+		console.log(obj1["@"])
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
