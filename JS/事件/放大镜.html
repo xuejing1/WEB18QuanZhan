@@ -30,8 +30,8 @@
 		}
 		#fd{
 			display: block;
-			width: 200px;
-			height: 200px;
+			width: 300px;
+			height: 300px;
 			background:orange;
 			opacity: 0.5;
 			cursor: move;
@@ -82,13 +82,21 @@
 						oLi[j].className='';
 					}
 					this.className='active';
-					// 需要i的值需要提前存起来
+					// 需要i的值需要提前存起来,因为该函数当中获取不到i
 					si.children[0].src="img/"+"s"+(this.index+1)+".jpg";
+					bi.children[0].src="img/"+"b"+(this.index+1)+".jpg";
 					}
 			}
+
 			oSi.onmouseover=function(){
 				fd.style.display='block';
 				bi.style.display='block';
+				oFd.onmousemove=function(ev){
+					var oEvent=ev||event;
+					oFd.style.left=oFd.offsetLeft-oSi.offsetLeft
+					disX=oEvent.clientX-oSi.offsetLeft;
+					disY=oEvent.clientY-oSi.offsetTop;
+				}
 			}
 			oSi.onmouseout=function(){
 				fd.style.display='none';
