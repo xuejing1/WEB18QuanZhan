@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建对象3</title>
+	<script type="text/javascript">
+		// 通过函数创建对象，在函数内部使用Object
+		function createPerson(name,age){
+			var obj=new Object();
+			obj.name=name;
+			obj.age=age;
+			obj.showName=function(){
+				console.log("I am"+this.name);
+			}
+			obj.showAge=function(){
+				console.log("I am"+this.age+"years old.");
+			}
+			return obj;
+		}
+		// 调用以下函数即可
+		var p1=createPerson('Am',20);
+		p1.showName();
+		p1.showAge();
+		var p2=createPerson('Co',30);
+		p2.showName();
+		p2.showAge();
+		// 返回了false，说明p1和p2在不同的函数上用了同名的属性，所以创建的函数上的方法不能共用
+		console.log(p1.showName==p2.showName);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
