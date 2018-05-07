@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建对象6(封装)</title>
+	<script type="text/javascript">
+		// 构造函数  类
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+			// 判断，为了让函数只调用一次
+			// 如果函数被调用一次，prototype上已经有showName属性，再次创建对象的时候直接找prototype上的该属性即可
+			if(!this.showName){
+				Person.prototype.showName=function(){
+				// this.LEGS中的this是通过prototype寻找的
+				console.log("I am"+this.name+"I have"+this.LEGS+"legs.");
+				}
+				console.log('add showName');
+			}
+			if(!this.showAge){
+				Person.prototype.showAge=function(){
+					console.log("I am"+this.age+"years old.");
+				}
+			}
+				// 也可添加属性，protoype上面添加的属性一般是常量，不去更改
+				Person.prototype.LEGS=2;
+		}
+		
+		// 使用new调用函数即可创建对象
+		var p1= new Person('Am',20);
+		p1.showName();
+		p1.showAge();
+
+		var p2=new Person('Co',30);
+		p2.showName();
+		p2.showAge();
+		console.log(p1.showName==p2.showName);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
