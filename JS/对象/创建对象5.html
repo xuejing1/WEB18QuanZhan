@@ -1,2 +1,37 @@
-原型  系统内部给所有的函数添加了一个对象  对象上可以加属性加方法
-函数上由个prototype对象 添加在函数上面 目的让所有创建出来的对象能够共用prototype上的方法或者属性
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建对象5(原型方法)</title>
+	<script type="text/javascript">
+		// 通过函数创建对象，使用new，让系统自己创建对象并且返回对象
+		function createPerson(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		// 使用函数上添加prototype的方法
+		createPerson.prototype.showName=function(){
+			// this.LEGS中的this是通过prototype寻找的
+			console.log("I am"+this.name+"I have"+this.LEGS+"legs.");
+		}
+		createPerson.prototype.showAge=function(){
+			console.log("I am"+this.age+"years old.")
+		}
+		// 也可添加属性，protoype上面添加的属性一般是常量，不去更改
+		createPerson.prototype.LEGS=2;
+		// 使用new调用函数即可创建对象
+		var p1= new createPerson('Am',20);
+		p1.showName();
+		p1.showAge();
+
+		var p2=new createPerson('Co',30);
+		p2.showName();
+		p2.showAge();
+		// 结果为true 因为使用的都是全局下的函数
+		console.log(p1.showName==p2.showName);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
