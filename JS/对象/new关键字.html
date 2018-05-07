@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>new关键字</title>
+	<script type="text/javascript">
+		// 在全局作用域下的函数挂在window上，只不过把window省略了
+		function show1(){
+			// this指的是window
+			console.log(this);
+		}
+		show1();
+		// 定义一个变量，会返回indefined，因为函数当中没有返回值，返回结果由return决定
+		var p1=show1();
+		console.log(p1);
+
+		function show2(){
+			console.log(this);
+		}
+		// 此时this指的是show2
+		new show2();
+		// new作用有两点：1.偷偷的创建一个对象给this 2.偷偷的返回this
+		var p2=new show2();
+		console.log(p2);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
