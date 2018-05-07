@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建对象4</title>
+	<script type="text/javascript">
+		// 通过函数创建对象，使用new，让系统自己创建对象并且返回对象
+		function createPerson(name,age){
+			this.name=name;
+			this.age=age;
+			this.showName=function(){
+				console.log("I am"+this.name);
+			}
+			this.showAge=function(){
+				console.log("I am"+this.age+"years old.");
+			}
+		}
+		// 使用new调用函数即可创建对象
+		var p1= new createPerson('Am',20);
+		p1.showName();
+		p1.showAge();
+		var p2=new createPerson('Co',30);
+		p2.showName();
+		p2.showAge();
+		console.log(p1.showName==p2.showName);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
