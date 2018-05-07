@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建对象1</title>
+	<script type="text/javascript">
+		// 创建对象：用类或者函数创建对象
+		// 用new Array创建数组从而构造对象，就是用new关键字创建的  Array本身就是一个对象    创建了Person这个对象
+		var Person=new Array(1,2,5,3,7,6);
+		// 也可以在上面添加属性
+		Person.name='Am';
+		Person.age=20;
+		Person.show=function(){
+			console.log("hello");
+		}
+		Person.show();
+
+		
+		// array是一个对象，本身就有sort方法,sort本身是个排序函数
+		// 用系统自有的类构造对象，会有自己定义方法覆盖系统的方法的风险
+		// sort在此处求和
+		Person.sort=function(){
+			var result=0;
+			// sort这个函数属于Person，所以this是指Person对象
+			for(var i=0;i<this.length;i++){
+				result+=this[i];
+			}
+			return result;
+		}
+		console.log(Person.sort());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
