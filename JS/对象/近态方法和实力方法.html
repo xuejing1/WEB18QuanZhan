@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实例方法和近态方法</title>
+	<script type="text/javascript">
+		// 构造函数  类：首字母一般大写，是用来创建对象的
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+			if(!this.showName){
+				Person.prototype.showName=function(){
+				// this.LEGS中的this是通过prototype寻找的
+				console.log("I am"+this.name+"I have"+this.LEGS+"legs.");
+				}
+				console.log('add showName');
+			}
+			if(!this.showAge){
+				Person.prototype.showAge=function(){
+					console.log("I am"+this.age+"years old.");
+				}
+			}
+				// 也可添加属性，protoype上面添加的属性一般是常量，不去更改
+				Person.prototype.LEGS=2;
+		}
+
+		// 	直接在构造函数上添加方法是近态方法，近态方法属于构造函数
+		Person.sum=function(n1,n2){
+			return n1+n2;
+		}
+		console.log(Person.sum(1,2));
+		// 对象上面有一个prototype对象上的方法，添加在原型上叫做实例方法，属于对象new 出来的实例
+		// 使用new调用函数即可创建对象,叫做对象的实例
+		var p1= new Person('Am',20);
+		p1.showName();
+		p1.showAge();
+
+		var p2=new Person('Co',30);
+		p2.showName();
+		p2.showAge();
+		console.log(p1.showName==p2.showName);
+	</script>
+</head>
+<body>
+	
+
+</body>
+</html>

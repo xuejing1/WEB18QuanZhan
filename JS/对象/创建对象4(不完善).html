@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建对象4</title>
+	<script type="text/javascript">
+		// 通过函数创建对象，使用new，让系统自己创建对象并且返回对象
+		function createPerson(name,age){
+			this.name=name;
+			this.age=age;
+			// 都是使用的一下全局作用域下的函数
+			this.showName=showName;
+			this.showAge=showAge;
+		}
+		// 全局作用域下的函数
+		function showName(){
+			// this由执行的时候决定指向谁
+			console.log("I am"+this.name);
+		}
+		function showAge(){
+			console.log("I am"+this.age+"years old.");
+		}
+		// 使用new调用函数即可创建对象
+		var p1= new createPerson('Am',20);
+		p1.showName();
+		p1.showAge();
+		var p2=new createPerson('Co',30);
+		p2.showName();
+		p2.showAge();
+		// 结果为true 因为使用的都是全局下的函数
+		console.log(p1.showName==p2.showName);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

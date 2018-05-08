@@ -4,13 +4,23 @@
 	<meta charset="UTF-8">
 	<title>原型测试</title>
 	<script type="text/javascript">
-		// Array系统的一个类
+		// 原型:系统内部给所有的函数添加了一个对象,对象上可以加属性和方法
+		// Array系统的一个类,函数上有个prototype对象 添加在函数上面， 目的让所有创建出来的对象能够共用prototype上的方法或者属性
 		// prototype是Array上的一个对象
-		Array.prototype
-		var arr=new Array(2,3,4,5);
-		arr.sum=function(){
+		Array.prototype.sum=function(){
 			var result=0;
+			for(var i=0;i<this.length;i++){
+				result+=this[i];
+			}
+			return result;
 		}
+
+		// arr和arr2共用Array类上的prototype上的属性
+		var arr=new Array(1,2,3,5,6);
+		console.log(arr.sum());
+
+		var arr2=new Array(1,2,3,5,6,7);
+		console.log(arr2.sum());
 	</script>
 </head>
 <body>

@@ -7,16 +7,49 @@
 		function Person(name,age){
 			this.name=name;
 			this.age=age;
+			Person.prototype.showname=function(){
+				console.log("I am "+this.name);
+			}
+			Person.prototype.showAge=function(){
+				console.log("I am "+this.age+" years old.");
+			}
 		}
-		Person.prototype.showname=function(){
-			console.log("I am"+this.name);
-		}
-		Person.prototype.showage=function(){
-			console.log("I am"+this.age);
-		}
+		// 堆内存的数据可以扩充，堆内存中的数据也有一个地址，该地址存储在栈内存中，变量指向地址，地址指向堆内存中的具体对象，复制相当于复制的地址
+		// 该变量也可以添加属性
+		// 系统会自动创建一个this，this最终返回回来给p1
+		var p1=new Person('Am',20);
+		p1.class='computer';
+		console.log(p1.class);
+		var p2=p1;
+		p1.showname();
+		p1.showAge();
+		p2.showname();
+		p2.showAge();
+		console.log(p2.class);
+
+		// 栈内存每一部分的存储的内容是固定的的,大小固定的
+		// 栈内存的地址是连续的，复制相当于复制存储区域，简单的数据类型存在栈内存当中，读取速度快。简单的数据类型一般有长度 都会有限度
+		var p3='Po';
+		var p4=p3;
+		p4='co';
+		console.log(p3);
+		console.log(p4);
 	</script>
 </head>
 <body>
-	
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- 
+	 -->
 </body>
 </html>
