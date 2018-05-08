@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡案例</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+	    div{
+	    	width: 150px;
+	    	height: 50px;
+	    }
+		#box{
+			width: 400px;
+			height: 50px;
+			float: left;
+		}
+		/*#box{
+			overflow: hidden;
+		}*/
+		#box li{
+			list-style:none;
+			float: left;
+			width: 70px;
+			height: 50px;
+			border:1px solid;
+			border-radius: 0.5px/0.5px;
+			background:black;
+			color: white;
+			margin-left: 20px;
+		}
+		.active{
+			background: white;
+			color: black;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			new Tab();
+		}
+		function Tab(){
+			this.oBox = document.getElementById('box');
+			this.aBtn =document.getElementsByTagName('div').children;
+			var _self=this;
+			for(var i=0;i<aBtn.length;i++){
+			
+				aBtn[i].index=i;
+				aBtn[i].onclick=funtion(){
+					// 函数在调用的时候属于谁，this就是谁
+					_self.fnClick(this);
+				}
+			}
+		}
+
+		Tab.prototype.fnClick(){
+					for(var j=0;j<aBtn.length;j++){
+						
+						aBtn[j].className='';
+						oDiv[j].style.display='none';
+					}
+					
+					this.className='active';
+					
+					oDiv[this.index].style.display='block';
+			}
+			
+	</script>
+</head>
+<body>
+	<ul id="box">
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<div>内容1</div>
+	<div>内容2</div>
+	<div>内容3</div>
+	<div>内容4</div>
+</body>
+</html>
