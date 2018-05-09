@@ -24,7 +24,7 @@
 			// name age 传到了父类的构造函数当中
 			// 属性的继承
 			Person.call(this,name,age);
-			this.ClassName=ClassName;
+			this.className=className;
 		}
 		
 		Student.prototype.showName = function(){
@@ -33,17 +33,17 @@
 		Student.prototype.showAge = function(){
 			console.log("I am "+this.age+" years old");
 		}
-		Student.prototype.showClassName = function(){
+		Student.prototype.showclassName = function(){
 			console.log("I am from "+this.className);
 		}
 
-		// 从给Son中的name  13给age Math给className
-		// 紧接着person call执行 里面的this此时指的是p2这个实例对象
+		// "Co",13,Math分别给Student中的name，age，className
+		// 紧接着Student中的person call执行 ，里面的this此时指的是p2这个实例对象
 		// 然后把student对象传递进去，传递到Person对象当中，最后实现了子类的继承
 		var p2=new Student('Co',13,"Math");
 		p2.showName();
 		p2.showAge();
-		p2.showClassName();
+		p2.showclassName();
 	</script>
 </head>
 <body>
