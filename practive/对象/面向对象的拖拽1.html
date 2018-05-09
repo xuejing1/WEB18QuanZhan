@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象的拖拽</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			new Drag();
+		}
+		function Drag(ev){
+			this.oBox=document.getElementById('box');
+			this.disX=0;
+			this.DisY=0;
+			var _self.fnDown();
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

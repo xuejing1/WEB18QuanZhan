@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的拷贝</title>
+	<script type="text/javascript">
+		var obj1={
+			name:"An",
+			age:20
+		}
+		// obj1与obj2具有相同的地址
+		var obj2=obj1;
+		obj2.max='1';
+		console.log(obj1);
+		console.log(obj2);
+
+		// 通过循环把obj1的属性与值赋给obj
+		var obj={}
+		for(key in obj1){
+			obj[key]=obj1[key];
+		}
+		console.log(obj);
+		// obj与obj1的地址不一样
+		obj.min="0";
+		console.log(obj);
+		console.log(obj1);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
