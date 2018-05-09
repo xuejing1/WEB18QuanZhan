@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性的定义1</title>
+	<script type="text/javascript">
+		var obj1={}
+		// 该种方法可遍历，可添加，可删除
+		obj1.name='Am';
+		console.log(obj1.name);
+		for(key in obj1){
+			console.log(obj1[key]);
+		}
+
+		var obj2={}
+		// defineProperty定义属性
+		// 第一个参数是指明给哪个对象添加，第二个参数是添加的属性名称，第三个参数是一个对象
+		// 第三个对象中写具体的值和三种权限(枚举：enumerable,是否可写，可添加属性：writable,是否删除：configurable)
+		// 三个权限默认false
+		Object.defineProperty(obj2,"name",{value:"Co",enumerable:true,writable:true,configurable:true})
+		console.log(obj2.name);
+		// 此时显示的Dt 因为是否可写设置的true
+		obj2.name='Dt';
+		console.log(obj2.name);
+		for(key in obj2){
+			// 枚举：遍历，迭代，循环的意思
+			console.log(obj2[key]);
+		}
+		delete obj2.name;
+		console.log(obj2.name);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
