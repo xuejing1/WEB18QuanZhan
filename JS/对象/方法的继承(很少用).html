@@ -20,6 +20,7 @@
 			this.className=className;
 		}
 		// 方法的继承  子类的原型对象直接指向父类  这样的弊端父类也会添加了子元素具有的属性
+		// 相当于复制的地址
 		Student.prototype=Person.prototype;
 		Student.prototype.showClassName = function(){
 			console.log("I am from "+this.className);
