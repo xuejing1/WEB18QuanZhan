@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>configurable</title>
+	<script type="text/javascript">
+		var obj={}
+		// configurable作用：1.是否可删除 2.控制属性是否可以被修改,是否可以被defineProperty重新定义
+		Object.defineProperty(obj,"name",{value:"Co",configurable:true});
+		console.log(obj.name);
+		Object.defineProperty(obj,"name",{value:"Am",enumerable:true,writable:true,configurable:true})
+		console.log(obj.name);
+		for(key in obj){
+			console.log(obj.name);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
