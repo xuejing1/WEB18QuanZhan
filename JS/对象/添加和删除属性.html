@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加和删除属性</title>
+	<script type="text/javascript">
+		var obj={
+			name:"po",
+			age:13
+		}
+		console.log(obj);
+		console.log(obj.name);
+		// 后定义同名属性会把先定义的覆盖掉
+		obj.name='Rt';
+		console.log(obj.name);
+
+		 function Person(name,age){
+		 	this.name=name;
+		 	this.age=age;
+		 }
+		 Person.prototype.showName=function(){
+		 	console.log("I am "+this.name+" I have "+"this.LEGS"+' legs');
+		 }
+		  Person.prototype.showAge=function(){
+		 	console.log("I am "+this.age+" years old");
+		 }
+		 Person.prototype.LEGS=2;
+
+		 var p1= new Person("Am",20);
+		 p1.showName();
+		 p1.showAge();
+		 console.log(p1.name);
+		 // 实例对象上添加一个同名属性，会找实例上的属性而不会找原型对象上的属性,可以把原型上的值覆盖掉
+		 p1.name="co";
+		 console.log(p1.name);
+
+		 var p2=new Person("Fs",50);
+		 p2.showName();
+		 p2.showAge();
+		 console.log(p2.name);
+		 // delete删除属性
+		 delete p2.name;
+		 console.log(p2.name);
+		 // 也可以删除原型对象上的属性，删除之后再定义的对象都不可以使用该属性
+		 delete Person.prototype.LEGS;
+		// delete删除，如果有该属性就删除，如果没有就返回true
+		 console.log(delete p2.max);
+		 var p3=new Person("Ad",90);
+		 p3.showName();
+		 p3.showAge();
+		 console.log(p3.LEGS);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
