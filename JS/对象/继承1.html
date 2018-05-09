@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承1</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.showName=function(){
+			console.log("I am "+this.name);
+		}
+		Person.prototype.showAge=function(){
+			console.log("I am "+this.age+" years old.")
+		}
+		var p1=new Person("Am",20);
+		p1.showName();
+		p1.showAge();
+
+		function Student(name,age,className){
+			// 调person的call方法
+			// 此时call里面的第一个参数改变指向，this就是Student
+			// name age 传到了父类的构造函数当中
+			// 属性的继承
+			Person.call(this,name,age);
+			this.ClassName=ClassName;
+		}
+		
+		Student.prototype.showName = function(){
+			console.log("I am "+this.name);
+		}
+		Student.prototype.showAge = function(){
+			console.log("I am "+this.age+" years old");
+		}
+		Student.prototype.showClassName = function(){
+			console.log("I am from "+this.className);
+		}
+
+		// 从给Son中的name  13给age Math给className
+		// 紧接着person call执行 里面的this此时指的是p2这个实例对象
+		// 然后把student对象传递进去，传递到Person对象当中，最后实现了子类的继承
+		var p2=new Student('Co',13,"Math");
+		p2.showName();
+		p2.showAge();
+		p2.showClassName();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
