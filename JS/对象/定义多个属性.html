@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定义多个属性</title>
+	<script type="text/javascript">
+		var obj={}
+		// defineProperties定义多个属性，第一个参数指明给哪个对象添加，第二个接收对象，对象里面写属性和对应的值
+		Object.defineProperties(obj,{
+			"name":{
+				value:"Am",
+				enumerable:true,
+				writable:true,
+				configurable:true
+			},
+			"age":{
+				value:20,
+				enumerable:true,
+				writable:true,
+				configurable:true
+			}
+		})
+		for(key in obj){
+			console.log(obj[key]);
+		}
+		// getOwnPropertyDescriptor获取自己对象的描述(属性对应的值和权限)
+		console.log(Object.getOwnPropertyDescriptor(obj,"name"));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
