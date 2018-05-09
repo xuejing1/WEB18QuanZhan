@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变this指向</title>
+	<script type="text/javascript">
+		function show1(n1,n2){
+			// 函数属于谁，this就指向谁
+			console.log(this,n1,n2)
+		}
+		// show函数函数上面有call方法，一般省略
+		// call的第一个参数是对象(改变指向)，第二个以及以后的参数是参数列表中的参数
+		show1();
+		show1.call({name:'Am'},1,2);
+
+		function show2(n1,n2){
+			console.log(this,n1,n2)
+		}
+		// apply等价于call，但接受的第二个参数是数组，数组内的数对应参数列表中的参数
+		show2.apply({name:"Co"},[3,4]);
+
+		function show3(n1,n2){
+			console.log(this,n1,n2)
+		}
+		// call和apply执行一个函数
+		// bind自身返回一个函数，相当于生成了一个新的函数
+		// 返回的函数也可调用
+		show3.bind({name:"Sa"},23,66)();
+
+		function show4(n1,n2){
+			console.log(this,n1,n2)
+		}
+		
+		console.log(show4);
+		var fn=show4.bind({name:"Sa"},27,76);
+		console.log(fn);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
