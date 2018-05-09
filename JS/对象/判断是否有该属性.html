@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断是否有该属性</title>
+	<script type="text/javascript">
+		function Person(name,age){
+	 		this.name=name;
+	 		this.age=age;
+		}
+		Person.prototype.showName=function(){
+		 	console.log("I am "+this.name+" I have"+" this.LEGS"+' legs');
+		}
+		Person.prototype.showAge=function(){
+		 	console.log("I am "+this.age+" years old");
+		}
+		Person.prototype.LEGS=2;
+		var p1=new Person("Am",20);
+		p1.showName();
+		p1.showAge();
+
+		// hasOwnProperty只能判断在实例上有没有该属性
+		console.log(p1.hasOwnProperty('name'));
+
+		// in 判断原型链上和实例上有没有该属性
+		console.log("LEGS" in p1)
+		console.log("name" in p1);
+
+		// 只判断原型链上有没有该属性(需要写函数进行判断)
+		function hasOwnProperty(obj,attr){
+			// 因为hasOwnProperty只能判断在实例上有没有该属性，所以返回false
+			return !obj.hasOwnProperty(attr)&&(attr in obj);
+		}
+		console.log(hasOwnProperty(p1,'LEGS'));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
