@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匹配HTML标签</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oTxt1=document.getElementById('txt1');
+			var oBtn=document.getElementById('btn');
+			var oTxt2=document.getElementById('txt2');
+			oBtn.onclick=function(){
+				var str=oTxt1.value;
+				// ^是指除了<>里面的都可以显示
+				var reg=/<[^<>]+>/g;
+				oTxt2.value=str.replace(reg,"#");
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="txt1" name="" id="txt1">
+	<input type="button" name="" id="btn" value="提交">
+	<input type="txt2" name="" id="txt2">
+</body>
+</html>

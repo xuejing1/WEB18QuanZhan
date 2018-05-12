@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则(邮箱的效验)</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oTxt=document.getElementById('txt');
+			var oBtn=document.getElementById('btn');
+			oBtn.onclick=function(){
+				var str=oTxt.value;
+				// [a-z]英文字符  后面的大括号写具体范围  字符的具体多少可以用花括号表示
+				// ^以什么开头 $以什么结尾
+				var reg=/^\w+@\w+\.[a-z]{2,5}$/
+				// 正则上面有一个test方法 会判断传进去的字符是否符合规定
+				if(reg.test(str)){
+					alert("合法");
+				}else{
+					alert("不合法")
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="txt">
+	<input type="button" name="" id="btn" value="校检邮箱">
+</body>
+</html>

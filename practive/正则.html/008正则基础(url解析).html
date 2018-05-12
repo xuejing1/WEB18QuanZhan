@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>url解析</title>
+	<script type="text/javascript">
+		var str1 = "this is a websit name is https://www.kuazhu.com ";
+		// [0-9a-z-]+域名，可能是数字也可能是字母
+		var reg1 = /(\w+):\/\/(\w+)\.([0-9a-z-]+)\.(\w+)/;
+		console.log(reg1.test(str1));
+		
+		var str2 = "this is a websit name is https://www.kuazhu.com ";
+		// 加小括号就是分组
+		var reg2 = /(\w+):\/\/(\w+)\.([0-9a-z-]+)\.(\w+)/;
+		// 分组之后match才会放进数组当中
+		console.log(str2.match(reg2));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则的使用.html</title>
+	<script>
+		var arr=[];
+		// 正则写法一
+		var reg=/w/;
+		// 查看正则的类型，是个对象
+		console.log(typeof reg);
+		// var reg = /abce\w/;
+		var arr = new Array();
+		// 正则写法二
+		// 第一个参数要正则的规则，第二个参数就是修正模式
+		var reg = new RegExp('a','g');
+		console.log(typeof reg);		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

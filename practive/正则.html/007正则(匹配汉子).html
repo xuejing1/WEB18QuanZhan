@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匹配汉字</title>
+	<script type="text/javascript">
+		// 所有的字符对应的都有一个编码
+		var str='a';
+		// 查看字符所对应的编码
+		console.log(str.charCodeAt(0));
+
+		var str2='恩';
+		// /[\u4e00-\u9fa5]+/g查看是否有汉字
+		var reg=/[\u4e00-\u9fa5]+/g;
+		console.log(reg.test(str2));
+
+		var str3="aaaaae恩";
+		var reg1=/[\u4e00-\u9fa5]+/g;
+		// 替换汉字
+		console.log(str3.replace(reg1,"#"));
+
+		var str4="a恩恩额恩";
+		var reg4=/[\u4e00-\u9fa5]+/g;
+		// 英文一般占一个位置,但汉字占两个位置，长度是1
+		console.log(str4.length);
+		// 获取正确长度(包括汉字)
+		function getLength(str4){
+			// 懒惰模式
+			//[\u4e00-\u9fa5]没有+，就是指一个汉字
+			// [\u4e00-\u9fa5]+，指一个到多个汉字，所以连在一起的汉字会当做一个处理
+			var reg4=/[\u4e00-\u9fa5]/g;
+			return console.log(str4.replace(reg4,"aa").length);
+		}
+		getLength(str4);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

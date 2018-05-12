@@ -21,7 +21,10 @@
 		}
 		
 		// 通过循环把父亲的方法赋给子类
-		for(key in )
+		// 父类不会具有子类特有的属性
+		for(key in Person.prototype){
+			Student.prototype[key]=Person.prototype[key];
+		}
 		Student.prototype.showClassName = function(){
 			console.log("I am from "+this.className);
 		}
