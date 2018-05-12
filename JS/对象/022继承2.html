@@ -11,8 +11,7 @@
 		Person.prototype.showName=function(){
 			console.log("I am "+this.name);
 		}
-
-		
+	
 		// 通过枚举父亲的属性，结合循环，父亲的某些方法可以独有，不赋予儿子
 		Object.defineProperty(Person.prototype,"showAge",{value:function(){
 			console.log("I am "+this.age+" years old.")

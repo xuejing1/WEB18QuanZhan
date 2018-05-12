@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承3</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			// 执行两次
+			console.log("#######");
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.showName=function(){
+			console.log("I am "+this.name);
+		}
+
+		// 通过枚举父亲的属性，结合循环，父亲的某些方法可以独有，不赋予儿子
+		// Student.prototype=new Person()通过这些方法又可以使儿子具有父亲的所有属性
+		Object.defineProperty(Person.prototype,"showAge",{value:function(){
+			console.log("I am "+this.age+" years old.")
+		}})
+
+		function Student(name,age,className){
+			Person.call(this,name,age);
+			this.className=className;
+		}
+
+		// 相当于指向了父类的一个实例，方法就会一层一层向上找
+		// 弊端，调用两次父类的构造函数,同时在子类的原型上产生了不必要的父类的属性
+		console.log("指向Person实例之前",Student.prototype);
+		Student.prototype=new Person();
+		console.log("指向之后",Student.prototype);
+
+		// 即便用枚举的方法，并且用实例构造对象，也会全部继承
+		// 把Student的原型上的constructor手动赋值
+		Student.prototype.constructor = Student;
+		console.log("添加constructor之后",Student.prototype);
+
+		Student.prototype.showClassName = function(){
+			console.log("I am from "+this.className);
+		}
+
+		var p1=new Student('Co',13,"Math");
+		p1.showName();
+		p1.showAge();
+		p1.showClassName();
+		// instanceof查看是不是某个函数上的实例
+		console.log(p1 instanceof Student);
+		console.log(p1 instanceof Person);
+
+		// 用student实例构造一个对象,这个对象是Person上的实例
+		// 因为上述Student的原型指向了父类的一个实例，而Student的原型指向了父类的一个实例之后的__proto__上没有constructor,所以就会向上一层找
+		var p2=new p1.__proto__.constructor();
+		console.log(p2 instanceof Person);		
+		console.log(p2 instanceof Student);		
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
