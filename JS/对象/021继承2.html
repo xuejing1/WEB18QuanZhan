@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承2</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.showName=function(){
+			console.log("I am "+this.name);
+		}
+		Person.prototype.showAge=function(){
+			console.log("I am "+this.age+" years old.")
+		}
+
+		function Student(name,age,className){
+			Person.call(this,name,age);
+			this.className=className;
+		}
+		
+		// 通过循环把父亲的方法赋给子类
+		// 父类不会具有子类特有的属性
+		// 弊端：如果父类的方法是不可枚举的,子类就继承不到
+		for(key in Person.prototype){
+			Student.prototype[key]=Person.prototype[key];
+		}
+		Student.prototype.showClassName = function(){
+			console.log("I am from "+this.className);
+		}
+
+		var p2=new Student('Co',13,"Math");
+		p2.showName();
+		p2.showAge();
+		p2.showClassName();
+
+		var p1=new Person("Am",20);
+		p1.showName();
+		p1.showAge();
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
