@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object.create</title>
+	<script type="text/javascript">
+		var obj1={
+			name:"Am",
+			Age:20
+		}
+		// 创建对象是一个空的，但是里面的__proto__对象指向了传进去的那个对象
+		// 传进去的对象改变原来的__proto__指向
+		var obj2=Object.create(obj1);
+		console.log(obj2);
+
+		// obj3与obj4含义不一样
+		// obj3传进去null会什么都没有，显示为No properties
+		// obj4会有个__proto__指向积累
+		var obj3=Object.create(null);
+		var obj4={};
+		console.log(obj3);
+		console.log(obj4);
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
