@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>181-表单脚本-获取元素.html</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			// var oForm = document.getElementsByTagName('form')[0];
+			// var oForm = document.getElementById('form1');
+
+			// 返回一个数组，整个document上的form
+			var aForms=document.forms;
+			// 每个form有相应的属性，有相应下表
+			console.log(aForms);
+			// 第一个form
+			var oForm=aForms[0];
+			// 相当于oForm
+			var aFormEle=oForm.elements;			
+			// 通过表单中的一个表单获取整个页面的form集合
+			console.log(oForm.elements);
+
+			// 通过元素名称获取具体元素
+			console.log(aFormEle.age)
+			// 通过中括号获取具体元素
+			console.log(aFormEle['age']);
+			// 通过下表获取
+			console.log(aFormEle[0]);
+
+			// 通过表单中的某个元素找到其所在的form表单
+			console.log(aFormEle[0].form);
+			// 同名的元素，会返回一个类似于数组的相应节点
+			console.log(aForms[0].sex)
+		
+		}
+	</script>
+</head>
+<body>
+	<form action="http://www.kuazhu.com" id='form1'>
+		<div>
+			姓名:<input type="text" name="username">
+		</div>
+		<div>
+			年龄:<input type="text" name="age">
+		</div>
+		<div>
+			性别:<input type="radio" name="sex">男<input type="radio" name="sex">女<input type="radio" name="sex">保密
+		</div>	
+		<div>
+			<input type="submit" value="提交">
+			<input type="button" value="测试" id='textBtn'>
+		</div>				
+	</form>
+</body>	
+</html>
