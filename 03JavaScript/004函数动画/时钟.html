@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时钟</title>
+	<style>
+		body{
+			background: #000;
+		}
+		#box{
+			color: #fff;
+			font-size: 40px;
+			width: 400px;
+			margin: 50px auto;
+		}
+	</style>
+	<script>
+		// n接收的是一个数字，该函数是为了转化为两位的字符串
+		function toStr(n){
+			if(n<10){
+				return '0'+n;
+			}else{
+				return ''+n;
+			}
+		}
+		// 时钟显示的是图片，应提前准备好0-9的十张图片
+		window.onload=function(){
+			// 获取元素
+			var oBox=document.getElementById('box');
+			var aImg=oBox.getElementsByTagName('img');
+			
+			function timer(){
+				// 获取系统时间
+				var now=new Date();
+				// 分别获取小时、分钟、秒
+				var h=now.getHours();
+				var m=now.getMinutes();
+				var s=now.getSeconds();
+				// var str=h+m+s的做法是错误的，会进行加法运算，应该组成字符串
+				// 组成两位是的字符串，格式：00:00:00
+				var str=toStr(h)+toStr(m)+toStr(s);
+				//循环字符串里面的数字 
+				for(var i=0;i<aImg.length;i++){
+					aImg[i].src='images/'+str.charAt(i)+'.png';
+				}				
+			}
+			setInterval(timer,1000);
+			// 定时器异步在同步之后，需要调用以下timer
+			timer();
+						
+			// str中的第i个,可表示为str[i],也可表示为str.charAt(i)
+			// 此处由上面的for循环里面的内容替代
+		/*	aImg[0].src='images/'+str.charAt(0)+'.png';
+			aImg[1].src='images/'+str.charAt(1)+'.png';
+			aImg[2].src='images/'+str.charAt(2)+'.png';
+			aImg[3].src='images/'+str.charAt(3)+'.png';
+			aImg[4].src='images/'+str.charAt(4)+'.png';
+			aImg[5].src='images/'+str.charAt(5)+'.png';
+															*/			
+		}
+	</script>
+</head>
+<body>
+	<div id='box'>
+		<img src="images/1.png" alt="">
+		<img src="images/0.png" alt="">
+		:
+		<img src="images/0.png" alt="">
+		<img src="images/9.png" alt="">
+		:
+		<img src="images/3.png" alt="">
+		<img src="images/4.png" alt="">	
+	</div>
+</body>
+</html>
