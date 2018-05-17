@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>075-延迟菜单.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#leftBox{
+			width: 100px;
+			height: 50px;
+			background: red;
+			float: left;
+		}
+		#rightBox{
+			width: 500px;
+			height: 600px;
+			background: blue;
+			float: left;
+			margin-left: 20px;
+			display: none;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			// 获取元素
+			var oLeft=document.getElementById('leftBox');
+			var oRight=document.getElementById('rightBox');
+			// 定义定时器
+			var timer=null;
+			oLeft.onmouseover=function(){
+				// 关闭定时器
+				clearTimeout(timer);
+				oRight.style.display='block';
+			}
+			oLeft.onmouseout=function(){
+				timer=setTimeout(function(){
+					oRight.style.display='none';
+				},500)
+			}
+			oRight.onmouseout=function(){
+				// 异步
+				timer=setTimeout(function(){
+					oRight.style.display='none';
+				},500)
+			}
+			oRight.onmouseover=function(){
+				clearTimeout(timer);
+				oRight.style.display='block';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="leftBox"></div>
+	<div id="rightBox"></div>
+</body>
+</html>
