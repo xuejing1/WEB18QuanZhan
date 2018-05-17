@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器的基本使用</title>
+	<script>
+		function show(){
+			alert(1);
+		}
+		show();
+		// setTimeout(要执行的函数，延迟时间);
+		// setTimeout是延迟定时器，第一个参数写要延迟的函数，第二个写要烟垂的时间，单位是ms
+		setTimeout(show,2000);
+		
+		var a=1;
+		// 第一个参数也可以写匿名函数
+		setTimeout(function(){
+			console.log(1);
+			console.log(a);
+			a=3;
+		},0)
+		// 先执行2再执行setTime里面的1，并且里面的a=3不会被执行
+		console.log(2);
+		// 此时的a是函数外面的 var a=1;
+		console.log(a);
+		// setInterval(show,1000)是循环定时器，用法与延迟定时器一样
+		//定时器相当于异步，有等待过程，顺序是先执行同步，遇见异步先存在一个队列(数组中)，所有的程序都是先执行完再执行异步(js是单线程) 
+		setInterval(function(){
+			alert(5);
+		},1000)
+		window.onload=function(){
+			// 获取元素
+			var oBtn1=document.getElementById('btn1');
+			var oBtn2=document.getElementById('btn2');
+			// 给定时器定义一个变量，这个变量必须定义在外面
+			var timer=null;
+			var timer1=null;
+			oBtn1.onclick=function(){
+				// 开启定时器时会返回一个值，返回的值是一个数字
+				// timer1是指setTimeout延迟定时器
+				timer1=setTimeout(function(){
+					console.log('aaaaa');
+				},5000)
+				
+				timer=setInterval(function(){
+					console.log('aaaa');
+				},1000)
+			}
+			oBtn2.onclick=function(){
+				// 关闭延迟定时器，括号里面的参数是开启定时器时赋的值
+				clearTimeout(timer1);
+				// 关闭循环定时器
+				clearInterval(timer);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id='btn1' value="开启">
+	<input type="button" id='btn2' value="关闭">
+</body>
+</html>
