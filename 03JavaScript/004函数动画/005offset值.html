@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>offset值</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+			top:100px;
+			left:10px;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+			var oDiv=document.getElementById('div1');
+			oBtn.onclick=function(){
+				// 每个元素都会有offset属性
+				// offsetLeft是当前左边偏移量
+				alert(oDiv.offsetLeft);
+				// offsetLeft是当前顶部偏移量
+				alert(oDiv.offsetTop);
+				// 宽度
+				alert(oDiv.offsetWidth);
+				// 高度
+				alert(oDiv.offsetHeight);
+			}
+		}
+	</script>	
+</head>
+<body>
+	<input type="button" id='btn' value="查看">
+	<div id="div1"></div>
+</body>
+</html>
