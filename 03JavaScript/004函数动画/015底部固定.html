@@ -8,6 +8,7 @@
 			margin: 0;
 			padding: 0;
 		}
+		/*加个滚动条*/
 		body{
 			height: 3000px;
 		}
@@ -15,6 +16,7 @@
 			width: 100px;
 			height: 100px;
 			background: red;
+			/*以首屏为参考*/
 			position: absolute;
 			right: 0;
 		}
@@ -50,12 +52,17 @@
 					}
 				}
 			},30)
-		}		
+		}
+		//window.onresize解决可视区问题，使得可视区变化依然显示
+		// window.onscroll使得拉动的时候依然出现
 		window.onresize=window.onscroll=window.onload=function(){
+			// 获取元素
 			var oDiv=document.getElementById('div1');
+			// 可视区
 			var iHeight=window.innerHeight;
+			// 解决兼容性问题
 			var iTop=document.body.scrollTop || document.documentElement.scrollTop;
-			
+			// 目标值
 			var iTarget=iTop+iHeight-oDiv.offsetHeight;
 			animation(oDiv,'top',iTarget);
 		}
