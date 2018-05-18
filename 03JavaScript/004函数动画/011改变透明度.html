@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变透明度</title>
+	<style>
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			opacity: 0.3;
+		}
+	</style>
+	<script>
+		//定义定时器
+		var timer=null;
+		// 动画函数，里面的参数分别是指对象，目标值(要求把透明度改为1)
+		function animation(obj,iTarget){
+			// 先关闭定时器
+			clearInterval(timer);
+			// 循环定时器
+			timer=setInterval(function(){
+				// 获取opacity，getComputedStyle(obj,false)['opacity']取出来的是字符串，所以需要乘以100变整数
+				var curr=getComputedStyle(obj,false)['opacity']*100;
+				// 定义初始速度
+				var iSpeed=0;
+				if(curr>iTarget){
+					iSpeed=-10;
+				}else{
+					iSpeed=10;
+				}
+				// 绝对值函数
+				if(Math.abs(iTarget-curr)<=Math.abs(iSpeed)){
+					clearInterval(timer);
+					// 注意最后需要再除以100
+					obj.style.opacity=iTarget/100;
+				}else{
+					obj.style.opacity=(curr+iSpeed)/100;
+				}
+				// 30ms最佳
+			},30)
+		}
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			oDiv.onmouseover=function(){
+				// 调用函数
+				animation(this,100);
+			}
+			oDiv.onmouseout=function(){
+				//调用函数
+				animation(this,30);
+			}			
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>
