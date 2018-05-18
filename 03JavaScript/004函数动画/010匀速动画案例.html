@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匀速动画的案例</title>
+	<style>
+		#main{
+			width: 400px;
+			height: 50px;
+			background: yellow;
+			position: absolute;
+			bottom: 0;
+			left:-400px;
+		}
+		#sub{
+			width: 100px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top:0px;
+			right: -100px;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			// 获取元素
+			var oMain=document.getElementById('main');
+			var oSub=document.getElementById('sub');
+			// 定义定时器初始值
+			var timer=null;
+			// animation动画，里面的参数是目标值
+			function animation(iTarget){
+				// 最开始需要关闭定时器
+				clearInterval(timer);
+				timer=setInterval(function(){
+					if(oMain.offsetLeft<iTarget){
+						iSpeed=20;
+					}else{
+						iSpeed=-20;
+					}
+					// 目标值-当前left值<=速度值？
+					if(Math.abs(iTarget-oMain.offsetLeft)<=Math.abs(iSpeed)){
+						oMain.style.left=iTarget+'px';
+						clearInterval(timer);
+					}else{
+						oMain.style.left=oMain.offsetLeft+iSpeed+'px';
+					}
+					// 最好是30
+				},30);
+			}
+			/*
+			function animation2(){
+				clearInterval(timer);
+				timer=setInterval(function(){
+					if(oMain.offsetLeft<-400){
+						iSpeed=20;
+					}else{
+						iSpeed=-20;
+					}
+					// -400是目标值
+					if(Math.abs(-400-oMain.offsetLeft)<=Math.abs(iSpeed)){
+						oMain.style.left='-400px';
+						clearInterval(timer);
+					}else{
+						oMain.style.left=oMain.offsetLeft+iSpeed+'px';
+					}
+				},30);
+			}
+			*/	
+			oMain.onmouseover=function(){
+				//调用函数
+				animation(0);
+			}
+			oMain.onmouseout=function(){
+				//直接把参数传进去，-400是目标值，调用函数
+				animation(-400);
+			}		
+		}
+	</script>
+</head>
+<body>
+	<div id="main">
+		<div id="sub"></div>
+	</div>
+</body>
+</html>
