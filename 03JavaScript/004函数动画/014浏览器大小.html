@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>086-浏览器的大小.html</title>
+	<style>
+		/*设置高滚动条会出来*/
+		body{
+			height: 3000px;
+		}
+	</style>
+	<script>
+		//浏览器有可视区和滚动区
+		window.onload=function(){
+			document.onclick=function(){
+				// 可视区
+				console.log("window.innerWidth:"+window.innerWidth);
+				console.log("window.innerHeight:"+window.innerHeight);
+				// 滚动区
+				// document.body.scrollTop存在兼容性问题
+				console.log("document.body.scrollTop:"+document.body.scrollTop);
+				console.log("document.documentElement.scrollTop:"+document.documentElement.scrollTop);
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
