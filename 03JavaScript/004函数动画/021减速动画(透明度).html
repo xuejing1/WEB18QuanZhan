@@ -27,23 +27,35 @@
 		}
 	</style>
 	<script>
+		var timer=null;
+		function animation(obj,attr,iTarget){
+			clearInterval(timer);
+			timer=setInterval(function(){
+				var curr=parseFloat(getComputedStyle(obj,false)[attr]);
+				if(attr=='opacity'){
+					curr=Math.round(curr*100)
+				}
+				
+				var iSpeed=(iTarget-curr)/10;
+				
+				iSpeed=iSpeed>0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+				if(!iSpeed){
+					clearInterval(timer)
+				}else{
+					if(attr=='opacity'){
+						obj.style[attr]=(curr+iSpeed)/100 ;
+					}else{
+						obj.style[attr]=curr+iSpeed+'px';
+					}
+				}
+			},30)
+		}
 		window.onload=function(){
 			var oBtn=document.getElementById('btn');
-			var oBox=document.getElementById('box1');
-			var timer=null;
+			var oBox=document.getElementById('box1');		
 			oBtn.onclick=function(){
-				clearInterval(timer);
-				timer=setInterval(function(){
-					var curr=parseFloat(getComputedStyle(oBox,false)['opacity'])*100;
-					curr=Math.round(curr);
-					var iSpeed=(30-curr)/6;
-					iSpeed=iSpeed>0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
-					if(!iSpeed){
-						clearInterval(timer)
-					}else{
-						oBox.style.opacity=(curr+iSpeed)/100 ;
-					}
-				},30)
+				animation(oBox,'opacity',1);
+	
 			}
 		}
 	</script>
