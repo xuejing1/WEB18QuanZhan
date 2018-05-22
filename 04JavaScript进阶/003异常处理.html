@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>异常处理</title>
+	<script>
+		function mutiple(n1,n2){
+			if(isNaN(parseInt(n1)) || isNaN(parseInt(n2)) ){
+				throw new Error('not a number');
+			}
+			return n1*n2;
+		}
+			// console.log(mutiple(12,'abc'));
+		//调用函数，try执行可能出现的异常 
+		try{
+			console.log(mutiple(12,'abc'));
+		//catch如果出现异常就捕获这个异常，做相应的处理
+		}catch(e){
+			console.log(e);
+		//finally清空操作，意思是无论前面是否异常都进行这个操作 
+		}finally{
+			console.log('end');
+		}
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
