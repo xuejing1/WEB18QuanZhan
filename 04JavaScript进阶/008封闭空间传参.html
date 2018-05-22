@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封闭空间传参</title>
+
+</head>
+<body>
+	<input type="button" name="" id="btn1" value="按钮1">
+	<input type="button" name="" id="btn2" value="按钮2">
+	<input type="button" name="" id="btn3" value="按钮3">
+	<div></div>
+</body>
+<script type="text/javascript">
+	//法一
+	(function(){
+			var oBtn1=document.getElementById('btn1');
+			var oDiv=document.getElementsByTagName('div');
+			oBtn1.onclick=function(){
+				alert("abc");
+			}
+		})();
+	//法二
+	(function(d){
+		var oBtn2=d.getElementById('btn2');
+		var oDiv=d.getElementsByTagName('div');
+		oBtn2.onclick=function(){
+			alert("123");
+		}
+	})(document);
+	//法三
+	(function(d,w){
+		var oBtn3=d.getElementById('btn3');
+		var oDiv=d.getElementsByTagName('div');
+		oBtn3.onclick=function(){
+			alert("ccc");
+		}
+		// 将oBtn绑定在window对象上，然后该函数外便可用oBtn
+		w.oBtn3=oBtn3;
+	})(document,window);
+	oBtn3.onmouseover=function(){
+		alert('mouseover')
+	}
+</script>
+</html>

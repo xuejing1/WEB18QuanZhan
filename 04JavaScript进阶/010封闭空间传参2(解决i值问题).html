@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封闭空间传参(解决i值问题)</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+			width: 300px;
+			height: 30px;
+			border: 1px solid #000;
+		}
+		.active{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="active"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+<script>
+	var aLi=document.getElementsByTagName('li');
+	// 定义鼠标离开的时候的初始值
+	var iLastOne=0;
+	for(var i=0;i<aLi.length;i++){
+		// 提前存好i值
+		aLi[i].index=i;
+		aLi[i].onmouseover=function(){
+			// 离开的li清空
+			aLi[iLastOne].className='';
+			this.className='active';
+			// 定义此时的iLastOne的i值
+			iLastOne=this.index;
+		}
+	}
+</script>
+</html>
