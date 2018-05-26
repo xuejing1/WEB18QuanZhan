@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>发布作业</title>
+	<script>
+		(function(w){
+			function Teacher(name){
+				this.name=name;
+				//创建一个空数组让学生放作业
+				this.students=[];
+			}
+			Teacher.prototype={
+				constructor:Teacher,
+				__proto__:Object.prototype,
+				//register方法
+				register:function(student){
+					this.students.push(student);
+				},
+				publish:function(msg){
+					for(var i=0;i<this.students.length;i++){
+						this.students[i].listen(msg)
+					}
+				}
+			}
+			w.Teacher=Teacher;
+		})(window);
+		(function(w){
+			function Student(name,teacher){
+				this.name=name;
+				teacher.register(this);
+				this.msg='';
+			}
+			Student.prototype={
+				constructor:Teacher,
+				__proto__:Object.prototype,
+				listen:function(msg){
+					this.msg=msg;
+				}
+			}
+			w.Student=Student;
+		})(window);
+		var teacher=new Teacher('AMY');
+		var s1=new Student('Am',teacher);
+		var s2=new Student('Co',teacher);
+		var s3=new Student('Yo',teacher);
+		teacher.publish('完成作业');
+		console.log(s1.name+s1.msg);
+		console.log(s2.name+s2.msg);
+		console.log(s3.name+s3.msg);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
