@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的节流</title>
+	<style type="text/css">
+		body{
+			height: 3000px;
+		}
+	</style>
+	<script type="text/javascript">
+		//会频繁触发，消耗资源
+		window.onresize=function(){
+			console.log("aa");
+		}
+		window.onscroll=function(){
+			console.log("bb");
+		}
+		//节流
+		var timer=null;
+		window.onresize=function(){
+			clearTimeout(timer);
+			timer=setTimeout(function(){
+				console.log("节流");
+			},300)
+		}
+		//函数节流：专门完成节流的函数
+		// 两个参数，第一个参数是返回的函数，第二个参数是延迟
+		function throttle(fn,delay){
+			var timer1=null;
+			// 返回一个函数
+			return function(){
+				clearTimeout(timer1);
+				timer1=setTimeout(fn,delay);
+			}
+		}
+		//调用节流函数
+		window.onscroll=throttle(function(){
+			console.log("ccc");
+		},300);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

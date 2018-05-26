@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax1</title>
+</head>
+<body>
+	<input type="button" value="获取数据" id='btn'>
+</body>
+<script>
+	var oBtn=document.getElementById('btn');
+	// Ajax处理异步的，Ajax是从网络上获取的，不是在本地打开的
+	oBtn.onclick=function(){
+		//1.创建ajax对象
+		// XMLHttpRequest与服务器建立连接
+		var oAjax=new XMLHttpRequest();
+		//2.和服务器建立连接
+		// oAjax上有个open方法，
+		// 第一个参数发送请求的方法(post或者GET或者其他) 第二个参数请求的地址(可写全也可不写全) 第三个是是否异步(true异步)
+		oAjax.open('GET','http://127.0.0.1:3000/file.txt',true);
+		//3.发送请求
+		oAjax.send();
+		//4.监听方法获取数据(当状态改变就会触发onreadystatechange方法)  
+		oAjax.onreadystatechange=function(){	
+			// 0(还没有初始化)  1(已经初始化，但是还没有调用open方法) 2(send方法已经调用)     3(返回了部分数据)  4(数据完全返回	)
+			console.log("in event::",oAjax.readyState);
+			// 数据不是立马返回的，不是直接完全返回的 所以需要做判断 当完全返回的时候
+			// readyState当前状态
+            if(oAjax.readyState==4){
+            	// 请求成功与否的处理
+            	if(oAjax.status==200){
+            		// oAjax上有个responseText属性
+            		console.log('get file success::',oAjax.responseText);
+            	}else{
+            		console.log('get file faild::',oAjax.status);
+            	}
+            }		
+		}
+	}
+</script>
+</html>
