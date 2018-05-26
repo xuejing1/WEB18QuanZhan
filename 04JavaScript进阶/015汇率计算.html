@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>汇率换算</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	(function(w){
+		function Local(name){
+			this.oInput='';
+			this.foreigns=[];
+			this.init(name);
+		}
+		Local.prototype={
+			constructor:Local;
+			init:function(name){
+				var oP=document.createElement('p');
+				oP.innerHTML=name;
+				oP.appendChild(this.oInput);
+				document.body.appendChild(oP);
+			},
+			register:function(foreign){
+				this.foreigns.push(foreign);
+			}
+			publish:function(){
+				this.oInput=function(){
+					for(var i=0;i<this.foreigns.length;i++){
+						this.foreigns[i].listen(this,oInput,value);
+					}
+				}.bind(this)
+			}
+		}
+		w.Local=Local
+	})(window);
+	(function(){
+		function Foreign(name,rate,local){
+			this.rate=rate;
+			this.oInput=value;
+			local.register(this);
+		}
+	})()
+</script>
+</html>
