@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">		
+		//写法一
+		jQuery(document).ready(function(){
+			var name="Co";
+			alert(name);
+		})
+		//写法二
+		$(document).ready(function(){
+			var age=30;
+			alert(age);
+		})
+		jQuery(function(){
+			var age=20;
+			alert(age);
+		})
+		$(function(){
+			var name="Am";
+			alert(name);
+		})
+		
+	</script>
+</head>
+<body>
+	<!-- <button>点击</button> -->
+	<!-- <input type="button" name="" value="点击" id="btn">
+	<div></div>
+	<div></div> -->
+</body>
+</html>

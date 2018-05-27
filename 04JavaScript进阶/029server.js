@@ -1,18 +1,20 @@
+
 var http=require('http');
 var fs=require('fs');
 var url=require('url');
 var querystring=require('querystring');
 var server=http.createServer(function(req,res){
 	res.setHeader("Content-Type","text/html;charset=UTF-8");
+	// 协议、域名、端口号三者只要有一者不一样就构成跨域 
+	res.setHeader("Access-Control-Allow-origin","http://127.0.0.1:3000");
 	var urlStr=req.url;
-	console.log("req url:::",urlStr);
 	//如果请求的是/favicon.ico直接返回
 	if(urlStr=='/favicon.ico'){
 		res.statusCode=404;
 		res.end();
 	}
 	console.log(req.method);
-	if(req.method=="POST"){//处理POST请求
+	if(req.method=="POST"){
 		var body='';
 		req.on('data',function(chunk){
 			body+=chunk;
@@ -39,7 +41,6 @@ var server=http.createServer(function(req,res){
 		var filePath="./"+urlStr;
 		fs.readFile(filePath,function(err,data){
 			if(err){
-				console.log('read file error:::',err);
 				res.statusCode=404;
 				res.end('file not found');
 			}else{

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Ajax6</title>
+	<title>Ajax7</title>
 </head>
 <body>
-	<input type="button" value="发送POST请求" id='btn'>
+	<input type="button" value="请求" id='btn'>
 	<ul id='ul1'>
 	</ul>
 </body>
@@ -13,14 +13,15 @@
 	(function(w){
 		function ajax(method,url,data,fnSucc,fnFaild){
 			//1.创建ajax对象
-			var oAjax=new XMLHttpRequest();//XHR
-			if(method=="POST"){//POST请求
+			var oAjax=new XMLHttpRequest();
+			if(method=="POST"){
 				//2.和服务器建立连接
 				oAjax.open(method,url,true);
 				oAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				res.setHeader("")
 				//3.发送请求
 				oAjax.send(data);				
-			}else{//GET请求
+			}else{
 				if(data){
 					url=url+"?"+data;
 				}
@@ -31,7 +32,7 @@
 			}
 			//4.监听方法获取数据
 			oAjax.onreadystatechange=function(){
-	            if(oAjax.readyState==4){//数据完全返回
+	            if(oAjax.readyState==4){
 	            	if(oAjax.status==200){
 	            		fnSucc(oAjax.responseText);
 	            	}else{
@@ -48,42 +49,11 @@
 	var oBtn=document.getElementById('btn');
 	var oUl=document.getElementById('ul1');
 	oBtn.onclick=function(){
-		/*
-		ajax('POST',
-			 'http://127.0.0.1:3000/postReq',
-			 "name=tom&age=18",
-			function(val){
-				console.log('get data success ###::',val);
-			},
-			function(status){
-				console.log('err::',status);
-			});
-			
-		ajax('GET',
-			 'http://127.0.0.1:3000/postReq',
-			 "name=tom&age=18",
-			function(val){
-				console.log('get data success ###::',val);
-			},
-			function(status){
-				console.log('err::',status);
-			});
-			
-			ajax('GET',
-			 'http://127.0.0.1:3000/026-data.json',
-			 "",
-			function(val){
-				console.log('get data success ###::',val);
-			},
-			function(status){
-				console.log('err::',status);
-			});
-			*/
 			ajax('GET',
 			 'http://127.0.0.1:3000/file.json',
 			 "",
 			function(val){
-				console.log('get data success ###::',val);
+				console.log('get file success',val);
 			});			
 	}
 </script>
