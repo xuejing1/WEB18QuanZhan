@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Ajax3</title>
+	<title>Ajax5(POST)</title>
 </head>
 <body>
-	<input type="button" value="获取数据" id='btn'>
-	<input type="text">
+	<input type="button" value="发送POST请求" id='btn'>
 	<ul id='ul1'>
 	</ul>
 </body>
@@ -15,11 +14,12 @@
 	var oUl=document.getElementById('ul1');
 	oBtn.onclick=function(){
 		//1.创建ajax对象
-		var oAja =new XMLHttpRequest();//XHR
+		var oAjax=new XMLHttpRequest();//XHR
 		//2.和服务器建立连接
-		oAjax.open('GET','http://127.0.0.1:3000/s?name=leo&age=88',true);
+		oAjax.open('POST','http://127.0.0.1:3000/postReq',true);
+		oAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		//3.发送请求
-		oAjax.send();
+		oAjax.send("name=tom&age=18");
 		//4.监听方法获取数据
 		oAjax.onreadystatechange=function(){
             if(oAjax.readyState==4){//数据完全返回

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Ajax4</title>
+	<title>Ajax4(数组)</title>
 </head>
 <body>
 	<input type="button" value="获取数据" id='btn'>
@@ -17,22 +17,22 @@
 		//1.创建ajax对象
 		var oAjax=new XMLHttpRequest();//XHR
 		//2.和服务器建立连接
-		oAjax.open('GET','http://127.0.0.1:3000/026-arr.txt',true);
+		oAjax.open('GET','http://127.0.0.1:3000/arr.txt',true);
 		//3.发送请求
 		oAjax.send();
 		//4.监听方法获取数据
 		oAjax.onreadystatechange=function(){
             if(oAjax.readyState==4){//数据完全返回
             	if(oAjax.status==200){
-            		console.log('get data success::',oAjax.responseText);
-            		var arr=JSON.parse(oAjax.responseText);
+            		console.log('get arr success::',oAjax.responseText);
+            		var arr1=JSON.parse(oAjax.responseText);
             		for(var i=0;i<arr.length;i++){
             			var oLi=document.createElement('li');
-            			oLi.innerHTML="姓名:"+arr[i].name+" 年龄:"+arr[i].age;
+            			oLi.innerHTML="姓名:"+arr1[i].name+" 年龄:"+arr1[i].age;
             			oUl.appendChild(oLi);
             		}
             	}else{
-            		console.log('get data faild::',oAjax.status);
+            		console.log('get arr faild::',oAjax.status);
             	}
             	
             }		

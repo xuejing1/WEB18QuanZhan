@@ -7,11 +7,12 @@ var server=http.createServer(function(req,res){
 	var urlStr=req.url;
 	console.log("req url:::",urlStr);
 	//如果请求的是/favicon.ico直接返回
+	// favicon.ico是指标题中的小图标
 	if(urlStr=='/favicon.ico'){
 		res.statusCode=404;
 		res.end();
 	}
-	//如果请求中有参数,把参数返回给前端页面
+	//判断请求中有没有参数，如果请求中有参数,把参数返回给前端页面
 	if(urlStr.search(/\?/)!=-1){
 		var prams=url.parse(urlStr,true).query;
 		//通常拿到参数后需要根据参数做相应的处理

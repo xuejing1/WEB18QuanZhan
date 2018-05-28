@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Ajax5</title>
+	<title>Ajax3(请求3)</title>
 </head>
 <body>
-	<input type="button" value="发送POST请求" id='btn'>
+	<!-- 传输的有参数的情况 -->
+	<input type="button" value="获取数据" id='btn'>
+	<input type="text">
 	<ul id='ul1'>
 	</ul>
 </body>
@@ -16,17 +18,16 @@
 		//1.创建ajax对象
 		var oAjax=new XMLHttpRequest();//XHR
 		//2.和服务器建立连接
-		oAjax.open('POST','http://127.0.0.1:3000/postReq',true);
-		oAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		oAjax.open('GET','http://127.0.0.1:3000/s?name=Ami&age=13',true);
 		//3.发送请求
-		oAjax.send("name=tom&age=18");
+		oAjax.send();
 		//4.监听方法获取数据
 		oAjax.onreadystatechange=function(){
-            if(oAjax.readyState==4){//数据完全返回
+            if(oAjax.readyState==4){
             	if(oAjax.status==200){
-            		console.log('get data success::',oAjax.responseText);
+            		console.log('get file success::',oAjax.responseText);
             	}else{
-            		console.log('get data faild::',oAjax.status);
+            		console.log('get file faild::',oAjax.status);
             	}
             	
             }		
