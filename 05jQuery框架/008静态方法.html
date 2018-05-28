@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery静态方法</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script type="text/javascript">
+		var arr=[11,22,33,66,55];
+		// arr.ach(arr,function(index,value){
+		// 	console.log(index+"###"+value)
+		// })
+		var oLi=document.getElementsByTagName('li');
+		// oLi.each(oLi,function(index,value){
+		// 	console.log(index+"###"+value)
+		// })
+		var res=arr.map(function(value,index){
+			return value;
+		})
+		var res1=oLi.map(function(value))
+	</script>
+</html>

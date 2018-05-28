@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery的操作属性</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			console.log($('input').attr('value'));
+			console.log($('input').attr('name'));
+			console.log($('input').prop('value'));
+			console.log($('input').prop('name'));
+			$("input").eq(3).attr('checked',true);
+			$("input").eq(3).prop('checked',true);
+			
+		})
+	</script>
+</head>
+<body>
+	<input type="text" name="a" value="aaa">
+	<input type="text" name="c" value="ccc">
+	<input type="text" name="b" value="bbb">
+	<input type="checkbox" name="" checked="">
+</body>
+</html>

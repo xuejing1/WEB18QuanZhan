@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery的基本过滤器</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			console.log($("div"));
+			// 返回的是jQuery对象
+			console.log($("div:eq(0)"));
+			console.log($("div").eq(0));
+			// 返回的是DOM元素
+			console.log($("div").get(0));
+			console.log($("div:eq(1)"));
+			console.log($("div:eq(-1)").index());
+		})
+	</script>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+</body>
+</html>

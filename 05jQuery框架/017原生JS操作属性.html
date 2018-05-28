@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原生JS操作属性</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBox=document.getElementById('box');
+			console.log(oBox.getAttribute('id'));
+			console.log(oBox.id);
+			console.log(oBox['id']);
+			console.log(oBox.getAttribute('index'));
+			$(function(){
+				
+			})
+		}
+	</script>
+</head>
+<body>
+	<div class="box" id="box" index='0'></div>
+</body>
+</html>
