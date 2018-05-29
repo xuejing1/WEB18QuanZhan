@@ -5,15 +5,17 @@
 	<title>jQuery的基本过滤器</title>
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
+		//$返回的是一个jQuery对象
 		$(function(){
 			console.log($("div"));
-			// 返回的是jQuery对象
+			// eq()括号里面写选择的第几个
 			console.log($("div:eq(0)"));
-			console.log($("div").eq(0));
-			// 返回的是DOM元素
-			console.log($("div").get(0));
 			console.log($("div:eq(1)"));
-			console.log($("div:eq(-1)").index());
+			// eq也可以写负数，代表返回倒数第几
+			console.log($("div:eq(-2)"));
+			// index()方法，返回排在第几，相当于下标
+			console.log($("div:eq(-2)").index());
+
 		})
 	</script>
 </head>

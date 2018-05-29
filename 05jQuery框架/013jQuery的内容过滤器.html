@@ -3,16 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>jQuery的内容过滤器</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 50px;
+			border:1px solid;;
+		}
+	</style>
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			console.log($("div"));
-			console.log($("p"));
+			// empty空的，既没有文本也没有标签
+			console.log($("div:empty"));
+			// parent只要有内容就会被选中,不管内容还是标签
+			console.log($("div:parent"));
+			// contains(选择包含的文本内容)，选择包含括号里面的文本内容
+			console.log($("div:contains(段落)"));
+			// has(选择器)，选择元素中有该选择器的
+			console.log($("div:has(p)"));
 		})
 	</script>
 </head>
 <body>
-	<div>1</div>
+	<div></div>
+	<div><p></p></div>
 	<div>我是div</div>
 	<div><p>我是段落</p></div>
 	<div><span>我是span</span></div>

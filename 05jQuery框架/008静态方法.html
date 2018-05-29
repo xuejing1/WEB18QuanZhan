@@ -3,6 +3,46 @@
 <head>
 	<meta charset="UTF-8">
 	<title>jQuery静态方法</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var oLi=document.getElementsByTagName('li');
+			var arr=[11,22,33,55,66];
+			var likeArr={0:"01",1:"02",length:2};
+			/*原生方法forEach只能遍历真正的数组*/
+			arr.forEach(function(value,index){
+				console.log(value)
+			});
+			// jQuery方法可以遍历真正的数组和伪数组以及构造的数组
+			$.each(arr,function(index,value){
+				console.log(index+"::"+value)
+			});
+			$.each(oLi,function(index,value){
+				console.log(index,value)
+			});
+			$.each(likeArr,function(index,value){
+				console.log(index,value)
+			});
+			// 原生的map方法也不可以遍历伪数组和构造的数组,并且需要有返回值
+			arr.map(function(value,index){
+				console.log("map1 "+value);
+				return value;
+			});
+			// jQuery中的map与each一样，不一样的是map中的回调函数的第一个参数是value，第二个是index
+			$.map(arr,function(value,index){
+				console.log("map2 "+value);
+				return value;
+			});
+			$.map(oLi,function(value,index){
+				console.log(index,value);
+				return value;
+			});
+			$.map(likeArr,function(value,index){
+				console.log(value);
+				return value;
+			});
+		})
+	</script>
 </head>
 <body>
 	<ul>
@@ -13,18 +53,4 @@
 		<li>5</li>
 	</ul>
 </body>
-<script type="text/javascript">
-		var arr=[11,22,33,66,55];
-		// arr.ach(arr,function(index,value){
-		// 	console.log(index+"###"+value)
-		// })
-		var oLi=document.getElementsByTagName('li');
-		// oLi.each(oLi,function(index,value){
-		// 	console.log(index+"###"+value)
-		// })
-		var res=arr.map(function(value,index){
-			return value;
-		})
-		var res1=oLi.map(function(value))
-	</script>
 </html>

@@ -5,8 +5,18 @@
 	<title>jQueryHoldRead</title>
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
+		//holdReady()的括号里面写布尔值，该执行的时候不执行
+		$.holdReady(true);
+		$(function(){	
+			alert("bbb");
+		});
 		window.onload=function(){
 			var oBtn=document.getElementById('btn');
+			oBtn.onclick=function(){
+			alert("aaa");
+			// 只有释放之后才会执行
+			$.holdReady(false);
+			}
 		}
 	</script>
 </head>
