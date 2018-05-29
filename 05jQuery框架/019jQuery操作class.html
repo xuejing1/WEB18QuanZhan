@@ -27,12 +27,14 @@
 			var oBtn=document.getElementsByTagName('input')[0];
 			
 			oBtn.onclick=function(){
+				// 添加class属性
 				console.log($('div').addClass('box1 box2'))
 			}			
 		})
 		$(function(){
 			var oBtn2=document.getElementById('btn2');
 			oBtn2.onclick=function(){
+				// 移除class属性
 				console.log($("div").removeClass('box3'))
 			}
 		})
