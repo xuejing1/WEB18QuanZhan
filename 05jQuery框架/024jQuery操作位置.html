@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery操作位置</title>
+	<style type="text/css">
+		.father{
+			width: 200px;
+			height: 200px;
+			border: 1px solid;
+			background: red;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			border:1px solid;
+			background: yellow;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			console.log($('son').offset({
+				top:50,
+				left:50
+			}))
+		})
+	</script>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>

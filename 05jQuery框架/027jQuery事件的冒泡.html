@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery事件的冒泡</title>
+	<style type="text/css">
+		.ff{
+			width: 200px;
+			height: 200px;
+			border:1px solid;
+			background: red;
+			margin:100px auto;
+		}
+		.f{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+		}
+		.s{
+			width: 50px;
+			height: 50px;
+			background: blue;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.ff').click(function(ev){
+				alert("ff");
+			})
+			$('.f').click(function(ev){
+				alert("f");
+				// return false;
+			});
+			$('.s').click(function(ev){
+				alert('s');
+				return false;
+			});
+			$('a').click(function(ev){
+				// return false;
+				ev.preventDefault();
+			})
+		})
+	</script>
+</head>
+<body>
+	<a href="http://www.baidu.com">跳转百度</a>
+	<div class="ff">
+		<div class="f">
+			<div class="s"></div>
+		</div>
+	</div>
+</body>
+</html>
