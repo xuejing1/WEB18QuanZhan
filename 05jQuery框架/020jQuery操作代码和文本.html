@@ -6,13 +6,16 @@
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('div').html('<h1>我是</h1>')
+			// html里面的标签和内容会被解析出来
+			$('div').html('<h1>我是</h1>');
+			// text不会解析标签，显示的是纯文本内容
+			$('#div1').text('<h1>我是</h1>')
 		})
 	</script>
 </head>
 <body>
 	<div></div>
 	<div></div>
-	<div></div>
+	<div id="div1"></div>
 </body>
 </html>
