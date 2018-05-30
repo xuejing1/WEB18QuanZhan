@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阻止默认行为</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// a特殊性
+			$(".a1").click(function(){
+				alert("跳转跨猪");
+			});
+			$(".a1").trigger("click");
+			$("span").click(function(){
+				alert("跳转百度");
+			});
+			// triggerHandler自动触发事件，阻止a标签的默认行为，需要触发a的子元素
+			$("span").triggerHandler("click");
+			$("input").click(function(){
+				alert("form");
+			});
+			// $("input").trigger('click');会自动触发事件但不会阻止默认事件
+			// triggerHandler('click')自动触发事件并且阻止了默认事件
+			$("input").triggerHandler('click');
+
+		})
+	</script>
+</head>
+<body>
+	<a href="http://www.kuazhu.com" class="a1">跳转跨猪</a>
+	<a href="http://www.baidu.com"><span>跳转百度</span></a>
+	<form action="http://www.kuazhu.com">
+		<input type="submit" name="" value="提交">
+	</form>
+</body>
+</html>
