@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阻止默认行为</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.a1').click(function(){
+				alert("aaaa");
+				// 阻止默认行为
+				return false;
+			});
+			$('.a2').click(function(ev){
+				alert("bbbbb");
+				// 阻止默认行为
+				ev.preventDefault();
+			})
+		})
+	</script>
+</head>
+<body>
+	<a href="http://www.baidu.com" class="a1">跳转百度</a>
+	<a href="http://www.kuazhu.com" class="a2">跳转跨猪</a>
+</body>
+</html>
