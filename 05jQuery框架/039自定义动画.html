@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义动画</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			border:1px solid;
+			margin-top: 20px;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.btn1').click(function(){
+				$('.div1').animate({
+				width:200,
+				},1000)
+			});
+			// animate({属性与值}，时长，回调函数)，此处的回调函数是动画执行完以后执行的函数
+			$('.btn2').click(function(){
+				$('.div2').animate({
+				width:200,
+				height:200
+				},1000,function(){
+					alert("回调函数")
+				})
+			});
+		})
+	</script>
+</head>
+<body>
+	<input type="button" name="" class="btn1" value="动画1">
+	<input type="button" name="" class="btn2" value="动画2">
+	<div class="div1"></div>
+	<div class="div2"></div>
+</body>
+</html>

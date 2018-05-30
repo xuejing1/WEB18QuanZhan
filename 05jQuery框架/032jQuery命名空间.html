@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery命名空间</title>
+	<style type="text/css">
+		.ff{
+			width: 200px;
+			height: 200px;
+			border:1px solid;
+			background: red;
+			margin:100px auto;
+		}
+		.f{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+		}
+		.s{
+			width: 50px;
+			height: 50px;
+			background: blue;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 点后面加名字
+			$('.s').on('click.s1',function(){
+				alert("s1");
+			});
+			$('.s').on('click.s2',function(){
+				alert("s2");
+			});
+			// 事件后面加个点为了指定谁被触发
+			$('.s').trigger('click.s2');
+			$('.f').on('click',function(){
+				alert('f');
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="ff">
+		<div class="f">
+			<div class="s"></div>
+		</div>
+	</div>
+</body>
+</html>

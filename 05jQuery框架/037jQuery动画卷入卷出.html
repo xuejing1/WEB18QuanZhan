@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画的显示隐藏</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border:1px solid;
+			background: red;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.btn1').click(function(){
+				$('div').slideDown(1000,function(){
+					alert('卷出');
+				});
+			});
+			$('.btn2').click(function(){
+				$('div').slideUp(1000);
+			});
+			$('.btn3').click(function(){
+				$('div').slideToggle(1000);
+			});
+		})
+	</script>
+</head>
+<body>
+	<button class="btn1">显示</button>
+	<button class="btn2">隐藏</button>
+	<button class="btn3">切换</button>
+	<div></div>
+</body>
+</html>

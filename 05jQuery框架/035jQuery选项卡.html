@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery选项卡</title>
+	<style type="text/css">
+		li{
+			list-style: none;
+		}
+		.btn li{
+			width: 50px;
+			height: 30px;
+			color:#000;
+			/*background: #000;*/
+			float: left;
+			margin-left: 10px;
+			margin-bottom: 20px;
+			border:1px solid;
+		}
+		.content li{
+			margin-top: 50px;
+			width: 180px;
+			height: 200px;
+			border:1px solid;
+			display: none;
+		}
+		.active{
+			background: red;
+		}
+		.show{
+			display: block;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".btn li").mouseenter(function(){
+				var $this=$(this);
+				$this.addClass('active');
+				$this.siblings().removeClass('active');
+				var $index=$this.index;
+				var cL=$('.content>li').eq($index);
+				cL.addClass('show');
+				cL.siblings().removeClass('show');
+			})
+		})
+	</script>
+</head>
+<body>
+	<ul class="btn active">
+		<li>按钮1</li>
+		<li>按钮2</li>
+		<li>按钮3</li>
+	</ul>
+	<ul class="content show">
+		<li style="display: block">1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

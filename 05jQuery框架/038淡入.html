@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画的淡入淡出</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border:1px solid;
+			background: red;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.btn1').click(function(){
+				$('div').fadeIn(1000,function(){
+					alert('淡入');
+				});
+			});
+			$('.btn2').click(function(){
+				$('div').fadeOut(1000);
+			});
+			$('.btn3').click(function(){
+				$('div').fadeToggle(1000);
+			});
+			$('.btn4').click(function(){
+				$('div').fadeTo(1000,0.6);
+			});
+		})
+	</script>
+</head>
+<body>
+	<button class="btn1">显示</button>
+	<button class="btn2">隐藏</button>
+	<button class="btn3">切换</button>
+	<button class="btn4">淡入到</button>
+	<div></div>
+</body>
+</html>

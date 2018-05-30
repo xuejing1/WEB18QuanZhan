@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>队列动画(先后顺序)</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			border:1px solid;
+			margin-top: 20px;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 法一,顺序执行
+			/*
+			$(".btn").click(function(){
+				$('div').animate({
+					width:200
+				},1000);
+				$('div').animate({
+					height:300
+				},1000);
+				$('div').animate({
+					opacity:0.6
+				})
+			}) */
+			//法二，回调函数里面执行动画
+			/*
+			$('.btn').click(function(){
+				$('div').animate({
+					width:200
+				},1000,function(){
+					$('div').animate({
+						height:300
+					},1000,function(){
+						$('div').animate({
+							opacity:0.6
+						},300)
+					})
+				})
+			}) */
+
+			//法三 $返回一个jQuery对象，在其对象上使用动画方法
+		
+			$(".btn").click(function(){
+				$("div").animate({
+					width:200
+				},1000).animate(function(){
+					height:300
+				}).animate(function(){
+					opacity:0.6
+				})
+			}) 
+		
+		})
+	</script>
+</head>
+<body>
+	<input type="button" name="" class="btn" value="动画">
+	<div class="div1"></div>
+	<div class="div2"></div>
+</body>
+</html>
