@@ -27,7 +27,8 @@
 		$(function(){
 			$('.ff').click(function(ev){
 				alert("ff");
-			})
+			});
+			// jQuery当中不用考虑ev的兼容性
 			$('.f').click(function(ev){
 				alert("f");
 				// 阻止冒泡，阻止谁冒泡就写在哪里
@@ -38,10 +39,6 @@
 				// 阻止冒泡
 				ev.stopPropagation();
 			});
-			$('a').click(function(ev){
-				// return false;
-				ev.preventDefault();
-			})
 		})
 	</script>
 </head>
