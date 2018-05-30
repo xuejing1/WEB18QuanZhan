@@ -4,15 +4,11 @@
 	<meta charset="UTF-8">
 	<title>事件的自动触发</title>
 	<style type="text/css">
-		div{
-			width: 100px;
-			height: 100px;
-			background: red;
-		}
 		.f1{
 			width: 200px;
 			height: 200px;
 			background: blue;
+			margin:0 auto
 		}
 		.s1{
 			width: 100px;
@@ -33,24 +29,28 @@
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			// $('div').click(function(){
-			// 	alert("trigger");
-			// });
 			// trigger("事件名称")，自动触发事件
-			// $('div').trigger('click');
-			// $(".f1").click(function(){
-			// 	alert("trigger")
-			// });
-			// $(".f1").trigger("click");
 			$(".f1").click(function(){
-				alert("triggerHandler")
+				alert("f1")
 			});
-			$(".f1").triggerHandler("click");
+			$(".s1").click(function(){
+				alert("s1");
+			});
+			// trigger("事件名称")不会阻止冒泡和默认行为
+			$(".s1").trigger("click");
+
+			$(".f2").click(function(){
+				alert("f2")
+			});
+			$(".s2").click(function(){
+				alert("s2")
+			});
+			// triggerHandler("事件名称"),自动触发事件，会阻止冒泡和默认行为
+			$(".f2").triggerHandler("click");
 		})
 	</script>
 </head>
 <body>
-	<div></div>
 	<div class="f1">
 		<div class="s1"></div>
 	</div>
