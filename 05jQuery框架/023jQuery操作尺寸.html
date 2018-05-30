@@ -13,10 +13,20 @@
 	</style>
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
+		//入口函数只要有一个，入口函数是指加载完页面之后执行
 		$(function(){
+			// 获取尺寸
+			console.log($('div').width());
+			// 设置尺寸
+			console.log($('div').height(200));
+			// innerWidth包括内边距(但不包括边框)
 			console.log($('div').innerWidth());
-			console.log($('div').innerHeight());
-			console.log($('div').innerWidth(200));
+			// 设置innerHeight
+			console.log($('div').innerHeight(300));
+			// 设置，outerWidth包括宽度，内边距以及边框
+			console.log($('div').outerWidth(200));
+			// 获取
+			console.log($('div').outerHeight());
 		})
 	</script>
 </head>

@@ -3,14 +3,59 @@
 <head>
 	<meta charset="UTF-8">
 	<title>事件的自动触发</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		.f1{
+			width: 200px;
+			height: 200px;
+			background: blue;
+		}
+		.s1{
+			width: 100px;
+			height: 100px;
+			background: green;
+		}
+		.f2{
+			width: 200px;
+			height: 200px;
+			background: yellow;
+		}
+		.s2{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('a').trigger('click')
+			// $('div').click(function(){
+			// 	alert("trigger");
+			// });
+			// trigger("事件名称")，自动触发事件
+			// $('div').trigger('click');
+			// $(".f1").click(function(){
+			// 	alert("trigger")
+			// });
+			// $(".f1").trigger("click");
+			$(".f1").click(function(){
+				alert("triggerHandler")
+			});
+			$(".f1").triggerHandler("click");
 		})
 	</script>
 </head>
 <body>
-	<a href="http://www.baidu.com">跳转</a>
+	<div></div>
+	<div class="f1">
+		<div class="s1"></div>
+	</div>
+	<div class="f2">
+		<div class="s2"></div>
+	</div>
 </body>
 </html>

@@ -4,32 +4,54 @@
 	<meta charset="UTF-8">
 	<title>jQuery操作位置</title>
 	<style type="text/css">
-		.father{
+		.father1{
 			width: 200px;
 			height: 200px;
 			border: 1px solid;
 			background: red;
+			margin:0 auto;
 		}
-		.son{
+		.son1{
 			width: 100px;
 			height: 100px;
 			border:1px solid;
 			background: yellow;
 		}
+		.father2{
+			width: 300px;
+			height: 300px;
+			background: blue;
+		}
+		.son2{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
 	</style>
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			console.log($('son').offset({
+			// offset是指距离浏览器顶部和左边的偏移值，相对于浏览器
+			console.log($('.son1').offset());
+			// 获取顶部距离
+			console.log($('.son1').offset().top);
+			// 设置son1的offset值
+			console.log($('.son1').offset({
 				top:50,
 				left:50
-			}))
+			}));
+			// position是相当于给son2添加了一个position属性，与添加了position属性效果一样
+			// position只能获取不能设置
+			console.log($('.son2').position());
 		})
 	</script>
 </head>
 <body>
-	<div class="father">
-		<div class="son"></div>
+	<div class="father1">
+		<div class="son1"></div>
+	</div>
+	<div class="father2">
+		<div class="son2"></div>
 	</div>
 </body>
 </html>

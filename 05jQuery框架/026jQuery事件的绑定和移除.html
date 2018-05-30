@@ -13,17 +13,28 @@
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
+			// 方法一，jQuery上的事件
 			$('div').click(function(){
 				alert("aaa");
 			});
+			$('div').mouseenter(function(){
+				alert("mouseenter");
+			});
+			// 方法二，jQuery上的on方法的事件
 			$("div").on("click",function(){
-				alert("bbb");
+				alert("on");
 			});
-			$('div').click(function show(){
-				alert("ccc");
-			});
-			$('div').off();
-		
+			// 移除函数不能移除匿名函数
+			function show(){
+				$("div").click(function(){
+					alert("show");
+				})
+			};
+			// $('div').off()移除所有事件;
+			// off('移除事件名')
+			$('div').off('mouseenter');
+			// off('移除事件名',函数名)
+			$('div').off('click',show);		
 		})
 	</script>
 </head>

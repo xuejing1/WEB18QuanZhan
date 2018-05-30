@@ -5,19 +5,45 @@
 	<title>jQuery的滚动距离</title>
 	<style type="text/css">
 		.father{
-			width: 100px;
-			height: 100px;
+			width: 300px;
+			height: 300px;
 			border:1px solid;
+			/*overflow: auto;是为了让father的滚动条出来*/
+			overflow: auto;
 		}
 		.son{
 			width: 3000px;
 			height: 3000px;
 		}
 	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			window.onload=function(){
+				var oBtn=document.getElementById('btn');
+				var oBtn2=document.getElementById('btn2');
+				oBtn.onclick=function(){
+					// 获取滚动距离
+					console.log($(".father").scrollTop());
+					console.log($(".father").scrollLeft());
+				}
+				oBtn2.onclick=function(){
+					// 设置滚动距离
+					console.log($(".father").scrollTop(60));
+					console.log($(".father").scrollLeft(60));
+					console.log($(".father").scrollTop());
+					console.log($(".father").scrollLeft());
+				}
+			}
+			
+		})
+	</script>
 </head>
 <body>
 	<div class="father">
 		<div class="son"></div>
 	</div>
+	<input type="button" name="" id="btn" value="滚动距离">
+	<input type="button" name="" id="btn2" value="设置滚动距离">
 </body>
 </html>
