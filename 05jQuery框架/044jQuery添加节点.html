@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加节点</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn1').click(function(){
+				var $Li=$("<li>我是创建</li>")
+				// $('ul').append($Li);
+				// $Li.appendTo($('ul'));
+				// $('ul').prepend($Li);
+				$Li.prependTo($('ul'));
+				// $('ul').after($Li);
+				// $('ul').before($Li);	
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button" name="" id="btn1" value="append">
+	<input type="button" name="" id="btn1" value="appendTo">
+	<input type="button" name="" id="btn1" value="创建1">
+	<input type="button" name="" id="btn1" value="创建1">
+	<input type="button" name="" id="btn1" value="创建1">
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</body>
+</html>

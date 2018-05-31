@@ -6,14 +6,17 @@
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('li').click(function(){
-				alert("li");
-			});
+			// delegate("子元素的选择器"，"委托事件名"，"回调函数")事件委托
+			// 这个回调函数写具体执行的事情
+			// 此处将li委托在ul上，用ul来监听
 			$('ul').delegate('li','click',function(){
-				$('input').click(function(){
-					$('ul').append('li');
+				// $(this)返回的是jQuery对象
+				alert($(this).html());
+			})
+			$('#btn').click(function(){
+				var $Li=$('<li>我是创建的li</li>')
+				$('ul').append($Li);
 
-				})
 			})
 		})
 	</script>

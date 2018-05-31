@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>删除节点</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.btn').click(function(){
+				$('li').click(function(){
+					alert('aaa');
+				})
+				// $('ul').remove();
+				// $('ul').empty();
+				$('li').detach();
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button" name="" class="btn" value="删除">
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

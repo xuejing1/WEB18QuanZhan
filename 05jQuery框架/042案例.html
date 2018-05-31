@@ -15,7 +15,7 @@
 			position:absolute;
 			top: 0px;
 			left: 0px;
-			opacity: 0.2;
+			opacity: 0.6;
 		}
 		.box{
 			width: 120px;
@@ -60,6 +60,8 @@
 			list-style:none;
 			border-right: none; 
 			background: white;
+			color: blue;
+			font-weight: bolder;
 		}
 		.ul2 li{
 			width: 50px;
@@ -68,17 +70,23 @@
 			list-style: none;
 			background: white;
 			line-height: 30px;
+			color: blue;
 		}
 		li{
 			display: none;
 			border-top: none;
+		}
+		ul .show{
+			background: #ccc;
+			opacity: 0.1;
 		}
 	</style>
 	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$(".box1").mouseenter(function(){
-				$('.box1 li').slideDown()
+				$('.box1 li').slideDown();
+				$('.ul1 .span1').addClass('span1')
 			});
 			$(".box1").mouseleave(function(){
 				$('.box1 li').slideUp()
@@ -107,6 +115,7 @@
 					timer=setTimeout(function(){
 					oP1.style.color="";
 					oSpan1.style.color='';
+
 					oSpan1.style.transform='rotateZ(90deg)';
 					},20)
 				};
@@ -139,7 +148,12 @@
 					oSpan2.style.color='';
 					oSpan2.style.transform='rotateZ(90deg)';
 				};
-			}
+			};
+			$('li').mouseenter(function(){
+				var $this=$(this);
+				$this.addClass('show');
+				$this.siblings().removeClass('show');
+			});
 		})
 	</script>
 </head>
@@ -154,7 +168,7 @@
 			</ul>
 		</div>
 		<div class="box2">
-			<p id="p2">选项2</p><span id="span2">&gt;</span>
+			<p id="p2">选项2</p><span id="span2" class="span2">&gt;</span>
 			<ul class="ul2" id="ul2">
 				<li>b</li>
 				<li>c</li>

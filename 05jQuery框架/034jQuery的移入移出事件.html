@@ -3,8 +3,35 @@
 <head>
 	<meta charset="UTF-8">
 	<title>jQuery移入移出事件</title>
+	<style type="text/css">
+		.f{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+		.s{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// hover(回调函数1，回调函数2)
+			// 回调函数1移入执行的函数，相当于mouseenter
+			//回调函数2移出函数，相当于mouseleave
+			$('.f').hover(function(){
+			alert('aa');
+			},function(){
+			alert('bb');
+			})
+		})
+	</script>
 </head>
 <body>
-	
+	<div class="f">
+		<div class="s"></div>
+	</div>
 </body>
 </html>

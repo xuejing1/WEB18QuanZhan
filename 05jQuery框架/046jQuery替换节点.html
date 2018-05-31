@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>替换节点</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border:1px solid;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.btn').click(function(){
+				var $1=$("<h1>我是</h1>");
+				$('div').replaceWidth($1);
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="替换" class="btn">
+	<div>
+		恩恩
+	</div>
+</body>
+</html>
