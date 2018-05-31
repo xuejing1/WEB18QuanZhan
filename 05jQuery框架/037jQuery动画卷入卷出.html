@@ -16,13 +16,16 @@
 	<script type="text/javascript">
 		$(function(){
 			$('.btn1').click(function(){
+				// sildeDown卷出(执行时间，回调函数)，这个回调函数是执行完动画要执行的
 				$('div').slideDown(1000,function(){
 					alert('卷出');
 				});
 			});
+			// sildeUp卷入(执行时间，回调函数)，这个回调函数是执行完动画要执行的
 			$('.btn2').click(function(){
 				$('div').slideUp(1000);
 			});
+			// slideToggle切换(执行时间，回调函数)，这个回调函数是执行完动画要执行的
 			$('.btn3').click(function(){
 				$('div').slideToggle(1000);
 			});

@@ -45,17 +45,18 @@
 			}) */
 
 			//法三 $返回一个jQuery对象，在其对象上使用动画方法
-		
 			$(".btn").click(function(){
-				$("div").animate({
+				$("div")
+				.animate({
 					width:200
-				},1000).animate(function(){
+				},1000)
+				.animate({
 					height:300
-				}).animate(function(){
+				},1000)
+				.animate({
 					opacity:0.6
-				})
-			}) 
-		
+				},1000)
+			}) 		
 		})
 	</script>
 </head>

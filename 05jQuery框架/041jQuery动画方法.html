@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>队列动画(先后顺序)</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			border:1px solid;
+			margin-top: 20px;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".btn").click(function(){
+				$('div').animate({
+					width:200
+				},1000);
+				// delay(延迟时间)，针对的是下一个动画
+				$('div').delay(1000);
+				$('div').animate({
+					height:300
+				},1000);
+				$('div').animate({
+					opacity:0.6
+				});
+			});
+			$('.btn2').click(function(){
+				// stop(布尔值，布尔值)，默认都是false
+				// 第一个参数是否停止动画，第二个参数是停止之后是否回到最后的状态
+				$('div').stop(true,false);
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button" name="" class="btn" value="动画">
+	<input type="button" name="" class="btn2" value="停止">
+	<div class="div1"></div>
+	<div class="div2"></div>
+</body>
+</html>
