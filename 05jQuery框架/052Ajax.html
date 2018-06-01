@@ -7,22 +7,17 @@
 	<script type="text/javascript">
 		$(function(){
 			$('button').click(function(){
-				$.ajax({
-					url:"http://www.127.0.0.1/101data.json";
+				var jqXHR=$.ajax({
+					url:"./101data.json";
 					type:"GET";
-					dataType:'json';
-					success:function(data,statusMsg,jaXHR){
-						console.log(data,statusMsg,jaXHR)
-					}
-					error:function(jqXHR,statusMsg){
-						console
-					}
+					dataType:"json";
 				})
 			})
 		})
 	</script>
 </head>
 <body>
-	<button>点击</button>
+	<button>获取数据</button>
 </body>
+
 </html>

@@ -16,6 +16,7 @@
 	<script type="text/javascript">
 		$(function(){
 			$(".btn").click(function(){
+				// animate只能变化带数字的
 				$('div').animate({
 					width:200
 				},1000);
@@ -25,8 +26,7 @@
 					height:300
 				},1000);
 				$('div').animate({
-					// opacity:0.6
-					background:"yellow"
+					opacity:0.6
 				},1000);
 			});
 			$('.btn2').click(function(){

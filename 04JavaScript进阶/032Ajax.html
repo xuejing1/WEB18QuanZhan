@@ -5,7 +5,7 @@
 	<title>Ajax2(请求2)</title>
 </head>
 <body>
-	<!-- 目的：前端所需要的数据可以动态从服务器端获取数据 -->
+	<!-- 目的：前端所需要的数据可以动态从服务器端获取数据，获取姓名年龄，显示在前台的页面中 -->
 	<input type="button" value="获取数据" id='btn'>
 	<input type="text">
 	<ul id='ul1'>
@@ -18,7 +18,7 @@
 		//1.创建ajax对象
 		var oAjax=new XMLHttpRequest();//XHR
 		console.log("after new::",oAjax.readyState);
-		//2.和服务器建立连接
+		//2.和服务器建立连接,oAjax上面有个open方法
 		oAjax.open('GET','http://127.0.0.1:3000/file.json',true);
 		console.log("after open::",oAjax.readyState);
 		//3.发送请求
@@ -29,18 +29,18 @@
 			console.log("in event::",oAjax.readyState);
             if(oAjax.readyState==4){//数据完全返回
             	if(oAjax.status==200){
-            		console.log('get data success::',oAjax.responseText);
+            		console.log('get file success::',oAjax.responseText);
             		console.log(typeof oAjax.responseText);
-            		// 将json内容转换为对象
+            		// 将json类型转换为对象用JSON.parse()
             		var obj=JSON.parse(oAjax.responseText);
             		console.log(obj.name);
             		console.log(obj.age);
             		var oLi=document.createElement('li');
-            		//后台的内容
+            		//后台的内容，即li里面的内容
             		oLi.innerHTML="姓名:"+obj.name+" 年龄:"+obj.age;
             		oUl.appendChild(oLi);
             	}else{
-            		console.log('get data faild::',oAjax.status);
+            		console.log('get flie faild::',oAjax.status);
             	}
             	
             }		

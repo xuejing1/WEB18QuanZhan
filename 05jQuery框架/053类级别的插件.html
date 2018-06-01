@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类级别的插件</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// $上有个extend方法，接收一个对象
+			$.extend({
+				show:function(){
+					alert('show');
+				}
+			})
+			$.show();
+			var obj={
+				show2:function(){
+					alert('show2');
+				}
+			}
+			// obj.show2();
+			$.lk=obj;
+			$.lk.show2();
+		})
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

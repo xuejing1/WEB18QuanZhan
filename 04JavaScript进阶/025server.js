@@ -1,6 +1,6 @@
 
 //require需求请求，通过require方法引入nodejs系统模块的http
-//这个http本身是有内容的
+//这个http本身是有内容的，node提供的一些模块
 var http=require('http');
 //http上有个createServer方法，接收一个函数
 //该函数接收两个参数(第一个参数是req请求数据(require)，第二个参数是res返回对象(response))

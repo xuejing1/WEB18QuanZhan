@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡案例</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border:1px solid;
+			display: none;
+		}
+		.active{
+			display: block;
+		}
+		.show{
+			background: red;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		;(function(options){
+			activeClass:'active',
+			btnSelector:''
+		})
+	</script>
+</head>
+<body>
+	<button class="show">按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<div class="active">内容1</div>
+	<div>内容2</div>
+	<div>内容3</div>
+</body>
+</html>
