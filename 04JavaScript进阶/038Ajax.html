@@ -2,24 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Ajax7</title>
+	<title>Ajax6</title>
 </head>
 <body>
-	<input type="button" value="请求" id='btn'>
+	<input type="button" value="发送请求" id='btn'>
 	<ul id='ul1'></ul>
 </body>
 <script>
+	//封装成函数
 	(function(w){
+		// 参数：method方法 url地址 data数据 fnSucc成功时执行什么，fnFaild失败时执行什么
 		function ajax(method,url,data,fnSucc,fnFaild){
 			//1.创建ajax对象
 			var oAjax=new XMLHttpRequest();
+			// 判断是什么请求 
+			// POST请求
 			if(method=="POST"){
 				//2.和服务器建立连接
 				oAjax.open(method,url,true);
 				oAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				//3.发送请求
-				oAjax.send(data);		
+				oAjax.send(data);				
 			}else{
+				// GET请求
 				if(data){
 					url=url+"?"+data;
 				}
@@ -31,13 +36,16 @@
 			//4.监听方法获取数据
 			oAjax.onreadystatechange=function(){
 	            if(oAjax.readyState==4){
+	            	// 成功时的处理
 	            	if(oAjax.status==200){
 	            		fnSucc(oAjax.responseText);
 	            	}else{
+	            		// 失败时的处理
 	            		if(fnFaild){
 	            			fnFaild(oAjax.status);
 	            		}
-	            	}	
+	            	}
+	            	
 	            }		
 			}
 		}
@@ -46,12 +54,15 @@
 	var oBtn=document.getElementById('btn');
 	var oUl=document.getElementById('ul1');
 	oBtn.onclick=function(){
-			ajax('GET',
-			 'http://localhost:3001/file.json',
-			 "",
-			function(val){
-				console.log('get file success ##::',val);
-			});			
+		// 调用Ajax函数,有数据的时候传数据，没数据的时候就是空
+		// 此处的地址是要获取的地址文件
+		ajax('GET',
+		 'http://127.0.0.1:3000/file.json',
+		 "",
+		 // 回调函数，成功时做的处理
+		function(val){
+			console.log('get file success ##:',val);
+		});	
 	}
 </script>
 </html>
