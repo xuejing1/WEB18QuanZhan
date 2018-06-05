@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>kQuery1</title>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<!-- <script type="text/javascript" src="../JS/kQuery.js"></script> -->
+	<script type="text/javascript">
+		//布尔值是假的返回空的jQuery对象
+		console.log($(''));
+		console.log($(false));
+		console.log($(NaN));
+		console.log($(undefined));
+		console.log($(null));
+		console.log($(0));
+		// 返回有document的jQuery对象
+		console.log($(function(){}));
+		// 传html代码返回了顶级元素的DOM节点，两个
+		console.log($("<div><p></p></div><div><p></p></div>"));
+		// 返回选择器选中的DOM节点
+		console.log($("li"));
+		// 传数组，所有的数组都返回一个jQuery对象，是一个伪数组
+		var aLi=document.getElementsByTagName('li');
+		var likeArr={0:'a',1:'2',length:2};
+		var arr=[1,2,3,5,6];
+		console.log($(aLi)); 
+		console.log($(likeArr)); 
+		console.log($(arr)); 
+		// 传DOM节点，数字等返回其参数对应内容的jQuery对象
+		var aLi=oLi[0];
+		console.log($(aLi));
+		console.log($(123));
+		console.log($(true));
+		console.log($({}));
+	</script>
+</head>
+<body>
+	<ul>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</body>
+</html>
