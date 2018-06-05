@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>真伪数组转换</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oLi=document.getElementsByTagName('li');
+			var likeArr={0:'a',1:'b',length:2};
+			var arr=[1,2,3,5,6];
+			function test(n1,n2){
+				console.log(this,n1,n2)
+			}
+			// test();
+			// var obj={name:'Ami'};
+			// test.call(obj,1,2);
+			var arr2=[];
+			// arr2.push(1,2);
+			// console.log(arr2);
+			var obj={};
+			[].push.apply(obj,oLi);
+			console.log(obj);
+			var arr3=[];
+			[].push.apply(arr3,likeArr);
+			console.log(arr3);
+			var arr4=[].slice.call(likeArr);
+			console.log(arr4)
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

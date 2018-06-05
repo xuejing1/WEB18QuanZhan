@@ -30,6 +30,39 @@
 					return this;
 				}
 			}
+			each:function(arr,fn){
+				if(kQuery.isArray(arr)){
+					for(var i=0;i<arr.length;i++){
+						var res=fn.call(arr[i],i,arr[i]);
+						if(res==false){
+							break;
+						}else if(res==true){
+							continue;
+						}
+					}
+				}
+			}
+			map:function(arr,fn){
+				var retArr=[];
+				if(kQuery.isArray(arr)){
+					for(var i=0;i<arr.length;i++){
+						var res=fn(arr[i],i);
+						if(res){
+							retArr.push(res);
+						}
+					}
+				}
+				else{
+					for(key in arr){
+						var res=fn(arr[key],key);
+						if(res){
+							retArr.push(res);
+						}
+					}
+					return retArr;
+				}
+			}
+
 		}
 	}
 	kQuery.fn.prototype=kQuery.fn;

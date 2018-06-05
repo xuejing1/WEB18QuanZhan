@@ -5,9 +5,9 @@
 	<title>Ajax6</title>
 </head>
 <body>
-	<input type="button" value="发送请求" id='btn'>
+	<input type="button" value="发送POST请求" id='btn'>
 	<ul id='ul1'></ul>
-	<!-- 既能处理POST请求也能处理GET请求(带参数)-->
+	<!-- 既能处理POST请求也能处理GET请求(不带参数)-->
 </body>
 <script>
 	//封装成函数
@@ -55,16 +55,13 @@
 	var oBtn=document.getElementById('btn');
 	var oUl=document.getElementById('ul1');
 	oBtn.onclick=function(){
-		// 调用Ajax函数
-		ajax('POST',
-		 'http://127.0.0.1:3000/postReq',
-		 "name=Am&age=20",
+		// 调用Ajax函数,有数据的时候传数据，没数据的时候就是空
+		ajax('GET',
+		 'http://127.0.0.1:3000/file.json',
+		 "",
 		 // 回调函数，成功时做的处理
 		function(val){
 			console.log('get file success ##:',val);
-		},
-		function(status){
-			console.log('get file err::',status);
 		});	
 	}
 </script>

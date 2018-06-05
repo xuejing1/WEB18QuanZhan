@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>extend</title>
+	<script type="text/javascript" src="../JS/kQuery/kQuery.js"></script>
+	<script type="text/javascript">
+		function Person(){
+			var obj={
+				test1:function(){
+					console.log('test1');
+				},
+				test2:function(){
+					console.log('test2');
+				}
+			}
+			Person.extend=function(obj){
+				for(key in obj){
+					this[key]=obj[key];
+				}
+			Person.extend(obj);
+			Person.test1();
+			Person.test2();
+			Person.prototype.extend=function(obj){
+				for(key in obj){
+					this[key]=obj[key];
+				}
+			}
+			Person.extend(obj);
+			var obj2={
+				test3:function(){
+					console.log('test3');
+				},
+				test4:function(){
+					console.log('test4');
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>电子书插件</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.div1{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+		.div2{
+			width: 500px;
+			height: 600px;
+			position:absolute;
+			left: -245px;
+			top: -245px;
+			background: red
+		}
+		.book{
+			width: 500px;
+			height: 600px;
+			position:absolute;
+			left: 0px;
+			top: 0px;
+		}
+	</style>
+	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="../turnjs4/lib/turn.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.book').turn()
+		})
+	</script>
+</head>
+<body>
+	<div class="div1">
+		<div class="div2">
+			<div class="book" style="background: url(../turnjs4/samples/basic/pages/1.jpg);"></div>
+			<div class="book" style="background: url(../turnjs4/samples/basic/pages/2.jpg);"></div>
+			<div class="book" style="background: url(../turnjs4/samples/basic/pages/3.jpg);"></div>
+			<div class="book" style="background: url(../turnjs4/samples/basic/pages/4.jpg);"></div>
+			<div class="book" style="background: url(../turnjs4/samples/basic/pages/5.jpg);"></div>
+		</div>
+	</div>
+</body>
+</html>
