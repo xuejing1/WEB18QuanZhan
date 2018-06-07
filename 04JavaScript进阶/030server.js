@@ -5,7 +5,7 @@ var fs=require('fs');
 
 var server=http.createServer(function(req,res){
 	res.setHeader("Content-Type","text/html;charset=UTF-8");
-	// url请求的地址，通过req获取到请求的地址
+	//url请求的地址，通过req获取到请求的地址
 	console.log(req.url);
 	// 定义一个变量为文件的位置
 	var filePath="./"+req.url;
