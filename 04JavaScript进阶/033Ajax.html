@@ -15,14 +15,14 @@
 	var oBtn=document.getElementById('btn');
 	var oUl=document.getElementById('ul1');
 	oBtn.onclick=function(){
-		//1.创建ajax对象
+		// 1.创建ajax对象
 		var oAjax=new XMLHttpRequest();//XHR
-		//2.和服务器建立连接
+		// 2.和服务器建立连接
 		// 传递参数，把参数传递给后台，格式：  ？参数1&参数2
 		oAjax.open('GET','http://127.0.0.1:3000/s?name=Ami&age=13',true);
-		//3.发送请求
+		// 3.发送请求
 		oAjax.send();
-		//4.监听方法获取数据
+		// 4.监听方法获取数据
 		oAjax.onreadystatechange=function(){
             if(oAjax.readyState==4){
             	if(oAjax.status==200){
