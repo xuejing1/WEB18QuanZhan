@@ -1,4 +1,4 @@
-// 从后台中获取数据
+//从后台中获取数据
 var http=require('http');
 // 将文件引入到环境当中
 var fs=require('fs');
