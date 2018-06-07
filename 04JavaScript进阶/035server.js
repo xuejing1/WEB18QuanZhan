@@ -26,7 +26,7 @@ var server=http.createServer(function(req,res){
 		// 数据完全获取之后
 		req.on('end',function(){
 			console.log(body);
-			//通常拿到参数后需要根据参数做相应的处理
+			// 通常拿到参数后需要根据参数做相应的处理
 			// 将字符串解析为对象
 			var bodyObj=querystring.parse(body);
 			var strBody=JSON.stringify(bodyObj);

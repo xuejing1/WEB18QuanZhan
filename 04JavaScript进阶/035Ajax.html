@@ -12,15 +12,15 @@
 	var oBtn=document.getElementById('btn');
 	var oUl=document.getElementById('ul1');
 	oBtn.onclick=function(){
-		//1.创建ajax对象
+		// 1.创建ajax对象
 		var oAjax=new XMLHttpRequest();
-		//2.和服务器建立连接
+		// 2.和服务器建立连接
 		oAjax.open('POST','http://127.0.0.1:3000/postReq',true);
 		// post请求需要在此处写一个请求头
 		oAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-		//3.发送请求，send("请求的参数")
+		// 3.发送请求，send("请求的参数")
 		oAjax.send("name=Am&age=20");
-		//4.监听方法获取数据
+		// 4.监听方法获取数据
 		oAjax.onreadystatechange=function(){
             if(oAjax.readyState==4){//数据完全返回
             	if(oAjax.status==200){
