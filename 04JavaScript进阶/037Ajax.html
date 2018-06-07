@@ -19,22 +19,22 @@
 			// 判断是什么请求 
 			// POST请求
 			if(method=="POST"){
-				//2.和服务器建立连接
+				// 2.和服务器建立连接
 				oAjax.open(method,url,true);
 				oAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-				//3.发送请求
+				// 3.发送请求
 				oAjax.send(data);				
 			}else{
 				// GET请求
 				if(data){
 					url=url+"?"+data;
 				}
-				//2.和服务器建立连接
+				// 2.和服务器建立连接
 				oAjax.open(method,url,true);
-				//3.发送请求
+				// 3.发送请求
 				oAjax.send();
 			}
-			//4.监听方法获取数据
+			// 4.监听方法获取数据
 			oAjax.onreadystatechange=function(){
 	            if(oAjax.readyState==4){
 	            	// 成功时的处理
