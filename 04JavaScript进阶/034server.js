@@ -6,14 +6,14 @@ var server=http.createServer(function(req,res){
 	res.setHeader("Content-Type","text/html;charset=UTF-8");
 	// 先将传进来的url给存起来
 	var urlStr=req.url;
-	//如果请求的是/favicon.ico直接返回，把它给屏蔽掉
+	// 如果请求的是/favicon.ico直接返回，把它给屏蔽掉
 	// favicon.ico是指标题中的小图标
 	if(urlStr=='/favicon.ico'){
 		res.statusCode=404;
 		res.end();
 	}
 	//判断请求中有没有参数，如果请求中有参数(有问号即代表有参数),把参数返回给前端页面
-	// search查询
+	// search查询,search搜到为正值，搜不到为-1
 	if(urlStr.search(/\?/)!=-1){
 		// 目的：获取传进来的参数
 		// parse是专门解析url的，返回的是一个对象(对象上面有个query属性(传进来的参数))
