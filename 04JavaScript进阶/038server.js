@@ -8,7 +8,7 @@ var server=http.createServer(function(req,res){
 	// 协议、域名、端口号三者只要有一者不一样就构成跨域 ,跨域请求需要有个origin header
 	// 允许哪个域进行跨域请求，*代表所有的域
 	// res.setHeader("Access-Control-Allow-origin","*");
-	res.setHeader("Access-Control-Allow-origin","http://127.0.0.1:3001");
+	res.setHeader("Access-Control-Allow-origin","http://127.0.0.1:3000");
 	var urlStr=req.url;
 	if(urlStr=='/favicon.ico'){
 		res.statusCode=404;
@@ -24,7 +24,7 @@ var server=http.createServer(function(req,res){
 		// 数据完全获取之后
 		req.on('end',function(){
 			console.log(body);
-			//通常拿到参数后需要根据参数做相应的处理
+			// 通常拿到参数后需要根据参数做相应的处理
 			// 将字符串解析为对象
 			var bodyObj=querystring.parse(body);
 			var strBody=JSON.stringify(bodyObj);
