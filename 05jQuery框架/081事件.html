@@ -3,13 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>事件测试</title>
-	<script type="text/javascript" src="../JS/jQuery/jquery-1.12.4.js"></script>
+	<!-- <script type="text/javascript" src="../JS/jQuery/jquery-1.12.4.js"></script> -->
 	<script type="text/javascript" src="../JS/kQuery/kQuery.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('button').on('click',{
-				alert('1');
-			})
+			function test1(){
+				alert('test1')
+			};
+			function test2(){
+				alert('test2')
+			}
+			$('button').on('click',test1);
+			$('button').on('click',function(){
+				alert("a2")
+			});
+			$('button').on('mouseover',test2);
+			$('button').on('mouseout',function(){
+				alert("b2")
+			});
+			// $('button').off('click');
+			$()
 		})
 	</script>
 </head>

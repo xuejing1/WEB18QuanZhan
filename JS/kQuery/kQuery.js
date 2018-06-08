@@ -499,9 +499,63 @@ kQuery.fn.extend({
 kQuery.fn.extend({
 	on:function(eventName,fn){
 		this.each(function(){
-			// this.addEventListener(eventName,fn);
-			kQuery.addEvent(this,eventName,fn);
+			if(!this.bucketEvent){
+				this.bucketEvent={};
+			}
+			if(!this.bucketEvent[eventName]){
+				this.bucketEvent[eventName]=[];
+				this.bucketEvent.push(fn);
+				kQuery.addEvent(this,eventName,function(){
+					kQuery.each(this.bucketEvent[eventName],function(){
+						
+					})
+				})
+			}else{
+				this.bucketEvent.push(fn);
+			}
 		})	
+	},
+	off:function(eventName,fnName){
+		if(arguments==0){
+			this.each(function(){
+				this.bucketEvent={};
+			})
+		}else if(arguments==1){
+			this.each(function(){
+				if(this.bucketEvent){
+					this.bucketEvent[eventName]=[];
+				}
+			})
+		}else if(arguments==2){
+			this.each(function(){
+				if(this.bucketEvent&&this.bucketEvent[eventName]){
+					kQuery(this.bucketEvent[eventName],function(index,fn){
+						if(this==fnName){
+							this.bucketEvent[eventName].splice(index,1);
+						}
+					})
+				}
+			})
+		}
+	},
+	clone:function(bocpy){
+		var arr=[];
+		this.each(function(){
+			if(bocpy&&this.bucketEvent){
+				var dom=this.cloneNode(true);
+				// 第一个参数事件名，第二个参数是数组
+				kQuery.each(this.bucketEvent,function(eventName,fnArr){
+					kQuery.each(fnArr,function(){
+						kQuery(dom).on(eventName,this);
+					})
+				});
+				arr.push(dom)
+			}else{
+				var dom=this.cloneNode(true);
+				arr.push(dom)
+			}
+		})
+		return kQuery(arr);
 	}
 });
 kQuery.fn.init.prototype=kQuery.fn;

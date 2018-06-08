@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>克隆</title>
+	<script type="text/javascript" src="../JS/jQuery/jquery-1.12.4.js"></script>
+	<!-- <script type="text/javascript" src="../JS/kQuery/kQuery.js"></script> -->
+	<script type="text/javascript">
+		$('button').on('click',function(){
+			$('div').on('click',function(){
+				alert('a')
+			});
+			$('button').on('click',function(){
+				// console.log($('div').clone());
+				$('body').append($('div').clone(true))
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>测试</button>
+	<div></div>
+	<div></div>
+</body>
+</html>
