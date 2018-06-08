@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性方法测试2</title>
+	<!-- <script type="text/javascript" src="../JS/jQuery/jquery-1.12.4.js"></script> -->
+	<script type="text/javascript" src="../JS/kQuery/kQuery.js"></script>
+	<script>
+		$(function(){
+			$('button')[0].onclick=function(){
+				// 什么都不传，把自身的jQuery对象返回来
+				console.log($('.box1').removeAttr());
+				// 传一个参数，会把该属性移除
+				console.log($('.box2').removeAttr('name'));
+				// 什么都不传返回第一个input值
+				console.log($('.input1').val());
+				// 返回jQuery对象，改变所有input的value值
+				console.log($('.input2').val('ccc'));
+			};
+		})
+	</script>
+</head>
+<body>
+	<button>测试</button>
+	<div class="box1" name='bbb'>div1</div>
+	<div class="box2" name='ccc'>div2</div>
+	<form action="http://www.kuazhu.com">
+		<input type="text" value="aaa" name="n1" class="input1">
+		<input type="text" value="bbb" name="n2" class="input2">
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>

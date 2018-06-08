@@ -3,45 +3,70 @@
 <head>
 	<meta charset="UTF-8">
 	<title>对象级别的插件</title>
-	<style type="text/css">
+	<style>
 		div{
 			width: 100px;
-			height: 100px;
-			border:1px solid;
+			height: 20px;
+			border: 1px solid #000;
 		}
 	</style>
-	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
-	<script type="text/javascript">
-		$(function(){
+	<script src="../JS/jQuery/jquery-1.12.4.min.js"></script>
+	<script>
+		;(function($){
+			// console.log($.prototype==$.fn);
 			/*
-			$.prototype.setColor=function(options){
-				// this为jQuery对象
-				console.log(this);
+			$.fn.setColor=function(options){
 				var defaults={
-					color:"red";
+					color:'red'
 				}
-				options=$.extend(defaults,options);
+				// console.log(this);//就是jQuery对象
+				options=$.extend(defaults,options)
+				
+				// this.css('color',options.color);
 				this.each(function(){
+					// console.log(this);
 					this.style.color=options.color;
-				})
-				this.css('color','red');
-			};
-			$('button').click(function(){
-				$('div').setColor({
-
-				})
-			})                */
-			$.fn.prototype.setColor=function(){
-				var defaults={
-					color:"red";
-				}
+				});
 			}
+			*/
+			$.fn.extend({
+				setColor: function(options){
+					var defaults={
+						color:'red'
+					}
+					// console.log(this);//就是jQuery对象
+					options=$.extend(defaults,options)
+					
+					// this.css('color',options.color);
+					this.each(function(){
+						// console.log(this);
+						this.style.color=options.color;
+					});
+				},
+				setBackground:function(){
+				}
+			});
+		})(jQuery);
+	</script>
+	<script>
+		$(function(){
+			$('button').click(function(){
+				// $('div').css('color','red');
+				// $('div').setColor('red');
+				// console.log($('div'));
+				// $('div').setColor({
+				// 	color:"yellow"
+				// });
+				$('div').setColor();
+				console.log($('div'));
+			})
 		})
 	</script>
 </head>
 <body>
-	<button>点击</button>
-	<div>1</div>
-	<div>1</div>
+	<button>点我变色</button>
+	<div>我是DIV</div>
+	<div>我是DIV</div>
+	<div>我是DIV</div>
 </body>
 </html>

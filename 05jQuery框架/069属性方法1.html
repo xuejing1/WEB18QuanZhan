@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性方法测试</title>
+	<!-- <script src="../JS/jQuery/jquery-1.12.4.js"></script> -->
+	<script src="../JS/kQuery/kQuery.js"></script>
+	<script>
+		$(function(){
+			// 会返回li里面的内容
+			console.log($('.li1').html());
+			// 传字符串，会把里面的内容改变，并且返回jQuery对象
+			console.log($('.li2').html('haha'));
+			// 传标签，会变内容并且添加该标签
+			console.log($('.li3').html('<p>我是p</p>'));
+			// 返回所有的文本
+			console.log($('.li4').text());
+			// 将文本内容改变
+			console.log($('.li5').text('haha'));
+			// 改变内容并且标签也会被当做文本
+			console.log($('.li6').text('<p>我是p</p>'));			
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li class="li1">li1</li>
+		<li class="li2">li2</li>
+		<li class="li3">li3</li>
+		<li class="li4">li4</li>
+		<li class="li5">li4</li>
+		<li class="li6">li4</li>
+	</ul>
+</body>
+</html>

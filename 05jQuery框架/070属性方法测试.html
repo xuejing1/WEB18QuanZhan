@@ -7,9 +7,18 @@
 	<script type="text/javascript" src="../JS/kQuery/kQuery.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('button')[0].onclick=function(){
-				$('div').attr("name")
-			}
+			$('button')[0].onclick = function(){
+				// 原生的attr必须传参数
+				// 传一个参数是获取
+				console.log($('div').attr('name'));
+				// 传两个参数是设置
+				console.log($('div').attr('name','aaa'));
+				// 传对象也是设置
+				console.log($('div').attr({
+					class:'box',
+					name:'aaa'
+				}));
+			};
 		})
 	</script>
 </head>

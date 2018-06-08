@@ -2,16 +2,30 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>赋值节点</title>
-	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
-	<script type="text/javascript">
+	<title>050-jQuery赋值节点.html</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script src="../JS/jQuery/jquery-1.12.4.js"></script>
+	<script>
 		$(function(){
-			
+			$('div').on('click',function(){
+				alert('click div');
+			});
+			$('button').click(function(){
+				var $div=$('div').clone(true);
+				// console.log($div);
+				$('body').append($div);
+			})
 		})
 	</script>
 </head>
 <body>
-	<input type="button" name="" class="btn" value="克隆">
-	<div></div>
+	<button>克隆</button>
+	<div>我是div</div>
 </body>
 </html>

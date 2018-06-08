@@ -3,26 +3,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>删除节点</title>
-	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
-	<script type="text/javascript">
+	<script src="../JS/jQuery/jquery-1.12.4.js"></script>
+	<style>
+		div{
+			width: 100px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script>
 		$(function(){
-			$('.btn').click(function(){
-				$('li').click(function(){
-					alert('aaa');
-				})
-				// $('ul').remove();
-				// $('ul').empty();
-				$('li').detach();
-			})
+			$('div').click(function(){
+				alert('click div')
+			});
+			$('button').click(function(){
+				// var $res=$('div').remove();
+				// console.log($res);
+				// $('body').append($res);
+				$('div').empty();
+				// var $res=$('div').detach();
+				// console.log($res);
+				// $('body').append($res);
+			});
 		})
 	</script>
 </head>
 <body>
-	<input type="button" name="" class="btn" value="删除">
-	<ul>
-		<li>1</li>
-		<li>2</li>
-		<li>3</li>
-	</ul>
+	<button>删除</button>
+	<div>我第div<h1>我是标题</h1></div>
 </body>
 </html>

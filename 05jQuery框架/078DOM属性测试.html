@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM属性测试</title>
+	<!-- <script type="text/javascript" src="../JS/jQuery/jquery-1.12.4.js"></script> -->
+	<script type="text/javascript" src="../JS/kQuery/kQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('button')[0].onclick = function(){
+				// 可以传参数也可以不传参数,删除所有但是也是返回了所有的
+				console.log($("div").remove());
+				// 删除有box1的但是返回了所有的
+				console.log($("div").remove(".box1"));
+			};
+		})
+	</script>
+</head>
+<body>
+	<button>测试</button>
+	<div class="div1">div1</div>
+	<div class="box1 box2">div2</div>
+	<div class="box2">div3</div>
+</body>
+</html>

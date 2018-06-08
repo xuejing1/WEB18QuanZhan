@@ -3,33 +3,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>添加节点</title>
-	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
-	<script type="text/javascript">
+	<script src="../JS/jQuery/jquery-1.12.4.js"></script>
+	<script>
 		$(function(){
-			$('#btn1').click(function(){
-				var $Li=$("<li>我是创建</li>")
-				// $('ul').append($Li);
-				// $Li.appendTo($('ul'));
-				// $('ul').prepend($Li);
-				$Li.prependTo($('ul'));
-				// $('ul').after($Li);
-				//$('ul').before($Li);	
+			$('button').click(function(){
+				// 父节点jQuery对象.append(子节点jQuery对象)
+				var $li=$('<li>我是新建的li</li>');
+				// $('ul').append($li);
+				// 子节点jQuery对象.appendTo(父节点jQuery对象)
+				// $li.appendTo($('ul'));
+				// 父节点jQuery对象.prepend(子节点jQuery对象)
+				// $('ul').prepend($li);
+				// 子节点jQuery对象.prependTo(父节点jQuery对象)	
+				// $li.prependTo($('ul'));	
+				// $li.after($('ul'));	
+				// $('ul').after($li);	
+				$('ul').before($li);	
 			})
 		})
 	</script>
 </head>
 <body>
-	<input type="button" name="" id="btn1" value="append">
-	<input type="button" name="" id="btn1" value="appendTo">
-	<input type="button" name="" id="btn1" value="创建1">
-	<input type="button" name="" id="btn1" value="创建1">
-	<input type="button" name="" id="btn1" value="创建1">
+	<button>测试</button>
 	<ul>
 		<li>1</li>
 		<li>2</li>
 		<li>3</li>
-		<li>5</li>
-		<li>6</li>
+		<li>4</li>
 	</ul>
 </body>
 </html>

@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>属性方法</title>
+	<title>DOM属性测试</title>
 	<!-- <script type="text/javascript" src="../JS/jQuery/jquery-1.12.4.js"></script> -->
 	<script type="text/javascript" src="../JS/kQuery/kQuery.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('li').html();
+			$('button')[0].onclick = function(){
+				// 清空所有内容，但是class依然在并且返回了所有的
+				console.log($("div").empty());
+			};
 		})
 	</script>
 </head>
 <body>
-	
+	<button>测试</button>
+	<div class="div1">div1</div>
+	<div class="box1 box2">div2</div>
+	<div class="box2">div3</div>
 </body>
 </html>

@@ -3,27 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>替换节点</title>
-	<style type="text/css">
-		div{
-			width: 100px;
-			height: 100px;
-			border:1px solid;
-		}
-	</style>
-	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
-	<script type="text/javascript">
+	<script src="../JS/jQuery/jquery-1.12.4.js"></script>
+	<script>
 		$(function(){
-			$('.btn').click(function(){
-				var $1=$("<h1>我是</h1>");
-				$('div').replaceWidth($1);
+			$('button').click(function(){
+				var $h1=$('<h1>我是标题</h1>');
+				// $('div').replaceWith($h1);
+				// $('div').replaceWith('<h2>我是h2</h2>');
+				$h1.replaceAll('.div2');
 			})
 		})
 	</script>
 </head>
 <body>
-	<input type="button" name="" value="替换" class="btn">
-	<div>
-		恩恩
-	</div>
+	<button>替换</button>
+	<div>我是div1</div>
+	<div class="div2">我是div2</div>
+	<div>我是div3</div>
+	<div>我是div4</div>
 </body>
 </html>
