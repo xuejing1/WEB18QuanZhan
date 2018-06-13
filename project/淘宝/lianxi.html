@@ -85,7 +85,7 @@
 	};
 
 	//css3实现显示隐藏,动画的实现用过渡
-	var css3 = {	
+	var css3={	
 		//淡入淡出的显示隐藏
 		fade:{
 			init:function($elem){
@@ -235,7 +235,6 @@
 						$elem.trigger('shown').data('status','shown');
 					});
 				})
-				
 			},
 			hide:function($elem){
 				hide($elem,function(){
@@ -251,7 +250,6 @@
 			}
 		},
 	}
-	
 	js._init=function($elem){
 		$elem.removeClass('transition');
 		init($elem);
