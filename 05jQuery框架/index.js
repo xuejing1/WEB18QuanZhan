@@ -1,12 +1,12 @@
-;(function(w){
-	var transitionEventName={
-		transition:'transitionend',
-		MozTransition:'transitionend',
-		WebkitTransition:'webkitTransitionEnd',
-		OTransition:'oTransitionend'
+// JS
+var js={
+	// fade:function($elem){
+	// 	$elem.removeClass('transition');
+	// },
+	slideUpDown:{
+		init:function($elem){
+			$elem.removeClass
+		}
 	}
-	var transition={
-		end:'',
-		isSupport:false;
-	}
-})(window);
+
+}
