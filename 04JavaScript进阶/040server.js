@@ -11,6 +11,8 @@ var server=http.createServer(function(req,res){
 	res.setHeader("Access-Control-Allow-origin","http://127.0.0.1:3000");
 	// 允许testHeader请求
 	res.setHeader("Access-Control-Allow-Headers","test");
+	// 允许访问响应头
+	res.setHeader("Access-Control-Expose-Headers","Date");
 	var urlStr=req.url;
 	if(urlStr=='/favicon.ico'){
 		res.statusCode=404;

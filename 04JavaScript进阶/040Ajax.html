@@ -40,6 +40,9 @@
 	            if(oAjax.readyState==4){
 	            	if(oAjax.status==200){
 	            		fnSucc(oAjax.responseText);
+	            		// 设置是否可以取到响应头
+	            		console.log(oAjax.getResponseHeader('Content-Type'));
+	            		console.log(oAjax.getResponseHeader('Date'));
 	            	}else{
 	            		if(fnFaild){
 	            			fnFaild(oAjax.status);
