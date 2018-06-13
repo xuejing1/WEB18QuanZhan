@@ -9,6 +9,8 @@ var server=http.createServer(function(req,res){
 	// 允许哪个域进行跨域请求，*代表所有的域
 	// res.setHeader("Access-Control-Allow-origin","*");
 	res.setHeader("Access-Control-Allow-origin","http://127.0.0.1:3000");
+	// 允许testHeader请求
+	res.setHeader("Access-Control-Allow-Headers","test");
 	var urlStr=req.url;
 	if(urlStr=='/favicon.ico'){
 		res.statusCode=404;
