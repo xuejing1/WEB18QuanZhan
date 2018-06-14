@@ -6,7 +6,9 @@
 </head>
 <body>
 	<input type="button" value="跨域发送请求" id='btn'>
-	<ul id='ul1'></ul>
+	<ul id='ul1'>
+		<img src="images/u=2108320122,1338733484&fm=27&gp=0.jpg">
+	</ul>
 </body>
 <script>
 	//封装成函数
@@ -57,7 +59,7 @@
 		// 调用Ajax函数,有数据的时候传数据，没数据的时候就是空
 		// 此处的地址是要获取的地址文件
 		ajax('GET',
-		 'http://www.a.com:3000/file.json',
+		 'http://10.196.18.35:3000/file.json',
 		 "",
 		 // 回调函数，成功时做的处理
 		function(val){

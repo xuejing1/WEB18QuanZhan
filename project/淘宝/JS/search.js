@@ -1,12 +1,33 @@
 ;(function($){
-	var $searchForm=$('search-form'),
-	$searchInput=$('.search-input'),
-	$searchLayer=$('.search-layer');
-	$searchFrom.on('submit',function(){
-		if(getInputVal()==''){
-			return false;
+	function Search($elem,options){
+		this.$elem=$elem;
+		this.$searchFrom=this.$elem.find('#search-form'),
+		this.searchInput=this.$elem.find('.search-input'),
+		this.$searchLayer=this.$elem.find('.search-layer'),
+		this.$searchBtn=this.$elem.find('.search-btn');
+		this.options=options;
+		this._init();
+		if(this.options.autocomplete){
+			this.autocomplete();
 		}
-	});
+	}
+	Search.prototype={
+		constructor:Search,
+		_init:function(){
+			this.$searchBtn.on('click',$.prototype(this.submit,this));
+		},
+		submit:function(){
+			if(this.getInputVal()==''){
+				return false;
+			}
+			this.$searchFrom.trigger('submit');
+		},
+		autocomplete:function(){
+			this.$searchInput.on('input',$proxy(this.getData,this))
+			.on('focus',$proxy(this.showLayer,this))
+			.on('click',)
+		}
+	}
 	var url='https://suggest.taobao.com/sug?code=utf-8&_ksTS=1528889766600_556&callback=jsonp557&k=1&area=c2c&bucketid=17&q=';
 
 	$searchInput.on('input',function(){
