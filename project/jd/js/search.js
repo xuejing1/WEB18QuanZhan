@@ -10,8 +10,6 @@
 			return this.data[key];
 		}
 	};
-
-
 	function Search($elem,options){
 		this.$elem=$elem;
 		this.$searchFrom=this.$elem.find('#search-form');
@@ -19,11 +17,8 @@
 		this.$searchLayer=this.$elem.find('.search-layer');
 		this.$searchBtn=this.$elem.find('.search-btn');
 		this.options=options;
-
 		this.isLoaded=false;
-
 		this._init();
-
 		if(this.options.autocomplete){
 			this.autocomplete();
 		}
@@ -51,31 +46,25 @@
 					}.bind(this),this.options.getDataInterval)
 				}else{
 					this.getData();
-				}
-				
+				}	
 			}.bind(this))
 			.on('focus',$.proxy(this.showLayer,this))
 			.on('click',function(ev){
 				ev.stopPropagation();
 			});
 			$(document).on('click',$.proxy(this.hideLayer,this));
-
 			//初始化显示隐藏插件
 			this.$searchLayer.showHide(this.options);
 		},
 		getData:function(){
-
 			var inputVal=this.getInputVal();
-
 			if(inputVal==''){
 				return false;
 			}
-
 			if(cache.readData(inputVal)){
 				this.$elem.trigger('getData',[cache.readData(inputVal)]);
 				return;
 			}
-
 			if(this.jqXHR){
 				this.jqXHR.abort();
 			}
@@ -95,7 +84,6 @@
 			.always(function(){
 				this.jqXHR=null;
 			}.bind(this));
-
 		},
 		showLayer:function(){
 			if(!this.isLoaded) return;
@@ -126,7 +114,6 @@
 		getDataInterval:200,
 		url:'https://suggest.taobao.com/sug?code=utf-8&_ksTS=1528889766600_556&k=1&area=c2c&bucketid=17&q='
 	}
-
 	$.fn.extend({
 		search:function(options,val){
 			return this.each(function(){
@@ -143,5 +130,4 @@
 			});
 		}
 	})
-
 })(jQuery);

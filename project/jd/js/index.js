@@ -1,8 +1,6 @@
 ;(function($){
-
 	/*顶部下拉菜单开始*/
 	var $menu=$('.top .dropdown');
-	
 	$menu.on('dropdown-show',function(ev){
 		var $this=$(this);
 		//当需要显示时从服务器获取数据并且加载
@@ -28,16 +26,13 @@
 		});
 
 	});
-	
 	$menu.dropdown({
 		css3:false,
 		js:true,
 		mode:'slideUpDown'
 	});
 	/*顶部下拉菜单end*/
-	
 	/*搜索框begin*/
-
 	var $search=$('.search');
 	$search.search({
 		autocomplete:true,
@@ -75,24 +70,18 @@
 		return html;
 	}
 	/*搜索框end*/	
-
 	/*分类导航开始*/
 	var $category=$('.category .dropdown');
-
 	$category.on('dropdown-show',function(ev){
-		// console.log(this);
 		var $this=$(this);
 		//当需要显示时从服务器获取数据并且加载
-
 		//获取需要请求的地址
 		var loadUrl=$this.data('load');
 		//如果页面上没有设置请求地址直接返回
 		if(!loadUrl) return;
-
 		var isLoaded=$this.data('isLoaded');
 		//如果已经加载过数据了直接返回
-		if(isLoaded) return;
-		
+		if(isLoaded) return;	
 		//如果有请求地址,发送请求获取数据
 		$.getJSON(loadUrl,function(data){
 			var html='';
@@ -109,14 +98,11 @@
 				$this.data('isLoaded',true);
 			},1000);
 		});
-
 	});
 	$category.dropdown({
 		css3:false,
 		js:true,
 		mode:'slideLeftRight'
 	});
-
-	/*分类导航end*/
-
+	/*主要内容导航end*/
 })(jQuery);

@@ -6,10 +6,8 @@
 				btnSelector:'.btn>li',
 				contentSelector:'.content>li',
 				eventType:'click'
-			}
-			
+			}		
 			options=$.extend(defaults,options);
-
 			this.each(function(){
 				var $tab=$(this);
 				var $btns=$tab.find(options.btnSelector);
@@ -18,7 +16,6 @@
 					var index=$(this).index();
 					$tab.find(options.contentSelector).eq(index).show().siblings().hide();
 				});
-
 			})
 		}
 	});
