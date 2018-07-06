@@ -1,4 +1,4 @@
-/*顶部导航开始*/
+顶部导航开始*/
 	.top{
 		height: 44px;
 		background: #f3f5f7;
@@ -262,6 +262,119 @@
 		border: 1px solid;
 		margin-left: 10px;
 	}
+	.sidebar{
+		width: 248px;
+		height: 500px;
+		margin-left: 10px;
+		margin-top: 10px;
+		/*border:1px solid #ccc;*/
+		border-bottom: none;
+	}
+	.sidebar-top{
+		height: 220px;
+		border:1px solid #ccc;
+	}
+	
+	.sidebar-top li:nth-child(1){
+		padding-left: 10px;
+		font-size: 18px;
+		height: 50px;
+		line-height: 50px;
+		color: #b1191a;
+	}
+	.sidebar-top span{
+		float: right;
+		font-size: 14px;
+	}
+	li{
+		list-style: none;
+	}
+	.sidebar-top li a{
+		
+		font-size: 14px;
+		display: inline-block;
+		margin-bottom: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: black;
+		/*font-weight: bold;*/
+	}
+	.sidebar-bottom{
+		/*width: 200px;*/
+		height: 280px;
+		border-top: 1px solid #ccc;
+		border-top: none;
+	}
+	.sidebar-bottom li{
+		width: 60px;
+		height: 91px;
+		border:1px solid #ccc;
+		border-top: none;
+		border-right: none;
+		text-align: center;
+		line-height: 91px;
+	}
+	.sidebar-bottom li:nth-child(4),.sidebar-bottom li:nth-child(8),.sidebar-bottom li:nth-child(12){
+		border-right: 1px solid #ccc;
+		width: 63px;
+	}
+
+		.sidebar{
+		width: 248px;
+		height: 500px;
+		margin-left: 10px;
+		margin-top: 10px;
+		/*border:1px solid #ccc;*/
+		border-bottom: none;
+	}
+	.sidebar-top{
+		height: 220px;
+		border:1px solid #ccc;
+	}
+	
+	.sidebar-top li:nth-child(1){
+		padding-left: 10px;
+		font-size: 18px;
+		height: 50px;
+		line-height: 50px;
+		color: #b1191a;
+	}
+	.sidebar-top span{
+		float: right;
+		font-size: 14px;
+	}
+	li{
+		list-style: none;
+	}
+	.sidebar-top li a{
+		
+		font-size: 14px;
+		display: inline-block;
+		margin-bottom: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: black;
+		/*font-weight: bold;*/
+	}
+	.sidebar-bottom{
+		/*width: 200px;*/
+		height: 280px;
+		border-top: 1px solid #ccc;
+		border-top: none;
+	}
+	.sidebar-bottom li{
+		width: 60px;
+		height: 91px;
+		border:1px solid #ccc;
+		border-top: none;
+		border-right: none;
+		text-align: center;
+		line-height: 91px;
+	}
+	.sidebar-bottom li:nth-child(4),.sidebar-bottom li:nth-child(8),.sidebar-bottom li:nth-child(12){
+		border-right: 1px solid #ccc;
+		width: 63px;
+	}
 /*主要内容结束*/
 /*今日热销开始*/
 	.hot{
@@ -274,4 +387,4 @@
 		height: 300px;
 		background: blue;
 	}
-/*楼层结束*/
+/*楼层结束

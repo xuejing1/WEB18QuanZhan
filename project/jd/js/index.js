@@ -93,9 +93,33 @@
 		js:true,
 		mode:'slideLeftRight'
 	});
-	/*主要内容导航end*/
-	// var $focusCarousel=$('.focus .carousel-container');
-	// $focusCarousel.carousel({
-	// 	activeIndex:5;
-	// })
+	// 主要内容导航end
+	// 轮播图begin
+	var $focusCarousel=$('.focus .carousel-container');
+	var item={};
+	var totalItemNum=0;
+	var loadFn=null;
+	$focusCarousel.on('carousel-show',function(ev,index,elem){
+		if(item[index]!='loaded'{
+			var img=$(elem).find('img');
+			var imgUrl=$img.data('src');
+			loadImage(imgUrl,function(url){
+				$img.attr('src',url);
+			},function(url){
+				$img.attr('src','images/placeholder.png')
+			}
+		});
+		
+		var image=new Image();
+		image.onload=function(){
+			$img.attr('src',imgUrl);
+		}
+		image.src=imgUrl;
+	})
+	$focusCarousel.carousel({
+		activeIndex:0,
+		mode:'fade',
+		interval:0
+	});
+	
 })(jQuery);

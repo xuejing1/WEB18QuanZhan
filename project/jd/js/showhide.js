@@ -111,7 +111,7 @@
 	}
 	css3._show=function($elem,className){
 		show($elem,function(){
-			$elem.show();//dispaly=block
+			$elem.show();
 			$elem
 			//为了解决用户频繁点击触发事件多次执行
 			.off(kuazhu.transition.end)

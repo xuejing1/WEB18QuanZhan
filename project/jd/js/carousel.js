@@ -8,27 +8,48 @@
 		this.controls=$elem.find('.control');
 		this.now=this._getCorrectIndex(options.activeIndex);
 		this._init();
-		if(options.interval){
-			this.auto();
-			var self=this;
-			this.$elem.hover($proxy(self.pause,self),$proxy(self.auto,self));
-		}
 	}
 	Carousel.prototype={
 		constructor:Carousel,
 		_init:function(){
 			var self=this;
-			this.$btns.eq(this.now).addClass('active');
 			if(this.options.mode==='slide'){
-				this.tab=this._slide;
-			}else{
-				this.carouselItems.showHide(this.options);
-				this.tab=this._slide;
-			}
+				this.$carouselItems.on('move moved',function(ev){
+					var index=self.$carouselItems.index(this);
+					if(ev.type=='move'){
+						if(index==self.now){
+							self.$elem.trigger('carousel-hide',[index,this]);
+						}else{
+							self.$elem.trigger('carousel-hhide',[index,this]);
+						}
+					}else if(ev.type=='moved'){
+						if(index==self.now){
+							self.$elem.trigger('carousel-shown',[index,this]);
+						}else{
+							self.$elem.trigger('carousel-hidden',[index,this]);
+						}
+					}
+			});
+			this.$elem.addClass('slide');
+			this.$carouselItems.eq(this.now).css({left:0});
+			this.$itemWidth=this.$carouselItems.eq(0).width();
+			this.$carouselItems.move(this.options);
+			this.transitionClass=this.$carouselItems.eq(this.now).hasClass('transition')? 'transition':'';
+			this.tab=this._slide;
+		}else{
+			this.$carouselItems.on('show shown hide hidden',function(ev){
+				self.$elem.trigger('carousel-'+ev.type,[self.$carouselItems.index(this),this]);
+			});
+			this.$elem.addClass('fade');
+			this.$carouseItems.eq(this.now).show();
+			this.$carouselItems.showHide(this.options);
+			this.tab=this._fade;
+		}
+		this.$btns.eq(this.now).addClass('active');
 			this.$elem.hover(function(){
-				self._show();
+				self.$controlBtns._show();
 			},function(){
-				self._hide();
+				self.$controlBtns._hide();
 			})
 			.on('click','.carousel-btnr',function(){
 				self.tab(self._getCorrectIndex(self.now+1));
@@ -52,7 +73,21 @@
 			this.$btns.eq(index).addClass('active');
 			this.now=index;
 		},
-		_slide(){
+		_slide(index,direction){
+			if(this.now==index) return;
+			if(!direction){
+				if(index>this.now){
+					direction=1;
+				}else{
+					direction=-1;
+				}
+			}
+			this.$carouselItems.eq(index).removeClass(this.transitionClass).css(left:direction*this.itemWidth);
+			setTimeout(function(){
+				this.$carouselItems.eq(this.now).move('x',-1*direction*this.itemWidth)
+				this.$carouselItems.eq(index).addClass(this.transitionClass).move('x',0);
+				this.now=index;
+			}.bind(this),20);
 		},
 		auto(){
 			var self=this;
