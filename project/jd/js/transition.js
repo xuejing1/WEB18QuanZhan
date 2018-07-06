@@ -17,6 +17,6 @@
 		}
 	}
 	//用命名空间存储值
-	w.kuazhu=w.kuazhu || {};
+	w.kuazhu=w.kuazhu||{};
 	w.kuazhu.transition=transition;
 })(window);

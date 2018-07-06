@@ -1,11 +1,11 @@
-;function($){
+;(function($){
 	function Carousel($elem,options){
 		this.$elem=$elem;
 		this.options=options;
-		this.carouselItems=this.$elem.find('.carousel-img');
-		this.btnNum=this.carouselItems.length;
-		this.btns=$elem.find('.carousel-btn');
-		this.controls=$elem.find('.control');
+		this.$carouselItems=this.$elem.find('.carousel-item');
+		this.itemNum=this.$carouselItems.length;
+		this.$btns=$elem.find('.btn-item');
+		this.$controlBtns=$elem.find('.control');
 		this.now=this._getCorrectIndex(options.activeIndex);
 		this._init();
 	}
@@ -13,81 +13,57 @@
 		constructor:Carousel,
 		_init:function(){
 			var self=this;
+			//显示当前的
+			this.$carouselItems.eq(this.now).show();
+			//激活底部对应的按钮
+			this.$btns.eq(this.now).addClass('active');
+
+			//划入划出
 			if(this.options.mode==='slide'){
-				this.$carouselItems.on('move moved',function(ev){
-					var index=self.$carouselItems.index(this);
-					if(ev.type=='move'){
-						if(index==self.now){
-							self.$elem.trigger('carousel-hide',[index,this]);
-						}else{
-							self.$elem.trigger('carousel-hhide',[index,this]);
-						}
-					}else if(ev.type=='moved'){
-						if(index==self.now){
-							self.$elem.trigger('carousel-shown',[index,this]);
-						}else{
-							self.$elem.trigger('carousel-hidden',[index,this]);
-						}
-					}
-			});
-			this.$elem.addClass('slide');
-			this.$carouselItems.eq(this.now).css({left:0});
-			this.$itemWidth=this.$carouselItems.eq(0).width();
-			this.$carouselItems.move(this.options);
-			this.transitionClass=this.$carouselItems.eq(this.now).hasClass('transition')? 'transition':'';
-			this.tab=this._slide;
-		}else{
-			this.$carouselItems.on('show shown hide hidden',function(ev){
-				self.$elem.trigger('carousel-'+ev.type,[self.$carouselItems.index(this),this]);
-			});
-			this.$elem.addClass('fade');
-			this.$carouseItems.eq(this.now).show();
-			this.$carouselItems.showHide(this.options);
-			this.tab=this._fade;
-		}
-		this.$btns.eq(this.now).addClass('active');
-			this.$elem.hover(function(){
-				self.$controlBtns._show();
+				this.tab = this._slide;
+			//淡入淡出	
+			}else{
+				//初始化显示隐藏插件
+				this.$carouselItems.showHide(this.options);
+				this.tab = this._fade;
+			}
+			//绑定事件
+			this.$elem
+			.hover(function(){
+				self.$controlBtns.show();
 			},function(){
-				self.$controlBtns._hide();
+				self.$controlBtns.hide();
 			})
-			.on('click','.carousel-btnr',function(){
+			.on('click','.control-right',function(){
+
 				self.tab(self._getCorrectIndex(self.now+1));
 			})
-			.on('click','.carousel-btnl',function(){
+			.on('click','.control-left',function(){
 				self.tab(self._getCorrectIndex(self.now-1));
-			})
+			});
+
 			this.$btns.on('click',function(){
 				self.tab(self.$btns.index($(this)));
 			});
+
 			if(this.options.interval){
 				this.auto();
-				this.$elem.hover($.proxy(self.pause,self),$.proxy(self.auto,self))
-			}
+				this.$elem.hover($.proxy(self.pause,self),$.proxy(self.auto,self));		
+			}				
 		},
+		//index表示将要显示的索引
 		_fade(index){
 			if(this.now==index) return;
+			//当前的隐藏
 			this.$carouselItems.eq(this.now).showHide('hide');
 			this.$btns.eq(this.now).removeClass('active');
+			//下一张显示
 			this.$carouselItems.eq(index).showHide('show');
 			this.$btns.eq(index).addClass('active');
+
 			this.now=index;
 		},
-		_slide(index,direction){
-			if(this.now==index) return;
-			if(!direction){
-				if(index>this.now){
-					direction=1;
-				}else{
-					direction=-1;
-				}
-			}
-			this.$carouselItems.eq(index).removeClass(this.transitionClass).css(left:direction*this.itemWidth);
-			setTimeout(function(){
-				this.$carouselItems.eq(this.now).move('x',-1*direction*this.itemWidth)
-				this.$carouselItems.eq(index).addClass(this.transitionClass).move('x',0);
-				this.now=index;
-			}.bind(this),20);
+		_slide(){
 		},
 		auto(){
 			var self=this;
@@ -100,8 +76,8 @@
 			clearInterval(this.timer);
 		},
 		_getCorrectIndex(index){
-			if(index>=this.btnNum) return 0;
-			if(index<0) return (this.btnNum-1);
+			if(index>=this.itemNum) return 0;
+			if(index<0) return (this.itemNum-1);
 			return index;
 		}
 	}
@@ -117,7 +93,7 @@
 			return this.each(function(){
 				var $this=$(this);
 				var carousel=$this.data('carousel');
-				if(!carousel){
+				if(!carousel){//单例模式
 					options=$.extend(Carousel.DEFAULTS,options);
 					carousel=new Carousel($(this),options);
 					$this.data('carousel',carousel);
@@ -128,4 +104,4 @@
 			});
 		}
 	})
-}(jQuery)
+})(jQuery);

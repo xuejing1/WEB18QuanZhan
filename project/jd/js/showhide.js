@@ -10,14 +10,15 @@
 	}
 	function show($elem,callBack){
 		if($elem.data('status')=='shown') return;
-		if($elem.data('status')=='show') return;	
+		if($elem.data('status')=='show') return;
+		
 		$elem.data('status','show').trigger('show');
+
 		callBack();	
 	}
 	function hide($elem,callBack){
 		if($elem.data('status')=='hidden') return;
 		if($elem.data('status')=='hide') return;
-
 		$elem.data('status','hide').trigger('hide');
 		callBack();		
 	}
@@ -30,12 +31,14 @@
 			})
 		},
 		hide:function($elem){
+
 			hide($elem,function(){
 				$elem.hide();
 				$elem.trigger('hidden').data('status','hidden');				
 			});
 		}
 	};
+
 	//css3实现显示隐藏,动画的实现用过渡
 	var css3={	
 		//淡入淡出的显示隐藏
@@ -111,7 +114,7 @@
 	}
 	css3._show=function($elem,className){
 		show($elem,function(){
-			$elem.show();
+			$elem.show();//dispaly=block
 			$elem
 			//为了解决用户频繁点击触发事件多次执行
 			.off(kuazhu.transition.end)
@@ -132,9 +135,10 @@
 			$elem
 			.off(kuazhu.transition.end)
 			.one(kuazhu.transition.end,function(){
-				$elem.hide();
+				// console.log('transitionend');
+				$elem.hide();//display:none
 				$elem.trigger('hidden').data('status','hidden');
-			});			
+			});
 			//触发了过渡	
 			$elem.addClass(className);	
 		});			
@@ -203,7 +207,7 @@
 						paddingTop:'0px',
 						paddingBottom:'0px',	
 						opacity:0		
-				});
+					});
 			}			
 		},
 		//淡入淡出左右卷入卷出
@@ -214,7 +218,7 @@
 						paddingLeft:'0px',
 						paddingRight:'0px',
 						opacity:0
-				});
+					});
 			},
 			show:function($elem){
 				js._customShow($elem);
@@ -226,7 +230,7 @@
 						paddingLeft:'0px',
 						paddingRight:'0px',
 						opacity:0				
-				});
+					});
 			}
 		}				
 	}
@@ -263,7 +267,7 @@
 		});		
 	}
 	js._customShow=function($elem){
-		$elem.show();//display:block
+		$elem.show();
 		//获取原始值
 		show($elem,function(){
 			$elem
@@ -283,8 +287,9 @@
 	}
 
 	//根据参数决定使用什么方式的显示和隐藏
-	function showHide($elem,options){	
+	function showHide($elem,options){
 		var showHideFn=null;
+
 		if(options.css3 && kuazhu.transition.isSupport){//css3
 			showHideFn=css3[options.mode];
 		}else if(options.js){//js
@@ -312,11 +317,9 @@
 				if(!mode){
 					options=$.extend(defaults,options);
 					mode=showHide($elem,options);
-					//把有方法(show/hide)的对象存到对应的DOM元素上
 					$elem.data('mode',mode);
 				}
 				if(typeof mode[options]=='function'){
-					//注意，此处要不执行显示隐藏的元素jquery对象传递
 					mode[options]($elem);
 				}
 			});

@@ -39,6 +39,7 @@
 			//获取数据
 			this.$searchInput
 			.on('input',function(){
+
 				if(this.options.getDataInterval){
 					clearTimeout(this.timer);
 					this.timer=setTimeout(function(){
@@ -46,15 +47,18 @@
 					}.bind(this),this.options.getDataInterval)
 				}else{
 					this.getData();
-				}	
+				}
+				
 			}.bind(this))
 			.on('focus',$.proxy(this.showLayer,this))
 			.on('click',function(ev){
 				ev.stopPropagation();
 			});
 			$(document).on('click',$.proxy(this.hideLayer,this));
+
 			//初始化显示隐藏插件
 			this.$searchLayer.showHide(this.options);
+
 		},
 		getData:function(){
 			var inputVal=this.getInputVal();
@@ -82,7 +86,7 @@
 				this.$elem.trigger('getNoData');
 			}.bind(this))
 			.always(function(){
-				this.jqXHR=null;
+				this.jqXHR = null;
 			}.bind(this));
 		},
 		showLayer:function(){
@@ -119,7 +123,7 @@
 			return this.each(function(){
 				var $this=$(this);
 				var search=$this.data('search');
-				if(!search){//单例模式
+				if(!search){
 					options=$.extend(Search.DEFAULTS,options);
 					search=new Search($(this),options);
 					$this.data('search',search);
