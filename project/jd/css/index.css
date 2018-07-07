@@ -1,3 +1,9 @@
+/*
+* @Author: TomChen
+* @Date:   2018-06-08 20:16:50
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-07-07 16:00:31
+*/
 /*顶部导航begin*/
 	.nav-site{
 		height: 44px;
@@ -128,6 +134,9 @@
 	.nav-main{
 		background: black;
 	}
+	.nav-main .container{
+		padding-left: 200px;
+	}
 	.nav-main .link{
 		display: inline-block;
 		height: 50px;
@@ -234,39 +243,93 @@
 		margin: 220px auto;
 
 	}
-	/*.focus .container{
-		position: relative;
-		left:100px;
-	}*/
-	/*.focus .category{
-		position: absolute;
-		left: 0px;
-	}*/
-	.focus .carousel{
-		margin-top: 10px;
-		margin-left: 6px;
-	}
+	
 	.focus .carousel-container,
 	.focus .carousel-container .carousel-item img {
-		width: 768px;
+		width: 728px;
 		height: 504px;
-	}	
-	/*.focus .category{
-		position: absolute;
-		left: 0px;
-	}*/
+	}
 
-	.sidebar{
-		width: 208px;
+	.focus-sidebar {
+		width: 249px;
+	}
+
+	.focus-news {
+		padding: 7px 20px 12px;
+		background-color: #fff;
+		border: 1px solid #d9dde1;
+		border-bottom: none;
+	}
+	.focus-news-head {
+		height: 38px;
+		line-height: 38px;
+	}
+	.focus-news-title {
+		color: #ea675a;
+		font-size: 16px;
+	}
+	.focus-news-body {
+		line-height: 28px;
+	}
+	.focus-service {
+		background-color: #fff;
+		border-left: 1px solid #d9dde1;
+	}
+	.focus-service-item {
+		width: 61px;
+		height: 71px;
+		border-top: 1px solid #d9dde1;
+		border-right: 1px solid #d9dde1;
+		text-align: center;
+	}
+	.focus-service-icon,
+	.focus-service-text {
+		display: inline-block;
+		width: 100%;
+	}
+	.focus-service-icon {
+		margin-top: 17px;
+		color: #f67272;
+		font-size: 22px;
+	}
+	.focus-service-text {
+		margin-top: 6px;
+		color: #4d555d;
+	}
+	.focus-ad {
+		width: 100%;
+		height: 90px;
+		background: url(../images/focus-ad.png) no-repeat;
+	}
+	.focus .slider{
+		margin-left: 8px;
+	}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sidebar{
+		width: 248px;
 		height: 500px;
 		margin-left: 10px;
 		margin-top: 10px;
 		/*border:1px solid #ccc;*/
 		border-bottom: none;
+		/*border: 1px solid #ccc;*/
 	}
 	.sidebar-top{
 		height: 200px;
 		border:1px solid #ccc;
+		/*border-bottom: 1px solid #ccc;*/
 	}
 	
 	.sidebar-top li:nth-child(1){
@@ -294,7 +357,7 @@
 		/*font-weight: bold;*/
 	}
 	.sidebar-bottom{
-		/*width: 200px;*/
+		width: 248px;
 		height: 240px;
 		border-top: 1px solid #ccc;
 		border-top: none;
@@ -306,7 +369,7 @@
 	}
 	.sidebar-bottom li{
 		position: relative;
-		width: 50px;
+		width: 65px;
 		height: 70px;
 		border:1px solid #ccc;
 		border-top: none;
@@ -318,7 +381,7 @@
 		color: #b1191a;
 		font-size: 18px;
 		position: absolute;
-		left: 18px;
+		left: 26px;
 		top: 12px;
 	}
 	.sidebar-bottom li:nth-child(4),.sidebar-bottom li:nth-child(8),.sidebar-bottom li:nth-child(12){
@@ -328,75 +391,104 @@
 	.asidebar-img{
 		margin-top: -30px;
 	}
-/*主要内容end*/
-/*今日热销begin*/
+	.asidebar-img img{
+		width: 248px;
+	}
+/*主要内容结束*/
+/*今日热销开始*/
 	.todays{
-		height: 275px;
+		height: 305px;
+		background: #fff;
 	}
-	.todays .container{
-		width:1200px;
-		height: 100%;
+	.todays .carousel-container{
+		width: 100%;
+		height: 305px;
 	}
-	.todays .container li img{
-		width: 200px;
-		height: 275px;
+	.todays .carousel-container .carousel-item img {
+		width: 240px;
+		height: 305px;
+		float: left;
+	}	
+/*今日热销结束*/
+/*楼层开始*/
+	.floor{
+		background: #fff;
 	}
-	.todays .ul1{
+	.floor .floor-hd{
+		width: 100%;
+		height: 70px;
+		box-sizing: border-box;
+		border-bottom: 1px solid #ccc;
+	}
+	.floor .floor-title{
+		margin-top: 22px;
+		height: 30px;
+		line-height: 30px;
+	}
+	.floor .floor-title .floor-title-num{
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		line-height: 24px;
+		background: #000;
+		color: #fff;
+		font-size: 14px;
+		text-align: center;
+		border-radius: 50%;
+		margin-right: 5px;
+	}
+	.floor .floor-title .floor-title-text{
+		font-size: 16px;
+		font-weight: bold;
+		position: relative;
+		top:2px;
+	}
+	.floor .tab-item-wrap{
+		margin-top: 10px;
+		height: 60px;
+		line-height: 60px;
+	}
+	.floor .tab-item-wrap .tab-item{
+		display: inline-block;
+		margin-right: 10px;
+	}
+	.floor .tab-item-wrap .tab-item:hover{
+		color: #ea675a;
+	}
+	.floor .tab-item-wrap .tab-item.tab-item-active{
+		background: url(../images/floor-arrow.png) no-repeat center bottom;
+		color: #ea675a;
+	}
+	.floor .tab-item-wrap .tab-divider{
+	    width: 1px;
+	    height: 20px;
+	    background: #ccc;
+	    margin-top: 20px;
+	    margin-right: 10px;
+	}
+	.floor .tab-panel{
 		display: none;
 	}
-	.todays .control {	
-		position: absolute;
-		top:50%;
-		width: 24px;
-		height: 40px;
-		line-height: 40px;
-		text-align: center;
-		font-size: 16px;
-		color: #fff;
-		margin-top: -30px;
-		cursor: pointer;
-		font-weight: bolder;
-		background: black;
-		opacity: 0.2;
-	}
-	.todays .control-left{
-		left: 0px;
-	}
-	.todays .control-right{
-		right: 0px;
-	}
-/*今日热销end*/
-/*楼层begin*/
-	.floor{
-		height: 300px;
-	}
-	.floor .floor1-top h2{
-		font-size: 20px;
-	}
-	.floor .floor1-top li{
-		list-style: none;
-		margin-left: 10px;
-	}
-	.floor .floor1-top{
-		width: 1200px;
-		height: 50px;
-		/*line-height: 50px;*/
-		background: white;
-		padding-top: 20px;
-		border-bottom: 1px solid #ccc;
-		
-	}
-	.floor .floor1-bottom li{
+	.floor .floor-item{
 		width: 200px;
-		height: 210px;
-		position: relative;
-		left: 0px;
-		background: white;
-		/*margin-right: 20px;*/
+		height: 234px;
 		text-align: center;
-		padding-top: 20px;
+		cursor: pointer;
 	}
-	.floor .floor1-bottom .price{
-		color: red;
+	.floor .floor-item:hover{
+		box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
 	}
-/*楼层end*/
+	.floor .floor-item .floor-item-pic{
+		margin-top: 24px;
+	}
+	.floor .floor-item .floor-item-name{
+		margin-top: 10px;
+	}
+	.floor .floor-item .floor-item-price{
+		margin-top: 10px;
+		color: #ff1414;
+		font-weight: bold;
+	}
+
+
+/*楼层结束*/

@@ -1,12 +1,16 @@
+
 ;(function($){
 	function DropDown($elem,options){
-		this.$elem=$elem;
-		this.options=options;
-		this.activeClass=this.$elem.data('active')+'-active';
-		this.$layer=this.$elem.find('.dropdown-layer');
-		this._init();	
+		this.$elem = $elem;
+		this.options = options;
+		this.activeClass = this.$elem.data('active') + '-active';
+		this.$layer = this.$elem.find('.dropdown-layer');
+		
+		this._init();
+	
 	}
-	DropDown.prototype={
+
+	DropDown.prototype = {
 		constructor:DropDown,
 		_init:function(){
 			//初始化显示隐藏模块
@@ -19,7 +23,7 @@
 
 			//绑定事件
 			//this.$elem.hover(this.show.bind(this),this.hide.bind(this));
-			if(this.options.eventName=='click'){
+			if(this.options.eventName == 'click'){
 				this.$elem.on('click',function(ev){
 					ev.stopPropagation();
 					this.show();
@@ -32,7 +36,7 @@
 		show:function(){
 			//避免用户快速划过触发事件
 			if(this.options.delay){
-				this.timer=setTimeout(function(){
+				this.timer = setTimeout(function(){
 					//显示下拉层
 					this.$layer.showHide('show');
 					this.$elem.addClass(this.activeClass);		
@@ -53,7 +57,7 @@
 		}
 	};
 
-	DropDown.DEFAULTS={
+	DropDown.DEFAULTS = {
 		css3:false,
 		js:true,
 		mode:'slideUpDown',
@@ -64,14 +68,14 @@
 	$.fn.extend({
 		dropdown:function(options){
 			return this.each(function(){
-				var $this=$(this);
-				var dropdown=$this.data('dropdown');
+				var $this = $(this);
+				var dropdown = $this.data('dropdown');
 				if(!dropdown){//单例模式
-					options=$.extend(DropDown.DEFAULTS,options);
-					dropdown=new DropDown($(this),options);
+					options  = $.extend({},DropDown.DEFAULTS,options);
+					dropdown = new DropDown($(this),options);
 					$this.data('dropdown',dropdown);
 				}
-				if(typeof dropdown[options]=='function'){
+				if(typeof dropdown[options] == 'function'){
 					dropdown[options]();
 				}
 			});

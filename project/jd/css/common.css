@@ -102,8 +102,8 @@
 		top:100%;
 		left:0px;
 	}
-/*搜索框公共样式end*/
-/*轮播图公共样式begin*/
+/*搜索框公共样式结束*/
+/*轮播图公共样式开始*/
 	.carousel-container{
 		position: relative;
 		overflow: hidden;
@@ -157,8 +157,10 @@
 	.carousel-container.fade .carousel-item{
 		display: none;
 	}
-
-/*轮播图公共样式end*/
+	.carousel-container.slide .carousel-item{
+		left:100%;
+	}
+/*轮播图公共样式结束*/
 
 
 
