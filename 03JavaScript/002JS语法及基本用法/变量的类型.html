@@ -11,7 +11,7 @@
 		// 改变的a的值不会影响b的值
 		var a=a+2;
 		var obj={
-			c:1,d:2;
+			c:1,d:2
 		}
 		var obj2=obj;
 		// obj和obj2里面的数会一样，为c:1,d:2,e:1;
@@ -19,6 +19,8 @@
 		// 相当于复制的名字而不是储存空间
 		// 返回object数据类型属于引用类型，除了object，其他都属于基本数据类型
 		obj2.e=1;
+		console.log(obj2);
+		console.log(obj);
 	</script>
 </head>
 <body>

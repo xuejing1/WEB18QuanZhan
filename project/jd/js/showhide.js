@@ -11,9 +11,7 @@
 	function show($elem,callBack){
 		if($elem.data('status')=='shown') return;
 		if($elem.data('status')=='show') return;
-		
 		$elem.data('status','show').trigger('show');
-
 		callBack();	
 	}
 	function hide($elem,callBack){
@@ -31,14 +29,12 @@
 			})
 		},
 		hide:function($elem){
-
 			hide($elem,function(){
 				$elem.hide();
 				$elem.trigger('hidden').data('status','hidden');				
 			});
 		}
 	};
-
 	//css3实现显示隐藏,动画的实现用过渡
 	var css3={	
 		//淡入淡出的显示隐藏
@@ -135,8 +131,7 @@
 			$elem
 			.off(kuazhu.transition.end)
 			.one(kuazhu.transition.end,function(){
-				// console.log('transitionend');
-				$elem.hide();//display:none
+				$elem.hide();
 				$elem.trigger('hidden').data('status','hidden');
 			});
 			//触发了过渡	
@@ -235,7 +230,7 @@
 		}				
 	}
 	js._init=function($elem){
-		$elem.removeClass('transition');//避免和css3的过渡发生冲突
+		$elem.removeClass('transition');
 		init($elem);
 	}
 	js._show=function($elem,mode){
