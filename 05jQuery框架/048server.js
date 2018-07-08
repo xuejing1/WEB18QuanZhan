@@ -7,7 +7,6 @@ var server=http.createServer(function(req,res){
 	// res.setHeader("Access-Control-Allow-Origin","http://127.0.0.1:3000");
 	// res.setHeader("Access-Control-Allow-Origin","*");
 	var urlStr=req.url;
-	console.log("req url:::",urlStr);
 	//如果请求的是/favicon.ico直接返回
 	if(urlStr=='/favicon.ico'){
 		res.statusCode=404;
@@ -28,8 +27,8 @@ var server=http.createServer(function(req,res){
 			res.statusCode=200;
 			res.end(strBody);
 		});
-
-	}else{//处理GET请求
+	}else{
+		//处理GET请求
 		//如果请求中有参数,把参数返回给前端页面
 		if(urlStr.search(/\?/)!=-1){
 			var prams=url.parse(urlStr,true).query;

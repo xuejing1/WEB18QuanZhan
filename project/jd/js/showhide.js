@@ -1,10 +1,8 @@
-
 ;(function($) {
-	//共通的初始化方法
 	function init($elem,hiddenCallBack){
 		if($elem.is(':hidden')){
 			$elem.data('status','hidden');
-			if(typeof hiddenCallBack == 'function') hiddenCallBack();
+			if(typeof hiddenCallBack=='function') hiddenCallBack();
 		}else{
 			$elem.data('status','shown');
 		}		
@@ -18,8 +16,8 @@
 		callBack();	
 	}
 	function hide($elem,callBack){
-		if($elem.data('status') == 'hidden') return;
-		if($elem.data('status') == 'hide') return;
+		if($elem.data('status')=='hidden') return;
+		if($elem.data('status')=='hide') return;
 
 		$elem.data('status','hide').trigger('hide');
 		callBack();		

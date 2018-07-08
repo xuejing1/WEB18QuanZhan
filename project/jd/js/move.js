@@ -1,14 +1,13 @@
 
 ;(function($){
 	function init($elem){
-		this.$elem = $elem;
-		this.currentX = parseFloat(this.$elem.css('left'));
-		this.currentY = parseFloat(this.$elem.css('top'));			
+		this.$elem=$elem;
+		this.currentX=parseFloat(this.$elem.css('left'));
+		this.currentY=parseFloat(this.$elem.css('top'));			
 	}
-
 	function to(x,y,callBack){
-		x = (typeof x == 'number') ? x : this.currentX; 
-		y = (typeof y == 'number') ? y : this.currentY; 
+		x = (typeof x=='number') ? x : this.currentX; 
+		y = (typeof y=='number') ? y : this.currentY; 
 
 		if(this.currentX == x && this.currentY == y) return;
 
