@@ -93,9 +93,7 @@
 			this.to(null,y);
 		}
 	}
-
 	var mode=null;
-
 	function move($elem,options){
 		if(options.css3&&kuazhu.transition.isSupport){
 			mode=new Css3($elem);
@@ -112,12 +110,10 @@
 			y:$.proxy(mode.y,mode)
 		}			
 	}
-
 	var DEFAULTS={
 		css3:true,
 		js:true
 	}
-
 	$.fn.extend({
 		move:function(options,x,y){
 			return this.each(function(){

@@ -27,12 +27,12 @@
 		show:function(){
 			if(this.options.delay){
 				this.timer=setTimeout(function(){
-					//显示下拉层
+					//显示
 					this.$layer.showHide('show');
 					this.$elem.addClass(this.activeClass);		
 				}.bind(this),this.options.delay)
 			}else{
-				//显示下拉层
+				//显示
 				this.$layer.showHide('show');
 				this.$elem.addClass(this.activeClass);					
 			}	
@@ -41,12 +41,11 @@
 			if(this.options.delay){
 				clearTimeout(this.timer);
 			}
-			//隐藏下拉层
+			//隐藏
 			this.$layer.showHide('hide');
 			this.$elem.removeClass(this.activeClass);	
 		}
 	};
-
 	DropDown.DEFAULTS={
 		css3:false,
 		js:true,
