@@ -21,13 +21,13 @@
 						if(index==self.now){
 							self.$elem.trigger('carousel-hide',[index,this]);
 						}else{
-							self.$elem.trigger('carousel-show',[index,this]);
+						 	self.$elem.trigger('carousel-show',[index,this]);
 						}
 					}else if(ev.type=='moved'){
 						if(index==self.now){
-							self.$elem.trigger('carousel-shown',[index,this]);
+						 	self.$elem.trigger('carousel-shown',[index,this]);
 						}else{
-							self.$elem.trigger('carousel-hidden',[index,this]);
+						 	self.$elem.trigger('carousel-hidden',[index,this]);
 						}
 					}
 				});
@@ -42,16 +42,11 @@
 					self.$elem.trigger('carousel-'+ev.type,[self.$carouselItems.index(this),this]);
 				});
 				this.$elem.addClass('fade');
-				//显示当前的
 				this.$carouselItems.eq(this.now).show();								
-				//初始化显示隐藏插件
 				this.$carouselItems.showHide(this.options);
 				this.tab=this._fade;
 			}
-			//激活底部对应的按钮
 			this.$btns.eq(this.now).addClass('active');	
-
-			//绑定事件
 			this.$elem
 			.hover(function(){
 				self.$controlBtns.show();
@@ -59,55 +54,45 @@
 				self.$controlBtns.hide();
 			})
 			.on('click','.control-right',function(){
-				//划动时向左划,方向是1
 				self.tab(self._getCorrectIndex(self.now+1),1);
 			})
 			.on('click','.control-left',function(){
-				//划动时向右划,方向是-1
 				self.tab(self._getCorrectIndex(self.now-1),-1);
 			});
-
 			this.$btns.on('click',function(){
 				self.tab(self.$btns.index($(this)));
 			});
-
 			if(this.options.interval){
 				this.auto();
 				this.$elem.hover($.proxy(self.pause,self),$.proxy(self.auto,self));		
 			}				
 		},
-		//index表示将要显示的索引
 		_fade(index){
 			if(this.now==index) return;
-			//当前的隐藏
 			this.$carouselItems.eq(this.now).showHide('hide');
 			this.$btns.eq(this.now).removeClass('active');
-			//下一张显示
 			this.$carouselItems.eq(index).showHide('show');
 			this.$btns.eq(index).addClass('active');
-
 			this.now=index;
 		},
 		_slide(index,direction){
 			if(this.now==index) return;
+			// 确定方向
 			if(!direction){
 				if(index>this.now){
 					direction=1;
 				}else{
 					direction=-1;
-				}				
+				}		
 			}
 			this.$carouselItems.eq(index).removeClass(this.transitionClass).css({left:direction*this.itemWidth});
 			setTimeout(function(){
-				//让当前的的划出
 				this.$carouselItems.eq(this.now).move('x',-1*direction*this.itemWidth)
-				//让指定的划入
 				this.$carouselItems.eq(index).addClass(this.transitionClass).move('x',0);
 				this.now=index;
 			}.bind(this),20);
-
 			this.$btns.eq(this.now).removeClass('active');
-			this.$btns.eq(index).addClass('active');			
+			this.$btns.eq(index).addClass('active');	
 		},
 		auto(){
 			var self=this;
