@@ -295,18 +295,29 @@
 				$doc.trigger('floor-loaded');
 
 			}
-		});
-
+		});         
 	}
+	function whichFloor(){
+		var num=-1;
+		$floors.each(function(index,elem){
+			if($win.scrollTop()<$(elem).offfset).top(){
+				num=index-1;
+				return false;
+			}
+		})
+		return num;
+	}
+	var $elevator=$('#elevator');
+	var 
 	//楼层选项卡
-	$floor.tab({
-		css3:false,
-		js:false,
-		mode:'fade',
-		eventName:'mouseenter',
-		activeIndex:0,
-		delay:200,
-		interval:0
-	});
+	// $floor.tab({
+	// 	css3:false,
+	// 	js:false,
+	// 	mode:'fade',
+	// 	eventName:'mouseenter',
+	// 	activeIndex:0,
+	// 	delay:200,
+	// 	interval:0
+	// });
 	/*楼层结束*/
 })(jQuery);

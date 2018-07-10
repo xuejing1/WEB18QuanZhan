@@ -1,10 +1,4 @@
-/*
-* @Author: TomChen
-* @Date:   2018-06-08 20:16:50
-* @Last Modified by:   TomChen
-* @Last Modified time: 2018-07-07 16:00:31
-*/
-/*顶部导航begin*/
+顶部导航begin*/
 	.nav-site{
 		height: 44px;
 		background: #f3f5f7;
@@ -479,4 +473,16 @@
 		color: #ff1414;
 		font-weight: bold;
 	}
-/*楼层end*/
+	/*电梯begin*/
+	.floorList{
+		width: 30px;
+		height: 30px;
+		border:1px solid #ccc;
+	}
+	.floorList-f{
+		background: #fff;
+		position: fixed;
+		
+	}
+	/*电梯end*/
+/*楼层end
