@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie</title>
+	<script type="text/javascript">
+		//存储  获取 删除
+		// document.cookie='Ami:20';
+		// console.log(document.cookie);
+		// 参数是键、值、过期时间
+		function setCookie(key,value,iDate){
+			var oDate=new Date();
+			oDate.setDate(oDate.getDate()+iDate);
+		}
+		setCookie('sex','男',1);
+		console.log(document.cookie);
+		function getCookie(key){
+			var value='';
+			var str=document.cookie;
+			for(var i=0;i<arr.length;i++){
+				var arr1=str.split('=');
+				if(arr2[0].trim()==key.trim()){
+					result=arr2[1];
+					break;	
+				}
+			}
+			return result;
+		}
+		function removeCookie(key){
+			setCookie(key,false,-1);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

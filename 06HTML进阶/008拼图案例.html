@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拼图案例</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.container{
+			width: 500px;
+			height: 300px;
+			border:1px solid;
+			margin: 50px auto;
+		}
+		.container li{
+			width: 100px;
+			height: 150px;
+			float: left;
+			list-style: none;
+		}
+		.container img{
+			width: 100px;
+			height: 150px;
+
+		}
+	</style>
+</head>
+<body>
+	<ul class="container">
+		<li draggable="true"><img src="images/01.png"></li>
+		<li draggable="true"><img src="images/03.png"></li>
+		<li draggable="true"><img src="images/02.png"></li>
+		<li draggable="true"><img src="images/09.png"></li>
+		<li draggable="true"><img src="images/07.png"></li>
+		<li draggable="true"><img src="images/06.png"></li>
+		<li draggable="true"><img src="images/05.png"></li>
+		<li draggable="true"><img src="images/08.png"></li>
+		<li draggable="true"><img src="images/04.png"></li>
+		<li draggable="true"><img src="images/10.png"></li>
+	</ul>
+</body>
+<script type="text/javascript" src="jQuery/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var targeEle=null;
+		$(".container")
+		.on('dragstart','li',function(ev){
+			targeEle=this;
+		})
+		.on('drop','li',function(ev){
+			if(targeEle!=this){
+				var tmp=targeEle.innerHTML;
+				targeEle.innerHTML=this.innerHTML;
+				this.innerHTML=tmp;
+			}
+		})
+		.on('dragover','li',function(ev){
+			ev.preventDefault();
+		});
+	})
+</script>
+</html>

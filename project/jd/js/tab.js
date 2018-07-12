@@ -36,18 +36,16 @@
 			if(this.options.interval){
 				this.auto();
 				this.$elem.hover($.proxy(self.pause,self),$.proxy(self.auto,self));		
-			}			
+			}
 		},
 		toggle:function(index){
 			if(this.now==index) return;
 			//隐藏当前的
 			this.$tabItems.eq(this.now).removeClass('tab-item-active');
 			this.$tabPanels.eq(this.now).showHide('hide');
-			//显示index对应的
 			this.$tabItems.eq(index).addClass('tab-item-active');
 			this.$tabPanels.eq(index).showHide('show');	
-
-			this.now=index;		
+			this.now=index;	
 		},
 		auto(){
 			var self=this;
@@ -58,7 +56,7 @@
 		},
 		pause(){
 			clearInterval(this.autoTimer);
-		},		
+		},
 		_getCorrectIndex(index){
 			if(index>=this.itemNum) return 0;
 			if(index<0) return (this.itemNum-1);

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>jQuery其他静态方法</title>
-	<script type="text/javascript" src="../JS/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="../JS/jQuery/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			var str='    --a b c--   ';
@@ -15,12 +15,13 @@
 			// $.trim(字符串)，去除字符串两边的空格
 			console.log(str);
 			console.log($.trim(str));
-			// $.isWindow()判断括号里面的是不是window
+			// $.isWindow()判断括号里面的参数对象是不是window对象
 			console.log($.isWindow(str));
 			console.log($.isWindow(window));
 			// isArray()判断括号里面的是不是数组
 			console.log($.isArray(arr));
 			console.log($.isArray(str));
+			console.log($.isArray(arrLike));
 			//  isFunction()判断括号里面的是不是函数
 			console.log($.isFunction(arrLike));
 			console.log($.isFunction(show));

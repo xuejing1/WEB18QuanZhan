@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>调查问卷案例</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.box-name{
+			margin-left: 30%;
+		}
+		.box .targets{
+			width: 500px;
+			height: 600px;
+			border-left: 1px solid red;
+			margin-left: 50%;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box-name">
+			<h2>调查问卷</h2>
+		</div>
+		<div class='targets'>
+			<div class="target" id="container1">
+				<label for="">姓名</label>
+				<input type="text" name="" id="txt">
+			</div>
+			<div class="target">
+				<label for="">年龄</label>
+				<input type="tetx" name="" id="txt2">
+			</div>
+			<div class="target">
+				<input type="checkbox" name="">	篮球
+				<input type="checkbox" name="">	足球
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		var targetEle=null;
+		$('.targets')
+		.on('dragstart','.target',function(){
+			targetEle=this;
+		});
+		$('.box-name')
+		.on('drop',function(){
+			$(this).append($(targetEle).clone());
+
+		})
+		.on('dragover',function(ev){
+			ev.preventDefault();
+		});
+	})
+</script>
+</html>
