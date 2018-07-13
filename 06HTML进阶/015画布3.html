@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画布</title>
+	<style type="text/css">
+		canvas{
+			border:1px solid;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="500" height="500" id="canvas">
+		您的浏览器版本过低
+	</canvas>
+</body>
+<script type="text/javascript">
+	var oCanvas=document.getElementById('canvas');
+	var ctx=oCanvas.getContext('2d');
+	ctx.moveTo(0,0);
+	ctx.lineTo(100,100);
+	ctx.lineTo(100,200);
+	ctx.strokeStyle='red';
+	// 填充颜色
+	ctx.fillStyle='yellow';
+	ctx.lineWidth=1;
+	ctx.fill();
+	ctx.closePath();
+	ctx.stroke();
+	// 调用两次stroke()时后面的会把之前的在复制一次，使用ctx.beginPath()来解决这个现象
+	ctx.beginPath()
+	ctx.moveTo(300,300);
+	ctx.lineTo(400,400);
+	ctx.stroke();
+</script>
+</html>

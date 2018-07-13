@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画布</title>
+	<style type="text/css">
+		canvas{
+			border:1px solid;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="200" height="200" id="canvas">
+		您的浏览器版本过低
+	</canvas>
+</body>
+<script type="text/javascript">
+	var oCanvas=document.getElementById('canvas');
+	var ctx=oCanvas.getContext('2d');
+	ctx.moveTo(0,0);
+	ctx.lineTo(100,100);
+	ctx.strokeStyle='red';
+	ctx.lineWidth=10;
+	ctx.stroke();
+</script>
+</html>

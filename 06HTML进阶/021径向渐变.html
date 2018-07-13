@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画圆</title>
+	<style type="text/css">
+		canvas{
+			border:1px solid;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas">
+		您的浏览器版本过低
+	</canvas>
+</body>
+<script type="text/javascript">
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=600;
+	oCanvas.height=600;
+	var ctx=oCanvas.getContext('2d');
+	ctx.beginPath();
+	// 创建渐变对象
+	var radialGradient=ctx.createRadialGradient(300,300,0,300,300,50);
+	// 由对一个到第二个的渐变
+	radialGradient.addColorStop(0.1,'rgb(250,0,0)');
+	radialGradient.addColorStop(1,'rgb(0,0,250)');
+	ctx.fillStyle=radialGradient;
+	ctx.arc(300,300,2*Math.PI,true);
+	ctx.fill();
+
+</script>
+</html>

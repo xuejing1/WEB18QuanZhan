@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画布</title>
+	<style type="text/css">
+	/*css设置的大小是在原来大小的基础上进行拉伸，拉伸css设置的大小*/
+		#canvas1{
+			border:1px solid;
+		}
+		#canvas2{
+			width: 500px;
+			height: 500px;
+			border:1px solid;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="200" height="200" id="canvas1">
+		您的浏览器版本过低
+	</canvas>
+	<canvas width="200" height="200" id="canvas2">
+		您的浏览器版本过低
+	</canvas>
+</body>
+<script type="text/javascript">
+	var oCanvas1=document.getElementById('canvas1');
+	var oCanvas2=document.getElementById('canvas2');
+	var ctx1=oCanvas1.getContext('2d');
+	ctx1.moveTo(0,0);
+	ctx1.lineTo(100,100);
+	ctx1.strokeStyle='red';
+	ctx1.lineWidth=10;
+	ctx1.stroke();
+	var ctx2=oCanvas2.getContext('2d');
+	ctx2.moveTo(0,0);
+	ctx2.lineTo(100,100);
+	ctx2.strokeStyle='yellow';
+	ctx2.lineWidth=10;
+	ctx2.stroke();
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画圆</title>
+	<style type="text/css">
+		canvas{
+			border:1px solid;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="500" height="500" id="canvas">
+		您的浏览器版本过低
+	</canvas>
+</body>
+<script type="text/javascript">
+	var oCanvas=document.getElementById('canvas');
+	var ctx=oCanvas.getContext('2d');
+	ctx.arc(200,200,100,0,2*Math.PI,true);
+	ctx.fillStyle='yellow';
+	ctx.fill();
+	ctx.stroke();
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本填充与描边</title>
+	<style type="text/css">
+		canvas{
+			border:1px solid;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas">
+		您的浏览器版本过低
+	</canvas>
+</body>
+<script type="text/javascript">
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=500;
+	oCanvas.height=500;
+	var ctx=oCanvas.getContext('2d');
+	ctx.beginPath();
+	var str='hello Ami';
+	// 文本填充
+	ctx.fillText(str,100,100);
+	// 文本描边
+	ctx.strokeText(str,200,200);
+</script>
+</html>
