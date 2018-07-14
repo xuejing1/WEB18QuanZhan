@@ -1,0 +1,35 @@
+.box1 {
+  background: #ff6700;
+  border: 1px solid;
+}
+.box2 {
+  -webkit-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px; 
+}
+.box3 {
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  background: #ff6700;
+}
+.box4 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-color: yellow transparent transparent transparent;
+}
+.box5 {
+  width: 100px;
+  height: 100px;
+}
+.box5 li {
+  color: #ff6700;
+}
+.box5 li p:hover {
+  color: #fff;
+}

@@ -1,0 +1,91 @@
+@background:#ff6700;
+@border:1px solid;
+@color:#ff6700;
+.box1{
+	width: 100px;
+	height: 100px;
+	background:@color;
+	border:1px solid;
+}
+.box2(){
+	.box1; 
+};
+.border-radius(@border-width){
+	-webkit-border-radius:@border-width;
+	-ms-border-radius:@border-width;
+	-moz-border-radius:@border-width;
+	-o-border-radius:@border-width;
+	border-radius:@border-width;
+}
+.border-radius-def(@border-width:20px){
+	-webkit-border-radius:@border-width;
+	-ms-border-radius:@border-width;
+	-moz-border-radius:@border-width;
+	-o-border-radius:@border-width;
+	border-radius:@border-width;
+}
+.box2{
+	.border-radius-def();
+}
+.box3{
+	.border-radius(10px);
+	background:@background;
+}
+.triangle(top){
+	width: 0;
+	height: 0;
+	overflow: hidden; 
+	border-color:  yellow transparent transparent transparent;
+}
+.triangle(right){
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-color: transparent blue transparent transparent;
+}
+.triangle(bottom){
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-color: transparent transparent green transparent;
+}
+.triangle(left){
+	width: 0;
+	height: 0;
+	overflow: hidden; 
+	border-color:  transparent transparent transparent red;
+}
+.box4{
+	.triangle(top);
+}
+.fs(@s){
+	// 加减乘除都可以用
+	font-size: @s+10px;
+}
+.box5{
+	width: 100px;
+	height: 100px;
+	.fs(10px);
+	li{
+		color:@color;
+		&:hover{
+			color:#fff;
+		}
+	}
+}
+
+.box6{
+	font-size: ~'calc(50px - 10px)';
+	width:~'calc(100px-20px)';
+}
+.box8{
+	.box1 !important;
+}
+.setStyle(@attr,@value){
+	@{attr}:unit(@value,px);
+}
+// 设置
+.box9{
+	.setStyle(width,100);
+	.setStyle(height,100);
+}
