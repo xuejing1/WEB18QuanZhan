@@ -1,0 +1,27 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+@rem:32;
+.rem(@attr,@px){
+	@{attr}:unit(@px/@rem,rem);
+}
+.rem(@attr,@px1,@px2){
+	@{atttr}:unit(@px1/@rem) unit(@px2/@rem,rem);
+}
+.rem(@attr,@px1,@px2,@px3){
+	@{atttr}:unit(@px1/@rem) unit(@px2/@rem,rem) unit(@px3/@rem,rem);
+}
+.rem(@attr,@px1,@px2,@px3,@px4){
+	@{atttr}:unit(@px1/@rem) unit(@px2/@rem,rem) unit(@px3/@rem,rem) unit(@px4/@rem,rem);
+}
+@border-color: #e5e5e5;
+.header{
+	.rem(height,45);
+	.rem(line-height,45);
+}
+img{
+	.rem(width,500);
+	float: left;
+	margin:10px 20px 30px 40px;
+}

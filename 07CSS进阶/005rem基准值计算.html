@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/rem.css">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+/*		html{
+			font-size: 15px;
+		}*/
+		img{
+			float: left;
+			width: 5rem;
+		}
+		h1{
+			font-size: 2rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="images/u=2118739199,3378602431&fm=27&gp=0.jpg">
+		<h1>我是标题我是标题我是标题我是标题我是标题我是标题我是标题</h1>
+	</div>
+</body>
+	<script type="text/javascript">
+		(function(win,doc){
+			var oRoot=doc.getElementsByTagName('html')[0];
+			function refreshFontsize(){
+				var iWidth=doc.body.clientWidth || doc.documentElement.clientWidth;
+				var iFontSize=iWidth/10;
+				oRoot.style.fontsize=iFontSize+'px';
+			}
+			win.addEventListen('resize',refreshFontsize,false);
+			doc.addEventListen('DOMContentLoaded',refreshFontsize,false);
+		})(window,document)
+	</script>
+	<!-- https://jingyan.baidu.com/album/6fb756ec792436241958fb7c.html?picindex=2 -->
+</html>

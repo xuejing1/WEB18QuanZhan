@@ -1,0 +1,13 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.header {
+  height: 1.40625rem;
+  line-height: 1.40625rem;
+}
+img {
+  width: 15.625rem;
+  float: left;
+  margin: 10px 20px 30px 40px;
+}
