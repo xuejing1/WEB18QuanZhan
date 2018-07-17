@@ -22,6 +22,7 @@
 	.rem(font-size,20);
 	// border:1px solid @border-color;
 	border-bottom:1px solid @border-color;
+	box-sizing: border-box;
 }
 .container1{
 	display: inline-block;
@@ -97,11 +98,11 @@
 	}
 }
 .main{
-	.rem(height,164);
+	.rem(height,140);
 	.rem(font-size,14);	
 	.main-top{
 		width: 100%;
-		.rem(height,110);
+		.rem(height,90);
 		// .rem(line-height,110);
 		.book{
 			width: 128px;
@@ -126,7 +127,7 @@
 
 		.name{
 			.rem(width,200);
-			.rem(height,110);
+			.rem(height,80);
 			float: right;
 			.weight{
 				font-size: 14px;
@@ -146,8 +147,8 @@
 			.minus{
 				display: inline-block;
 				.rem(width,30);
-				.rem(height,30);
-				.rem(line-height,30);
+				.rem(height,25);
+				.rem(line-height,25);
 				background: @color5;
 				color:#ebebeb;
 				font-weight: bolder;
@@ -157,8 +158,8 @@
 			}
 			.number{
 				.rem(width,46);
-				.rem(height,30);
-				.rem(line-height,30);
+				.rem(height,25);
+				.rem(line-height,25);
 				display: inline-block;
 				color:@color6;
 				background: @color5;
@@ -169,8 +170,8 @@
 			}
 			.add{
 				.rem(width,30);
-				.rem(height,30);
-				.rem(line-height,30);
+				.rem(height,20);
+				.rem(line-height,20);
 				display: inline-block;
 				color:@color6;
 				font-size: 28px;
@@ -184,7 +185,7 @@
 				color:@color6;
 				font-size:12px;
 				position: absolute;
-				right: 60px;
+				right: 50px;
 			}
 			.delate{
 				color:@color6;
@@ -199,7 +200,7 @@
 		.rem(height,40);
 		.rem(line-height,40);
 		background:#fff4f5;
-		margin-top: 14px;
+		margin-top: 20px;
 		position: absolute;
 		right: 10px;
 	}
@@ -218,4 +219,67 @@
 		font-size:12px;
 		font-weight: bolder;
 	}
+}
+.bottom{
+	.rem(height,50);
+	.rem(line-height,50);
+	.rem(font-size,16);
+	.select{
+		.rem(width,42);
+		.asign{
+			margin-top: 20px;
+			display: inline-block;
+			.rem(width,20);
+			.rem(height,20);
+			border-radius: 50%;
+			border: 1px solid @color4;
+			margin-left: 10px;
+			box-sizing: border-box;
+		}
+		p{	
+			.rem(font-size,10);
+			position: absolute;
+			left: 8px;
+			bottom: 30px;
+			color:@color4;
+		}
+	}
+	.add{
+		.rem(width,130);
+		.rem(height,50);
+		position: absolute;
+		right: 112px;
+		bottom:40px;
+		// border:1px solid;
+		.adds{
+			position: absolute;
+			top: -10px;
+			left: 28px;
+			font-weight: bolder;
+		}
+		.price{
+			position: absolute;
+			top: -10px;
+			right: 0px;
+			color:@color3;
+			font-weight: bolder;
+		}
+		p{
+			.rem(font-size,12);
+			position: absolute;
+			bottom: -10px;
+			right: 0px;
+			color:@color4;
+		}
+	}
+	.adds1{
+		.rem(width,110);
+		.rem(height,50);
+		.rem(line-height,50);
+		background: #d7d7d7;
+		position: absolute;
+		right: 0px;
+		bottom:40px;
+	}
+	border-top:1px solid @border-color;
 }

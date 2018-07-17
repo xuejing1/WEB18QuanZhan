@@ -1,0 +1,32 @@
+.header{
+	position: relative;
+	left: 100px;
+}
+/*.container1{
+	position: relative;
+}*/
+.carousel .container1{
+	position: relative;
+	width: 465;
+	height: 666px;
+}
+.carousel .container1 li{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		float: left;
+}
+.carousel img{
+	width: 465px;
+	height: 666px;
+}
+.carousel .container2{
+	float: right;
+	top: 0px;
+}
+
+.zl{
+	float: right;
+	width: 100px;
+	
+}
