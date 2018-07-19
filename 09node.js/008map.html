@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>map</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+	let obj1={name:'Ami'};
+	let obj2={};
+	obj2[obj1]='jsssss';
+	console.log(obj2);
+	console.log(obj2[obj1]);
+
+	for(key in obj2){
+		console.log(key);
+		console.log(obj2[key]);
+	}
+
+
+	let obj1={name:'Ami'};
+	let map=new Map();
+	console.log(map);
+	map.set('name','Ami');
+	map.set(obj1,'shhsjs');
+
+	console.log(map);
+	console.log(map.size);
+
+	console.log(map.has)
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let变量定义</title>
+	<style type="text/css">
+		li{
+			list-style: none;
+			width: 20px;
+			height: 20px;
+			border: 1px solid;
+		}
+	</style>
+	<script type="text/javascript">
+		let name='Ami';
+		console.log(name);
+		function showAge1(){
+			let age=20;
+			function showAge2(){
+				let age=18;
+				console.log(age);
+			}
+			showAge2();
+			console.log(age);
+		}
+		showAge1();
+		window.onload=function(){
+			var oLi=document.getElementsByTagName('li');
+			for(let i=0;i<oLi.length;i++){
+				oLi[i].onclick=function(){
+					console.log(i);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>
