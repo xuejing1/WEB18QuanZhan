@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise立即执行</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+
+
+	let promise=new Promise(function(resolve,reject){
+		console.log('Promise');
+		resolve();
+	});
+
+	promise.then(function(){
+		console.log('resolved.');
+	});
+
+	console.log('hi');
+
+	function loadImageAsync(url){
+		return new Promise(function(resolve,reject){
+			const image=new Image();
+
+			image.onload=function(){
+				reject(new Error('image'+url));
+			};
+			image.src=url; 
+		});
+	}
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数和普通函数的区别</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function fact(n){
+		if(n<=1){
+			return 1;
+		}else{
+			// return n*fact(n-1);
+			return n*arguments.callee(n-1);
+		}
+	}
+	let fnFact=fact;
+	fact=null;
+
+</script>
+</html>

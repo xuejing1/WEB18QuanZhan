@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的参数</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// function show(msg){
+	// 	msg=msg||'hello';
+	// 	console.log(msg);
+	// }
+	// show();
+
+
+	// function show(msg='hello'){
+	// 	console.log(msg);
+	// }
+	// show('');
+
+
+	// function show(name,msg='hello'){
+	// 	console.log(msg);
+	// }
+
+	// show();
+
+
+	// function show(name,{age=20,sex='女'={}}){
+	// 	console.log(name,age,sex);
+	// }
+	// show('Ami',(age:10,sex:'男'));
+
+
+	// function show(name,...arg){
+	// 	console.log(name,arg[0]);
+	// }
+
+	// show('Ami',20);
+
+
+	let i=99;
+	function show(age=i+1){
+		console.log(age);
+	}
+	show();
+	i=100;
+
+	show();
+</script>
+</html>

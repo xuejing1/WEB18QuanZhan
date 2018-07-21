@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function Person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	Person.prototype={
+		constructor:Person,
+		showName:function(){
+			console.log("I am"+this.name);
+		},
+		showAge:function(){
+			console.log("I am"+this.age+"years old.")
+		}
+	};
+	avr p=new Person("Ami",20);
+	p.showName();
+	p.showAge();
+
+
+
+	class Person{
+		constructor(name,age){
+			this.name=name;
+			this.age=age;
+		}
+	}
+	let p=new Person();
+	console.log(p);
+	console.log(typeof Person);
+	console.log(Person.prototype);
+
+
+	class Student extends Person{
+		constructor(name,age){
+			this.name=name;
+			this.age=age;
+		}
+	}
+</script>
+</html>
