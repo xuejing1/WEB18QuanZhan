@@ -1,7 +1,7 @@
 
 
 const http=require('http');
-// req可读流 res可写流
+// req可读流  res可写流
 const server=http.createServer((req,res)=>{
 
 	let pathName=req.url;
