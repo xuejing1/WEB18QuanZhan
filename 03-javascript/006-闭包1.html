@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包1</title>
+	<script type="text/javascript">
+		//闭包1:子函数可以使用父函数中的变量，自下向上找
+		function show(){
+			var age1=1;
+			function age(){
+				var age2=2;
+				console.log(age1);
+				console.log(age2);
+			}
+			age();
+		}
+		show();
+		//一个函数可以返回一个函数,show2返回的是一个函数
+		function show2(){
+			var name='A';
+
+			return function(){
+				var name2='B';
+				console.log(name);
+				console.log(name2);
+			}
+		}
+		show2()();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

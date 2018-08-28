@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封闭空间传参</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border:1px solid;
+		}
+	</style>
+
+</head>
+<body>
+	<input type="button" name="" id="btn">
+	<div id="div1"></div>
+</body>
+<script type="text/javascript">
+	//将所需要的变量传入进去
+	(function(d,w){
+		var oBtn=d.getElementById('btn');
+		var oDiv=d.getElementById('div1');
+
+		oBtn.onclick=function(){
+			alert('d');
+		}
+		// 将外部所需要的变量绑定到window上
+		w.oDiv=oDiv;
+
+	})(document,window);
+	oDiv.onmouseover=function(){
+		alert('w');
+	}
+</script>
+</html>
