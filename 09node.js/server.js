@@ -3,54 +3,15 @@ const path=require('path');
 const fs=require('fs');
 const mime=require('./mime.json');
 const url=require('url');
-const WishModel=require('./WishModel.js');
+const querystring=require('querystring');
+const swig=require('swig');
+
+
 const server=http.createServer((req,res)=>{
-	let reqUrl=url.parse(req.url,true);
-	let pathname=reqUrl.pathname;
-	let fileName=req.url;
-	if(pathname==='/index.html' || pathname===''){
-		WishModel.get((err,data)=>{
-			if(!err){
-				let html=`<!DOCTYPE html>
-							<html lang="en">
-							<head>
-								<meta charset="UTF-8">
-								<title>许愿树</title>
-								<link rel="stylesheet" href="css/index.css">
-							</head>
-							<body>
-								<div class="wall">`
-					data.forEach((val)=>{
-						html+=`<div class="wish" style="background:${val.color}">
-										<a href="javascript:;" class="close" data-id='${val.id}'></a>
-										${val.content}
-								 </div>`
-					});
-					html+=`</div>
-					            <div class="form-box">
-									<div>
-										<textarea name="content" id="content" cols="30" rows="20"></textarea>
-									</div>
-									<div>
-										<a href="javascript:;" class="sub-btn">许下心愿</a>
-									</div>
-								</div>
-							</body>
-							<script src="js/jquery.min.js"></script>
-							<script src="js/jquery.pep.js"></script>
-							<script src="js/index.js"></script>
-							</html>`;
-				res.setHeader('Content-Type','text/html;charset=UTF-8');
-				res.end(html);
-			}else{
-				console.log(err);
-			}
-		});				
-	}else{
-		if(fileName.lastIndexOf('.')==-1){
-			fileName=fileName+'/index.html';
-		}
-		let filePath=path.normalize(__dirname+'/static/'+fileName);
+
+	let pathname=url.parse(req.url,true).pathname;
+	if(pathname.startWidth('/static/')){
+		let filePath=path.normalize(__dirname+pathname);
 		let fileExtName=path.extname(filePath);
 
 		fs.readFile(filePath,(err,data)=>{
@@ -60,10 +21,32 @@ const server=http.createServer((req,res)=>{
 				res.end(data);
 			}else{
 				res.setHeader('Content-Type', 'text/html;charset=UTF-8');
-				res.statusCode=404;
-				res.end('<h1>页面走丢了。。。。</h1>');
+				res.statusCode=404;			
+				res.end('<h1>页面走丢了。。。。</h1>');		
 			}
-		});
+		});	
+
+	}else{
+
+		let paths=pathname.split('/');
+		let constroller=paths[1] || 'wish';
+		let action=paths[2] || 'index';
+		let args=paths.slice(3);
+		let model;
+
+		try{
+
+			model=require('./constroller/'+constroller);
+
+		}catch(err){
+			res.setHeader('Content-Type', 'text/html;charset=UTF-8');
+			res.statusCode=404;			
+			res.end('<h1>页面走丢了。。。。</h1>');
+			return;
+		}
+		if(model[action]){
+			model[action].apply(null,[req,res].concat(args));
+		}
 	}
 });
 server.listen(3000,'127.0.0.1',()=>{
