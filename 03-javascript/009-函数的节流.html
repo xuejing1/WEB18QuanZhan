@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的节流</title>
+	<style type="text/css">
+		body{
+			height: 3000px;
+		}
+	</style>
+	<script type="text/javascript">
+		/*耗费资源，频繁触发,需要使用定时器来解决该问题
+		window.onscroll=function(){
+			console.log('aa');
+		}
+		window.onresize=function(){
+			console.log('bb');
+		}
+		*/
+
+		// 节流函数(传入两个参数，分别是函数和延迟时间)
+		// 返回一个函数，返回的函数里面执行参数里面fn函数(需要使用定时器解决频繁触发的问题)
+		function throttle(fn,delay){
+			var timer=null;
+
+			return function(){
+				clearTimeout(timer);
+				timer=setTimeout(fn,delay);
+			}
+		}
+		// 调用节流函数
+		window.onscroll=throttle(function(){
+			console.log('aa');
+		},500);
+		window.onresize=throttle(function(){
+			console.log('bb');
+		},500)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

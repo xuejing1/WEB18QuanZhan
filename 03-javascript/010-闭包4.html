@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包4</title>
+	<script type="text/javascript">
+		(function(w){
+			function Person(name,age){
+				//调用初始化函数
+				this.init(name,age);
+		}
+		//直接把原型prototype加在构造对象上
+		Person.prototype={
+
+			constructor:Person,
+			__proto__:Object.prototype,
+
+			//初始化函数
+			init:function(name,age){
+				this.name=name;
+				this.age=age;
+			},
+			//自定义函数
+			showName:function(){
+				console.log('I am ' +this.name);
+			},
+			showAge:function(){
+				console.log("I am " + this.age);
+			}
+
+		}
+
+		w.Person=Person;
+
+		})(window)
+		
+		var p1=new Person('Ami',20);
+		p1.showAge();
+		p1.showName();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
