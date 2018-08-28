@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封闭空间</title>
+	<script type="text/javascript">
+		//封闭空间：匿名函数的自我调用
+		// 后面的()是调用
+		// 当有多个封闭空间时，需要用 ; 或者 + 或者 - 分隔开
+		(function(){
+			console.log('1');
+		})()
+		;(function(){
+			console.log('2');
+		})();
+		(function(){
+			console.log('3');
+		})()
+		+(function(){
+			console.log('4');
+		})()-
+		(function(){
+			console.log('5');
+		})()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
