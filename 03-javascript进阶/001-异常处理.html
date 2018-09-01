@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>异常处理</title>
+	<script>
+		//函数：两个数的乘积
+		function mutiple(n1,n2){
+			if(isNaN(parseInt(n1)) || isNaN(parseInt(n2)) ){
+				//抛出异常，Error是系统自带的一个类
+				throw new Error('not a number');
+			}
+			return n1*n2;
+		}
+			
+		try{//有可能出现的异常代码
+
+			console.log(mutiple(2,'a'));	
+		}catch(e){//异常处理，接收一个参数，这个参数指的是异常
+
+			console.log(e);
+		}finally{//无论是否有异常，都会执行该操作，比如清空操作
+			console.log('end');
+		}
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
