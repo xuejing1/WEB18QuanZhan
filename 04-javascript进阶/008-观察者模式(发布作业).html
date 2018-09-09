@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>观察者模式</title>
+	<script type="text/javascript">
+		//老师
+		(function(w){
+
+			function Teacher(name){
+				this.name    =name;
+				// 提供一个让数组让学生创建的时候把自己传进去
+				this.students=[];
+			}
+
+			Teacher.prototype={
+				constructor:Teacher,
+				__proto__  :Object.prototype,
+				// 提供一个方法(接口)，让学生把自己传进来
+				register:function(student){
+					this.students.push(student);
+				},
+				// 提供一个老师发布作业的方法
+				publish:function(msg){
+					// 循环数组里的每一个学生，让其得到作业
+					for(var i=0;i<this.students.length;i++){
+						this.students[i].listen(msg);
+					}		
+				}
+			}
+
+			// 将Teacher暴露给外部
+			w.Teacher=Teacher;
+
+		})(window);
+
+		// 学生
+		(function(w){
+
+			function Student(name,teacher){
+				this.name=name;
+				// 调用register函数，使老师与学生绑定在一起，学生把自己传进去
+				teacher.register(this);
+				this.msg ='';//刚开始的时候学生的消息，作业是空的
+			}
+
+			Student.prototype={
+				constructor:Student,
+				__proto__:Object.prototype,
+				// 学生提供listen方法，监听作业
+				listen:function(msg){
+					this.msg=msg;
+				}
+			}
+
+			// 将Student暴露给外部
+			w.Student=Student;
+
+		})(window)
+
+		// 构造实例
+		var t =new Teacher('Ami');
+		var s1=new Student('小王',t);
+		var s2=new Student('小李',t);
+		var s3=new Student('小陈',t);
+		t.publish('背诵');
+
+		console.log(s1.name+'完成'+s1.msg);
+		console.log(s2.name+'完成'+s2.msg);
+		console.log(s3.name+'完成'+s3.msg);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

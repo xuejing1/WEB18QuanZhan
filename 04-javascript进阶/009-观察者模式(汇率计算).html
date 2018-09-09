@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>汇率计算</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+		//本币
+		(function(w){
+
+			function Local(name){
+				this.foreigns=[];
+				this.init(name);
+				this.oInput  =null;
+			}
+
+			Local.prototype={
+				constructor:Local,
+				__proto__  :Object.prototype,
+				// 创建一个初始化DOM节点的方法
+				init:function(name){
+					// 需要创建p标签和input标签
+					var oP      =document.createElement('p');
+					oP.innerHTML=name;
+					this.oInput =document.createElement('input');
+					oP.appendChild(this.oInput);
+					document.body.appendChild(oP);
+				},
+				// 提供一个方法将外币传递到数组中
+				register:function(foreign){
+					this.foreigns.push(foreign);
+				},
+				// 触发oninput事件
+				publish:function(){
+					this.oInput.oninput=function(){
+						// 需要循环得到每一个外币
+						for(var i=0;i<this.foreigns.length;i++){
+							// 调用listen方法
+							this.foreigns[i].listen(this.oInput.value);
+						}
+					}.bind(this);//本来for当中的this指的是OInput，使用bind的话可以拿到Local上的this
+					// bind返回改变this上下文后的函数
+				}
+
+			}
+
+			w.Local=Local;
+
+		})(window);
+
+		// 外币
+		(function(w){
+
+			// 名字，汇率，本地
+			function Foreign(name,rate,local){
+				this.rate  =rate;
+				this.oInput=null;
+				local.register(this);//调用本地的register方法，这个方法接收一个参数，这个参数是外币
+				this.init(name);
+			}
+
+			Foreign.prototype={
+				constructor:Foreign,
+				__proto__:Object.prototype,
+				// 初始化函数，初始化DOM节点
+				init:function(name){
+					var oP      =document.createElement('p');
+					oP.innerHTML=name;
+					this.oInput =document.createElement('input');
+					oP.appendChild(this.oInput);
+					document.body.appendChild(oP);				
+				},
+				listen:function(val){
+					this.oInput.value=val/this.rate;
+				}
+			}
+
+			// 暴露给外部
+			w.Foreign=Foreign;
+
+		})(window)
+
+		// 构造实例
+		var cny=new Local('人民币');
+		var f1=new Foreign('美元',3,cny);
+		var f2=new Foreign('日元',0.1,cny);
+		var f3=new Foreign('港币',7,cny);
+
+		cny.publish();
+	</script>
+</html>
