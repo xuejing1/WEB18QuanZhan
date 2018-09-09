@@ -6,21 +6,21 @@
 	<script type="text/javascript">
 		(function(w){
 			function Person(name,age){
-				//调用初始化函数
+				// 调用初始化函数
 				this.init(name,age);
 		}
-		//直接把原型prototype加在构造对象上
+		// 直接把原型prototype加在构造对象上
 		Person.prototype={
 
 			constructor:Person,
 			__proto__:Object.prototype,
 
-			//初始化函数
+			// 初始化函数
 			init:function(name,age){
 				this.name=name;
 				this.age=age;
 			},
-			//自定义函数
+			// 自定义函数
 			showName:function(){
 				console.log('I am ' +this.name);
 			},
