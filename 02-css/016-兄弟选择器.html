@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>兄弟选择器</title>
+	<style type="text/css">
+		/*+的兄弟选择器只能够选择相邻的兄弟，如果没有选不着*/
+		/*找到h1的相邻的兄弟p*/
+		h1+p{
+			color: red;
+		}
+		/*~的兄弟选择器能够选择到所有的兄弟*/
+		/*找到h2的所有的p兄弟*/
+		h2~p{
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<h1>我是标题</h1>
+	<p>我是段落</p>
+	<div>
+		<h2>我是标题2</h2>
+		<p>我是段落2</p>
+		<a href="#">未命名</a>
+		<p>我是段落3</p>
+		<p>我是段落3</p>
+		<p>我是段落3</p>
+	</div>
+</body>
+</html>
