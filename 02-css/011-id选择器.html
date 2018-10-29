@@ -4,18 +4,30 @@
 	<meta charset="UTF-8">
 	<title>id选择器</title>
 	<style type="text/css">
-		/*id选择器命名使用id，设置样式的时候使用“#”*/
-		#id1{
-			color: blue;
-		}
-		#id2{
+		/*1.id选择器，使用#号，id唯一
+		  2.id是配合js使用的，不是用来设置样式的*/
+		#son{
 			color: red;
+			font-size: 24px;
+		}
+		#f{
+			color: yellow;
+			font-size: 30px;
 		}
 	</style>
 </head>
 <body>
-	<p id="id1">我是段落1</p>
-	<p id="id2">我是段落2</p>
-	<p id="id1">我是段落3</p>
+	<ul>
+		<li id="son">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>
+			<ul>
+				<li>我是li标签</li>
+			</ul>
+		</li>
+	</ul>
+	<p id="f">我是p标签</p>
+	<p>我是p标签</p>
 </body>
 </html>

@@ -4,28 +4,36 @@
 	<meta charset="UTF-8">
 	<title>兄弟选择器</title>
 	<style type="text/css">
-		/*+的兄弟选择器只能够选择相邻的兄弟，如果没有选不着*/
-		/*找到h1的相邻的兄弟p*/
-		h1+p{
+		/*1.相邻兄弟选择器是用+号
+		  2.相邻兄弟选择器是只选中相邻的兄弟*/
+		.txt1+li{
 			color: red;
 		}
-		/*~的兄弟选择器能够选择到所有的兄弟*/
-		/*找到h2的所有的p兄弟*/
-		h2~p{
+		/*1.通用兄弟选择器使用~号
+		  2.通用兄弟选择器是所有的兄弟*/
+		.txt2~p{
+			color: blue;
+		}
+		.txt2~span{
 			color: yellow;
 		}
 	</style>
 </head>
 <body>
-	<h1>我是标题</h1>
-	<p>我是段落</p>
 	<div>
-		<h2>我是标题2</h2>
-		<p>我是段落2</p>
-		<a href="#">未命名</a>
-		<p>我是段落3</p>
-		<p>我是段落3</p>
-		<p>我是段落3</p>
+		<ul>
+			<li class="txt1">我是列表1</li>
+			<li>我是列表2</li>
+			<li>我是列表3</li>
+		</ul>
+		<p class="txt2">我是段落</p>
+		<p>我是段落</p>
+		<p>我是段落</p>
+		<span>我是span</span>
 	</div>
+	<p>我是段落2</p>
+	<p>我是段落2</p>
+	<p>我是段落2</p>
+	<span>我是span2</span>
 </body>
 </html>

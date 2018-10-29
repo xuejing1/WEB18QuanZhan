@@ -4,23 +4,38 @@
 	<meta charset="UTF-8">
 	<title>后代选择器</title>
 	<style type="text/css">
-		/*后代选择器是指的所有的后代，包括儿子，孙子等等*/
-		/*后代选择器中使用空格分开*/
-		div p{
-			color: red;
+		/*1.后代选择器：所有的后代，包括儿子，孙子，重孙子......
+		  2.后代选择器使用空格*/
+		ul li{
+			color:red;
+		}
+		.fast #bottom li{
+			color: yellow;
 		}
 	</style>
 </head>
 <body>
+	<ul>
+		<li>我是1</li>
+		<li>我是2</li>
+	</ul>
 	<div>
 		<div>
-			<p>我是段落1</p>
-			<p>我是段落2</p>
-			<p>我是段落3</p>
+			<div>
+				<ul>
+					<li>
+						我是后面的
+					</li>
+				</ul>
+			</div>
 		</div>
-		<a href="#">未命名</a>
-		<p>我也是段落</p>
 	</div>
-	<p>我是段落</p>
+	<div class="fast">
+		<div id="bottom">
+			<ul>
+				<li>我是最后一个</li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>

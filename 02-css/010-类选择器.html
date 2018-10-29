@@ -4,21 +4,28 @@
 	<meta charset="UTF-8">
 	<title>类选择器</title>
 	<style type="text/css">
-		/*类选择器命名使用class，设置样式的时候使用“.”*/
-		.p1{
+		.son{
 			color: red;
+			font-size: 24px;
 		}
-		.p2{
+		.f{
 			color: yellow;
+			font-size: 30px;
 		}
 	</style>
 </head>
 <body>
-	<p class="p1">我是段落1</p>
-	<p class="p2">我是段落2</p>
-	<p>我是段落3</p>
-	<p class="p1">我是段落1</p>
-	<p class="p1">我是段落1</p>
-	<p class="p1">我是段落1</p>
+	<ul>
+		<li class="son">1</li>
+		<li class="son">2</li>
+		<li>3</li>
+		<li>
+			<ul>
+				<li class="son">我是li标签</li>
+			</ul>
+		</li>
+	</ul>
+	<p class="f">我是p标签</p>
+	<p>我是p标签</p>
 </body>
 </html>

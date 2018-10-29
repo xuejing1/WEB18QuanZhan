@@ -4,18 +4,22 @@
 	<meta charset="UTF-8">
 	<title>交集选择器</title>
 	<style type="text/css">
-		/*选中所有满足条件的选择器，类似于交集*/
-		/*每个选择器之间不能添加任何字符*/
-		p.p1#id1{
-			color:red;
+		/*交集选择器中间不可以有空格*/
+		.txt.txt2{
+			color: yellow;
 		}
 	</style>
 </head>
 <body>
-	<p class="p1" id="id1">我是段落1</p>
-	<p class="p2">我是段落2</p>
-	<p class="p1">我是段3</p>
-	<p>我是段落4</p>
-	<p>我是段落5</p>
+	<div>
+		<ul>
+			<li class="txt">我是列表</li>
+			<li>我是列表2</li>
+		</ul>
+		<p class="txt txt2">我是段落1</p>
+		<span class="txt txt2">我是span1</span>
+	</div>
+	<span>我是span</span>
+	<p>我是段落</p>
 </body>
 </html>

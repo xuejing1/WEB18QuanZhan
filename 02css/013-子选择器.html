@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>子选择器</title>
+	<style type="text/css">
+		/*子选择器只能选择自己的儿子，使用“>”号*/
+		/*是选择器1的含有选择器2的儿子*/
+		.div2>p{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="div2">
+		<p>我是段落</p>
+		<a href="#">未命名1</a>
+		<a href="#">未命名2</a>
+		<a href="#">未命名3</a>
+	</div>
+	<div class="div2">
+		<p>我也是段落</p>
+		<div>
+			<p>我是段落</p>
+			<p>我是段落</p>
+			<p>我是段落</p>
+		</div>
+	</div>
+</body>
+</html>

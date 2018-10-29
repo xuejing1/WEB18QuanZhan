@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>序选择器(不区分类型)</title>
+	<style type="text/css">
+		/*1.不区分类型 2.必须选择的第几个有这个标签*/
+		p:nth-child(3){
+			color:red;
+		}
+		/*不区分类型，父元素的唯一子元素*/
+		p:only-child{
+			color: blue;
+		}
+		p:nth-child(odd){
+			/*font-size: 24px;*/
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>我是大标题</h1>
+	<P>我是段落1</P>
+	<P>我是段落2</P>
+	<h2>我是标题2</h2>
+	<P>我是段落3</P>
+	<div>
+		<p>段落1</p>
+	</div>
+	<P>我是段落4</P>
+	<P>我是段落5</P>
+	<P>我是段落6</P>
+	<P>我是段落7</P>
+	<P>我是段落8</P>
+</body>
+</html>

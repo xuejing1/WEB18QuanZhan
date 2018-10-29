@@ -4,27 +4,25 @@
 	<meta charset="UTF-8">
 	<title>子选择器</title>
 	<style type="text/css">
-		/*子选择器只能选择自己的儿子，使用“>”号*/
-		/*是选择器1的含有选择器2的儿子*/
-		.div2>p{
+		/*子选择器使用>号，选中的只有儿子*/
+		div>p{
 			color: red;
+		}
+		div>.txt2{
+			color: yellow;
 		}
 	</style>
 </head>
 <body>
-	<div class="div2">
-		<p>我是段落</p>
-		<a href="#">未命名1</a>
-		<a href="#">未命名2</a>
-		<a href="#">未命名3</a>
+	<div>
+		<ul>
+			<li class="txt">我是列表</li>
+			<li>我是列表2</li>
+		</ul>
+		<p class="txt">我是段落1</p>
+		<span class="txt txt2">我是span1</span>
 	</div>
-	<div class="div2">
-		<p>我也是段落</p>
-		<div>
-			<p>我是段落</p>
-			<p>我是段落</p>
-			<p>我是段落</p>
-		</div>
-	</div>
+	<span>我是span</span>
+	<p>我是段落</p>
 </body>
 </html>
