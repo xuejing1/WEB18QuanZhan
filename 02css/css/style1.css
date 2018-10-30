@@ -1,7 +1,0 @@
-/*注意需要使用引号标明要导入的文件*/
-@import "style2.css";
-
-p{
-	color:red;
-	font-size: 24px;
-}
