@@ -4,12 +4,18 @@
 	<meta charset="UTF-8">
 	<title>序选择器(区分类型)</title>
 	<style type="text/css">
-		p:nth-child(3){
-			color:red;
+		/*1.区分类型
+		  2.同级别，第几个*/
+		p:nth-of-type(1){
+			color: red;
 		}
-		/*不区分类型，父元素的唯一子元素*/
-		p:only-child{
+		/*同级别，区分类型，even偶数*/
+		p:nth-of-type(even){
 			color: blue;
+		}
+		/*区分类型，第一个*/
+		h2:first-of-type{
+			color: yellow;
 		}
 	</style>
 </head>

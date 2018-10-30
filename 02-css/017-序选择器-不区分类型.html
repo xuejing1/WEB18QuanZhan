@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>序选择器(不区分类型)</title>
+	<title>序选择器(同级别不区分类型)</title>
 	<style type="text/css">
 		/*1.不区分类型 2.必须选择的第几个有这个标签*/
 		p:nth-child(3){
@@ -12,9 +12,14 @@
 		p:only-child{
 			color: blue;
 		}
+		/*odd奇数 even偶数*/
 		p:nth-child(odd){
 			/*font-size: 24px;*/
 			color: yellow;
+		}
+		/*同级别倒数第一个，同级别，不区分类型*/
+		p:last-child{
+			color: green;
 		}
 	</style>
 </head>
@@ -32,6 +37,9 @@
 	<P>我是段落5</P>
 	<P>我是段落6</P>
 	<P>我是段落7</P>
+	<div>
+		<p>en</p>
+	</div>
 	<P>我是段落8</P>
 </body>
 </html>
