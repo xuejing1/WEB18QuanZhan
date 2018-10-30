@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性选择器</title>
+	<style type="text/css">
+		/*选中所有具有title属性的元素*/
+		[title]{
+			border:1px solid;
+		}
+		/*选中所有属性为title并且值为kuazhu的*/
+		[title=kuazhu]{
+			color: red;
+		}
+		/*1.只能选中title的值以kuazhu开始的
+		  2.并且只能用-分隔的和独立的元素*/
+		[title|=kuazhu]{
+			color: yellow;
+		}
+		/*选中所有title的值以kuazhu开始的元素*/
+		[title^=kuazhu]{
+			color: gray;
+		}
+		/*选中所有title的值以.com结尾的的元素*/
+		[title$=".com"]{
+			color: green;
+		}
+		/*选中包括title的值为com并且是空格分隔的和独立的元素*/
+		[title~="com"]{
+			color: orange;
+		}
+		/*选中所有title的值为w的元素*/
+		[title*=w]{
+			color:pink; 
+		}
+	</style>
+</head>
+<body>
+	<a href="https://www.kuazhu.com" title="kuazhu.com">kuazhu.com</a><br>
+	<a href="https://www.kuazhu.com" title="kuazhu-com">kuazhu-com</a><br>
+	<a href="https://www.kuazhu.com" title="kuazhu">kuazhu</a><br>
+	<a href="https://www.kuazhu.com" title="www.kuazhu.com">www.kuazhu.com</a><br>
+	<a href="https://www.kuazhu.com" title="www-kuazhu.com">www-kuazhu.com</a><br>
+	<a href="https://www.kuazhu.com" title="www kuazhu.com">www kuazhu.com</a><br>
+	<a href="https://www.kuazhu.com" title="www kuazhu com">www kuazhu com</a><br>
+	<a href="https://www.kuazhu.com" title="com">com</a><br>
+	<a href="https://www.kuazhus.com" title="w.com">com</a><br>
+	<a href="https://www.kuazhus-com" title="w-com">com</a><br>
+	<a href="https://www.kuazhus com" title="w com">com</a><br>
+</body>
+</html>
