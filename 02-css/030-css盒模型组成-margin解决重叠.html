@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>margin重叠</title>
+	<style type="text/css">
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-bottom: 5px;
+		}
+		.son2{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			margin-top: 10px;
+		}
+		.father{
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<div class="father2">
+		<div class="son2"></div>
+	</div>
+</body>
+</html>
