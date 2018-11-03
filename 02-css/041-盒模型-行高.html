@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内容居中</title>
+	<style type="text/css">
+		.father{
+			width: 500px;
+			height: 200px;
+			background: red;
+		}
+		/*1.设置行高可以自动垂直居中
+		  2.当行文本垂直居中直接设置的行高跟高度一样即可*/
+		.son{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			text-align: center;
+			line-height: 100px;
+		}
+		/*如果有多行的文本，就设置padding，但是不设置高度，让高度由文字撑起来*/
+		.son2{
+			width: 100px;
+			padding: 10px 0;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son">我是内容</div>
+		<div class="son2">我是内容我是内容我是内容我是内容我是内容我是内</div>
+	</div>
+</body>
+</html>
