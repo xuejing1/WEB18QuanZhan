@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒模型的居中</title>
+	<style type="text/css">
+		/*给父元素设置padding达到居中的效果*/
+		.father{
+			width: 500px;
+			height: 100px;
+			background: yellow;
+			padding: 0 225px;
+			box-sizing: border-box;
+		}
+		.son{
+			width: 50px;
+			height: 50px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>
