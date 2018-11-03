@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒模型的居中</title>
+	<style type="text/css">
+		.father{
+			width: 500px;
+			height: 100px;
+			background: yellow;
+			border: 1px solid;
+			box-sizing: border-box;
+		}
+		/*1.给子元素添加margin达到居中的效果
+		  2.注意子元素的margin会传递，应该阻止传递*/
+		.son{
+			width: 50px;
+			height: 50px;
+			background: red;
+			margin-top: 25px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>
