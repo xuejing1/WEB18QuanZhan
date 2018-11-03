@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆角的设置</title>
+	<style type="text/css">
+		/*单一样式，注意如果设置正双圆的话需要加上边框*/
+		.div1{
+			width: 200px;
+			height: 200px;
+			border: 10px solid;
+			margin:100px auto;
+			border-top-left-radius: 110px 110px;
+			border-top-right-radius: 110px 110px;
+			border-bottom-right-radius: 110px 110px;
+			border-bottom-left-radius: 110px 110px;
+		}
+		/*水平方向和垂直方向不一样的情况下是个椭圆*/
+		.div2{
+			width: 100px;
+			height: 100px;
+			border: 1px solid;
+			border-top-left-radius: 50% 80%;
+		}
+		/*1.复合样式border-radius:取值1(左上 右上 右下 左下)/[取值2(左上 右上 右下 左下)];
+		  2.如果半径都一样的话可以只写一个
+		  3.如果一个值没有取那么就取对角的值*/
+		.div3{
+			width: 200px;
+			height: 200px;
+			border: 10px solid;
+			border-radius: 110px 20px 30px 10px/110px 20px 30px 10px ;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+</body>
+</html>
