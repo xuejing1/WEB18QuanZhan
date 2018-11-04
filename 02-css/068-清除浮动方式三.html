@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除浮动方式三</title>
+	<style type="text/css">
+		/*方式三：外墙法，给两个盒子之间添加空盒子，并且给这个空盒子添加clear：both属性*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box3 p{
+			float: left;
+		}
+		.box4{
+			width: 200px;
+			height: 200px;
+			background: pink;
+		}
+		.box{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="box3">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+	</div>
+	<div class="box"></div>
+	<div class="box4">
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除浮动方式四</title>
+	<style type="text/css">
+		/*方式四,内墙法,给第一个盒子所有元素的后面添加一个空盒子,并且给这个空盒子设置clear:both属性*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box3 p{
+			float: left;
+		}
+		.box4{
+			width: 200px;
+			height: 200px;
+			background: pink;
+		}
+		.box{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="box3">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<div class="box"></div>
+	</div>
+	
+	<div class="box4">
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动流-子元素和父元素</title>
+	<style type="text/css">
+		/*形成现象的原因：子元素撑不起父元素的高度*/
+		.father1 div{
+			width: 50px;
+			height: 30px;
+			background: red;
+			float: left;
+			border: 1px solid;
+		}
+		.father2 div{
+			width: 50px;
+			height: 30px;
+			background: blue;
+			float: left;
+			border: 1px solid;
+		}
+	</style>
+</head>
+<body>
+	<div class="father1">
+		<div class="son1">1</div>
+		<div class="son2">2</div>
+		<div class="son3">3</div>
+	</div>
+	<div class="father2">
+		<div class="son1">1</div>
+		<div class="son2">2</div>
+		<div class="son3">3</div>
+	</div>
+</body>
+</html>

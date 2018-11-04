@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除浮动方式一</title>
+	<style type="text/css">
+		/*方式一：给浮动元素的父亲添加高度*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			height: 100px;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			float: left;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: yellow;
+		}
+		.box3{
+			width: 100px;
+			height: 100px;
+			background: blue;
+		}
+		.box3 p{
+			float: left;
+		}
+		.box4{
+			width: 200px;
+			height: 200px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box1">1</div>
+	</div>
+	<div class="box2"></div>
+	<div class="box3">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+	</div>
+	<div class="box4">
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+	</div>
+</body>
+</html>

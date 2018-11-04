@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动流布局</title>
+	<style type="text/css">
+		/*左浮动找左浮动，右浮动找右浮动的元素*/
+		.box1{
+			float: left;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: yellow;
+			float: left;
+		}
+		.box3{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			float: right;
+		}
+		.box4{
+			width: 500px;
+			height: 500px;
+			background: gray;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">1</div>
+	<div class="box2">2</div>
+	<div class="box3">3</div>
+	<div class="box4">4</div>
+</body>
+</html>
