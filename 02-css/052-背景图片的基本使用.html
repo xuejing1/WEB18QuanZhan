@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景图片的基本使用</title>
+	<style type="text/css">
+		body{
+			height: 3000px;
+		}
+		.div1{
+			width: 500px;
+			height: 500px;
+			border: 1px solid;
+			background-image: url(images/s.jpg);
+			background-repeat: no-repeat;
+		}
+		.div2{
+			width: 200px;
+			height: 200px;
+			border: 1px solid;
+			background-image: url(images/s.jpg);
+			background-repeat: repeat-x;
+			background-color: red;
+			background-attachment: scroll;
+		}
+		.div3{
+			width: 200px;
+			height: 200px;
+			border: 1px solid;
+			background-image: url(images/s.jpg);
+			background-repeat: repeat-y;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+</body>
+</html>
