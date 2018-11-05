@@ -3,8 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>image和background-img区别</title>
+	<style type="text/css">
+		/*1.背景图片不占用空间，只是作为一个背景，起到修饰作用
+		  2.img标签占用页面空间，它是要呈现出来的东西，上面不可以写文字等内容*/
+		.box{
+			width: 500px;
+			height: 500px;
+			border: 1px solid;
+			background-image: url(images/s.jpg);
+			font-size: 36px;
+		}
+	</style>
 </head>
 <body>
-	
+	<div class="box">我在背景图片上可以写文字，背景图片不占空间</div>
+	<img src="images/s.jpg" alt="">
 </body>
 </html>
