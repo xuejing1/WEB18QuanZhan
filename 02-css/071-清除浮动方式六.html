@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>清除浮动方式五</title>
+	<title>清除浮动方式六</title>
 	<style type="text/css">
-		/*方法五,通过伪元素选择器(:after)实现内墙法*/
+		/*方式六,通过给第一个盒子添加overflow: hidden来清除浮动,其原理是触发第一个盒子的BFC*/
 		*{
 			margin: 0;
 			padding: 0;
@@ -12,6 +12,7 @@
 		.box3{
 			background: blue;
 			width: 1000px;
+			overflow: hidden;
 		}
 		.box3 p{
 			float: left;
@@ -21,20 +22,10 @@
 			height: 200px;
 			background: pink;
 		}
-		.clearfix:after{
-			visibility: hidden;
-			display: block;
-			height: 0px;
-			content: '';
-			clear: both;
-		}
-		.clearfix{
-			*zoom:1;
-		}
 	</style>
 </head>
 <body>
-	<div class="box3 clearfix">
+	<div class="box3">
 		<p>1</p>
 		<p>2</p>
 		<p>3</p>
