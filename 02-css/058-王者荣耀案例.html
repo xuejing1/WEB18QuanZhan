@@ -3,8 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>王者荣耀案例</title>
+	<style type="text/css">
+		/*儿子的宽度要和父亲的宽度和高度一样，才能设置其在父亲盒子中的位置*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 100%;
+			height: 780px;
+			background-image: url(images/bg_qq.jpg);
+			background-repeat: no-repeat;
+		}
+		.son{
+			width: 100%;
+			height: 100%;
+			background-image: url(images/bg_qq_bottom.png);
+			background-repeat: no-repeat;
+			background-position: center bottom;
+		}
+	</style>
 </head>
 <body>
-	
+	<div class="father">
+		<div class="son"></div>
+	</div>
 </body>
 </html>
