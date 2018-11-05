@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动流布局案例</title>
+	<style type="text/css">
+		.box{
+			width: 600px;
+			height: 500px;
+			margin:50px auto;
+		}
+		.top{
+			width: 100%;
+			height: 60px;
+		}
+		.top .t-l{
+			width: 60px;
+			height: 60px;
+			background: red;
+			float: left;
+		}
+		.top .t-r{
+			width: 120px;
+			height: 30px;
+			background: gray;
+			float: right;
+		}
+		.top .t-r2{
+			width: 450px;
+			height: 30px;
+			background: purple;
+			float: right;
+		}
+		.center{
+			width: 100%;
+			height: 415px;
+			margin-top: 5px;
+		}
+		.center .left{
+			width: 490px;
+			height: 410px;
+			margin-right: 5px;
+			float: left;
+		}
+		.c-top{
+			width: 100%;
+			height: 390px;
+		}
+		.c-bottom{
+			width: 100%;
+			height: 20px;
+			background: red;
+			margin-top: 5px;
+		}
+		.c-top .l{
+			width: 380px;
+			height: 380px;
+			float: left;
+		}
+		.c-top .r{
+			width: 100px;
+			height: 100%;
+			background: pink;
+			float: right;
+		}
+		.l-t{
+			width: 100%;
+			height: 220px;
+			background: yellow;
+		}
+		.l-b{
+			width: 100%;
+			height: 165px;
+			margin-top: 5px;
+			background: yellow;
+		}
+		.right{
+			width: 100px;
+			height: 100%;
+			background: skyblue;
+			float: right;
+		}
+		.bottom{
+			background: blue;
+			height: 30px;
+			width: 100%;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="top">
+			<div class="t-l"></div>
+			<div class="t-r"></div>
+			<div class="t-r2"></div>
+		</div>
+		<div class="center">
+			<div class="left">
+				<div class="c-top">
+					<div class="l">
+						<div class="l-t"></div>
+						<div class="l-b"></div>
+					</div>
+					<div class="r"></div>
+				</div>
+				<div class="c-bottom"></div>
+			</div>
+			<div class="right"></div>
+		</div>
+		<div class="bottom"></div>
+	</div>
+</body>
+</html>
