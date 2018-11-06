@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>静态定位</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*1.绝对定位脱离标准流
+		  2.默认下是静态定位，在标准流当中*/
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 50px;
+			top: 50px;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: yellow;
+			position: static;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
+</html>
