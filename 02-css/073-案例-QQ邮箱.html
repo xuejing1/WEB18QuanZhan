@@ -46,27 +46,103 @@
 			margin-left: 5px;
 		}
 		.container{
-			width: 1366px;
-			height: 524px;
-			background: #ffffff;
-			padding-top: 74px;
+			width: 1366px;;
+			height: 460px;
+			margin:0 auto;
+			padding: 73px 225px 60px 41px;
 			box-sizing: border-box;
 		}
 		.container-left{
-			height: 386px;
-			width: 498px;
-			padding-top: 65px;
-			box-sizing: border-box;
+			width: 760px;
+			height: 383px;
 			float: left;
-			margin-left: 224px;	
+			background-image: url(images/qq-aside.jpg);
+			background-repeat: no-repeat;
 		}
 		.container-right{
-			height: 386px;
-			width: 336px;
-			border: 1px solid #a1b1c5;
-			border-radius: 5px;
+			width: 334px;
+			height: 383px;
+			border: 1px solid #c0cdda;
 			float: right;
-			margin-right: 224px;
+			border-radius: 5px;
+		}
+		.container-right .bottom{
+			width: 100%;
+			height: 224px;
+			margin-top: 36px;
+			margin-left: 26px;
+		}
+		.container li{
+			float: left;
+			background: #f9fbff;
+		}
+		.container .title li:nth-child(1){
+			margin-right: 60px;
+			margin-left: 60px;
+			color: #999999;
+		}
+		.container .title li:nth-child(1):hover{
+			color: black;
+		}
+		[type="text"],[type="password"]{
+			width: 285px;
+			height: 40px;
+			outline: none;
+			border-radius: 3px;
+			border: 1px solid #97a5b6;
+			padding-left: 13px;
+			box-sizing: border-box;
+		}
+		[type="password"]{
+			margin-top: 10px;
+		}
+		[type="checkbox"]{
+			display:inline-block;
+			width: 18px;
+			height: 18px;
+			outline: none;
+			border: 1px solid #97a5b6;
+			margin-top: 24px;
+			vertical-align: bottom;
+		}
+		[type="button"]{
+			background: #5a99df;
+			width: 285px;
+			height: 40px;
+			outline: none;
+			border-radius: 5px;
+			color: white;
+			font-size: 18px;
+			margin-top: 16px;
+			border: 1px solid #5a99df;
+			margin-bottom: 200px;
+		}
+		[type="button"]:hover{
+			background: #71a6df;
+		}
+		.container-right .end{
+			width: 334px;
+			height: 72px;
+			padding-left: 102px;
+			box-sizing: border-box;
+			padding-top: 35px;
+		}
+		.container-right .end span{
+			color: #c0cdda;
+			margin-left: 6px;
+			margin-right: 8px;
+		}
+		.container-right .end li{
+			list-style:none;
+			float: left;
+		}
+		.end a{
+			color: #1d5495;
+			text-decoration: none;
+			font-size: 12px;
+		}
+		.end a:hover{
+			text-decoration: underline;
 		}
 		.title{
 			width: 100%;
@@ -78,22 +154,12 @@
 		.title li{
 			list-style: none;
 		}
-		li:nth-child(1){
-			float: left;
-			color: #a5a2a6;
-			padding-left: 54px;
-			box-sizing: border-box;
-		}
-		li:nth-child(2){
-			float: right;
-			padding-right: 54px;
-			box-sizing: border-box;
-		}
 		.footer{
 			width: 1366px;
 			height: 37px;
 			background: #eff5fb;
 			border-top: 1px solid #d7dfeb;
+			margin-top: 60px;
 		}
 		.footer ul{
 			width: 680px;
@@ -148,9 +214,7 @@
 		</ul>
 	</div>
 	<div class="container">
-		<div class="container-left">
-			<img src="images/qq-aside.jpg">
-		</div>
+		<div class="container-left"></div>
 		<div class="container-right">
 			<div class="title">
 				<ul>
@@ -158,7 +222,25 @@
 					<li>账号密码登录</li>
 				</ul>
 			</div>
-			<div></div>
+			<div class="bottom">
+				<input type="text" name="" placeholder="支持QQ/邮箱/手机号登录">
+				<input type="password" name="" placeholder="QQ密码"><br>
+				<input type="checkbox" name="asign" id="asign">下次自动登录
+				<input type="button" name="" value="登录">
+			</div>
+			<ul class="end">
+				<li>
+					<a href="#">忘了密码？</a>
+					<span>|</span>
+				</li>
+				<li>
+					<a href="#">注册新帐号</a>
+					<span>|</span>
+				</li>
+				<li>
+					<a href="#">意见反馈</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 	<div class="footer">
