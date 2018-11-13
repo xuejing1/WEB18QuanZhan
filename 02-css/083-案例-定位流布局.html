@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位流布局</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;	
+		}
+		.header{
+			width: 1000px;
+			height: 40px;
+			background: gray;
+			margin-top: 20px;
+			margin-left: 50%;
+			position: relative;
+			left: -500px;
+		}
+		.header img{
+			position:absolute;
+			top: -13px;
+			left: -19px; 
+			margin-left: 50%;
+		}
+		.header li{
+			width: 200px;
+			height: 100%;
+			line-height: 40px;
+			text-align: center;
+			float: left;
+			list-style: none;
+			font-size: 14px;
+		}
+		.header li:nth-child(3){
+			background: red;
+		}
+		.main{
+			width: 100%;
+			height: 540px;
+			background-image: url(images/bg.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+			overflow: hidden;
+		}
+		.main-l{
+			width: 104px;
+			height: 200px;
+			background: red;
+			position: fixed;
+			top: 50%;
+			left: 0px;
+			margin-top: -100px;
+		}
+		.main-c{
+			width: 760px;
+			height: 100%;
+			position: relative;
+			margin:0 auto;
+		}
+		.main-r{
+			width: 104px;
+			height: 200px;
+			background: red;
+			position: fixed;
+			top: 50%;
+			margin-top: -100px;
+			right: 0px;
+		}
+		.head li{
+			list-style: none;
+			width: 42px;
+			height: 60px;
+			background: #aba08c;
+			color: white;
+			font-size: 18px;
+			text-align: center;
+			line-height: 60px;
+		}
+		.head li:nth-child(1){
+			position: absolute;
+			top: 50%;
+			left: 0px;
+			margin-top: -73px;
+		}
+		.head li:nth-child(2){
+			position: absolute;
+			top: 50%;
+			right: 0px;
+			margin-top: -73px;
+		}
+		.number li{
+			list-style: none;
+			width: 20px;
+			height: 20px;
+			background: #aea79e;
+			text-align: center;
+			line-height: 20px;
+			border: 1px solid gray;
+			border-radius: 11px;
+			color: white;
+		}
+		.number{
+			width:760px;
+			height: 404px;
+			border: 1px solid;
+			margin-top: 68px;
+			position: relative;
+		}
+		.number li:nth-child(1){
+			position: absolute;
+			bottom: 8px;
+			right: 160px;
+		}
+		.number li:nth-child(2){
+			position: absolute;
+			bottom: 8px;
+			right: 128px;
+		}
+		.number li:nth-child(3){
+			position: absolute;
+			bottom: 8px;
+			right: 98px;
+		}
+		.number li:nth-child(4){
+			position: absolute;
+			bottom: 8px;
+			right: 64px;
+		}
+		.number li:nth-child(5){
+			position: absolute;
+			bottom: 8px;
+			right: 28px;
+		}
+		.bottom{
+			width: 1000px;
+			height: 500px;
+			margin:0 auto;
+			background: blue;
+		}
+		.end{
+			background: #999999;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+		}
+		.end a{
+			color: purple;
+			font-size: 12px;
+			text-decoration: none;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<img src="images/tianmao.jpg">
+		<ul>
+			<li>天猫会员</li>
+			<li>品牌街</li>
+			<li>电视城</li>
+			<li>营业厅</li>
+			<li>魅力惠</li>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="main-l"></div>
+		<div class="main-c">
+			<ul class="head">
+				<li>&lt;</li>
+				<li>&gt;</li>
+			</ul>
+			<ul class="number">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+		<div class="main-r"></div>
+	</div>
+	<div class="bottom">
+		我是内容
+	</div>
+	<div class="end">
+		<a href="#">返回顶部</a>
+	</div>
+</body>
+</html>
