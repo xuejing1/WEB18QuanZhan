@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过渡的多种属性简写</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			/*all代表所有改变的属性*/
+			transition:all 2s;
+		}
+		div:hover{
+			width: 800px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
