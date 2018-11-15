@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转轴向问题</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			border: 1px solid;
+			margin:20px auto;
+			perspective: 500px;
+		}
+		li img{
+			width: 200px;
+			height: 200px;
+		}
+		li:nth-child(1) img{
+			transform: rotateX(45deg);
+		}
+		li:nth-child(2) img{
+			transform: rotateY(45deg);
+		}
+		li:nth-child(3) img{
+			transform: rotateZ(45deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<img src="images/z/z1.jpg">
+		</li>
+		<li>
+			<img src="images/z/z2.jpg">
+		</li>
+		<li>
+			<img src="images/z/z3.jpg">
+		</li>
+	</ul>
+</body>
+</html>

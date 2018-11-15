@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变旋转基点</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			border: 1px solid;
+			position: relative;
+			margin:50px auto;
+		}
+		li{
+			width: 200px;
+			height: 200px;
+			list-style: none;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			/*改变旋转基点transform-origin：水平距离 垂直距离*/
+			transform-origin: 0 0;
+		}
+		li:nth-child(1){
+			background: yellow;
+			transform: rotate(30deg);
+		}
+		li:nth-child(2){
+			background: red;
+			transform: rotate(60deg);
+		}
+		li:nth-child(3){
+			background: blue;
+			transform: rotate(90deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>
