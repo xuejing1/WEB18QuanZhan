@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画的基本使用</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*动画的基本使用，需要有三要素：动画的名称，执行时间以及执行过程*/
+		div{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			animation-name: sport;
+			animation-duration: 2s;
+		}
+		@keyframes sport{
+			from{
+				width: 100px;
+			}
+			to{
+				width: 500px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

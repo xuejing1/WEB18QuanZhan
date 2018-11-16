@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动图片</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 500px;
+			height: 300px;
+			border: 1px solid;
+			margin:50px auto;
+			overflow: hidden;
+		}
+		img{
+			width: 500px;
+			height: 300px;
+		}
+		ul{
+			width: 2000px;
+			height: 300px;
+			animation:sport 10s linear infinite;
+		}
+		@keyframes sport{
+			from{
+				margin-left: 0px;
+			}
+			to{
+				margin-left: -1500px;
+			}
+		}
+		ul li{
+			list-style: none;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><img src="images/c/c1.jpg"></li>
+			<li><img src="images/c/c2.jpg"></li>
+			<li><img src="images/c/c3.jpg"></li>
+			<li><img src="images/c/c1.jpg"></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百分比动画</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 500px;
+			height: 500px;
+			margin:50px auto;
+			border:1px solid;
+			position: relative;
+		}
+		.son{
+			width: 50px;
+			height: 50px;
+			animation:sport 2s;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			background: red;
+		}
+		@keyframes sport{
+			0%{
+				top: 0px;
+				left: 0px;
+			}
+			25%{
+				top: 0px;
+				left: 450px;
+			}
+			50%{
+				top: 450px;
+				left: 450px;
+			}
+			75%{
+				top: 450px;
+				left: 0px;
+			}
+			100%{
+				top: 0px;
+				left: 0px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>
