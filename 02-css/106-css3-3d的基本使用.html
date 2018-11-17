@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3d的基本使用</title>
+	<style type="text/css">
+		.father{
+			width: 300px;
+			height: 300px;
+			background: red;
+			margin:50px auto;
+			position: relative;
+			perspective: 500px;
+			transform-style: preserve-3d;
+			transform: rotateY(30deg);
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -50px;
+			margin-left: -50px;
+			background: yellow;
+			transform:rotateY(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>
