@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义字体的使用</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*1.注意需要有自定义的名称，并且有字体文件的位置
+		  2.对于加粗和倾斜等这些样式需要每个@font-family里面专门指定
+		  3.并且所对用的文字所在的盒子或者标签也需要同时指定
+		  4.注意每个@font-family里面和所对应的字体里面应该自定义的名称应该一样*/
+		@font-face{
+			font-family: 'testFont';
+			src:url(./fonts/Sansation_Light.eot),
+				url(./fonts/Sansation_Light.ttf);
+		}
+		@font-face{
+			font-family: 'testFont';
+			src:url(./fonts/Sansation_Bold.eot),
+				url(./fonts/Sansation_Bold.ttf);
+			font-style: italic;
+			font-weight: bold;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			border: 1px solid #000;
+			font-family: 'testFont';
+			font-weight: bold;
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<div>我是内容</div>
+</body>
+</html>
