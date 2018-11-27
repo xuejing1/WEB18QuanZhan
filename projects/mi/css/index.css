@@ -1,0 +1,77 @@
+/*顶部begin*/
+.top{
+	height: 41px;
+	background: #333333;
+}
+.top .nav{
+	width: 1226px;
+	height: 41px;
+	line-height: 41px;
+	background: green;
+	margin:0 auto;
+	position: relative;
+}
+.top .nav a{
+	color: #b0b0b0;
+	text-decoration: none;
+	font-size: 12px;
+}
+.top span{
+	color: #423d39;
+	margin-right: 7px;
+	margin-left: 7px;
+}
+.top .nav-left{
+	float: left;
+	margin-right: 370px;
+}
+.top .nav-left li{
+	float: left;
+}
+.top .nav-right{
+	float: left;
+	
+}
+.top .nav-right li{
+	float: left;
+}
+.top .nav-right li:nth-child(4){
+	width: 120px;
+	height: 100%;
+	background: red;
+	text-align: center;
+	position: absolute;
+	right: 0px;
+	position: absolute;
+}
+/*顶部end*/
+/*头部begin*/
+.header{
+	height: 100px;
+	background: yellow;
+}
+/*头部end*/
+/*热卖begin*/
+.hot{
+	height: 1273px;
+	background: blue;
+}
+/*热卖end*/
+/*主要begin*/
+.main{
+	height: 6774px;
+	background: pink;
+}
+/*主要end*/
+/*尾部begin*/
+.footer{
+	height: 276px;
+	background: orange;
+}
+/*尾部end*/
+/*底部begin*/
+.bottom{
+	height: 179px;
+	background: skyblue;
+}
+/*底部end*/
