@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单线程和多线程</title>
+</head>
+<body>
+	<button id="btn">点击</button>
+</body>
+<script type="text/javascript">
+	var oBtn=document.getElementById('btn');
+	var i=1;
+		oBtn.onclick=function(){
+			i++;
+		}
+		setTimeout(function(){
+				console.log(i)
+			},2000);
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setTimeout延迟定时器</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function show(){
+		console.log('setTimeout');
+	}
+	setTimeout(show,2000);
+	setTimeout('console.log(22)',3000);
+	var timer=setTimeout(function(){
+		console.log('111'),2000
+	});
+	console.log('timer',timer);
+</script>
+</html>
