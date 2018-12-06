@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>换肤</title>
+	<link rel="stylesheet" type="text/css" href="css/skin1.css" id="skin">
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+</style>
+<script type="text/javascript">
+	function toskin1(){
+		document.getElementById('skin').href="css/skin1.css"
+	}
+	function toskin2(){
+		document.getElementById('skin').href="css/skin2.css"
+	}
+</script>
+<body>
+	<input type="button" name="" value="皮肤1" onclick="toskin1()">
+	<input type="button" name="" value="皮肤2" onclick="toskin2()">
+</body>
+</html>

@@ -79,19 +79,20 @@
 	height: 100px;
 	background: green;
 	margin:0 auto;
+	position: relative;
 }
 
-/*.header .nav{
+.header .nav{
 	width: 100px;
 	height: 100px;
 	background: red;
 	float: left;
-}*/
+}
 .header .container .logo{
 	width: 50px;
 	height: 50px;
 	background: #ff6700;
-	float: left;
+	
 }
 /*头部end*/
 /*热卖begin*/

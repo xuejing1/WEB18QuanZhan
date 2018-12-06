@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打开和关闭窗口</title>
+</head>
+<body>
+	<button id="btn1">打开百度</button>
+	<button id="btn2">打开跨猪</button>
+	<button id="btn3">打开空白页</button>
+</body>
+<script type="text/javascript">
+	var oBtn1=document.getElementById('btn1');
+	var oBtn2=document.getElementById('btn2');
+	var oBtn3=document.getElementById('btn3');
+	oBtn1.onclick=function(){
+		window.open('http://www.baidu.com');
+	}
+	oBtn2.onclick=function(){
+		window.open('https://www.kuazhu.com','_self');
+	}
+	// 打开空白页
+	oBtn3.onclick=function(){
+		window.open('about:blank');
+	}
+</script>
+</html>

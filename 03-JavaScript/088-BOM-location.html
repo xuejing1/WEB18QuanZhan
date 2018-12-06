@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>location</title>
+</head>
+<body>
+	<button id="btn">打开</button>
+	<button id="btn2">打开2</button>
+</body>
+<script type="text/javascript">
+	console.log(window.location);
+	console.log(document.location);
+	console.log(window.location===document.location);
+	var oBtn=document.getElementById('btn');
+	var oBtn2=document.getElementById('btn2');
+	oBtn.onclick=function(){
+		window.location.assign('http://www.baidu.com');
+	}
+	oBtn2.onclick=function(){
+		window.location.href="https://www.kuazhu.com";
+	}
+</script>
+</html>

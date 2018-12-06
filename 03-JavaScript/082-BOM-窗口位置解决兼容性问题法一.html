@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>解决兼容性问题法一</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 法一：解决兼容性问题 
+	var iTop=0;
+	if(window.screenTop){
+		iTop=window.screenTop;
+	}else{
+		iTop=window.screenY;
+	}
+	console.log(iTop);
+</script>
+</html>

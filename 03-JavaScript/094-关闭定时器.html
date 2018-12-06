@@ -9,14 +9,12 @@
 </body>
 <script type="text/javascript">
 	var oBtn=document.getElementById('btn');
-	function show(){
-		setTimeout(function(){
+
+	var timer=setInterval(function(){
 			console.log('111')
 		},2000);
-	}
-	show();
 	oBtn.onclick=function(){
-		clearTimeout('timer');
+		clearInterval(timer);
 	}
 </script>
 </html>

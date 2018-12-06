@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>运行代码</title>
+</head>
+<body>
+	<textarea id="txt" rows="10" cols="10"></textarea>
+	<button id="btn">运行</button>
+</body>
+<script type="text/javascript">
+	var oTxt=document.getElementById('txt');
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function(){
+		var val=oTxt.value;
+		var newWin=window.open('about:blank');
+		// document.write方法
+		newWin.document.write(val);
+	}
+	
+</script>
+</html>
