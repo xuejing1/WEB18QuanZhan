@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: black;
+		}
+		div{
+			width: 500px;
+			height: 100px;
+			line-height: 100px;
+			color: white;
+			text-align: center;
+			margin: 50px auto;
+			font-size: 26px;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">
+	
+	</div>
+</body>
+<script type="text/javascript">
+	var oTimer=document.getElementById('time');
+	var endDate=new Date('2018/12/08 19:20:10');
+	var timer=0;
+	// 为了出现两位数字的字符
+	function toStr(num){
+		if(num<10){
+			return '0'+num;
+		}else{
+			return ''+num;
+		}
+	}
+	function endTime(){
+		var allTime=endDate.getTime()-Date.now();
+		// 当时间结束时，为了避免出现负数，需要关闭定时器
+		if(allTime<=0){
+			allTime=0;
+			clearInterval(timer);
+		}
+		var iAllSeconds=parseInt(allTime/1000);
+		var iHour=parseInt(iAllSeconds/3600);
+		var iMin=parseInt((iAllSeconds%3600)/60);
+		var iSec=parseInt((iAllSeconds%3600)%60);
+		oTimer.innerHTML='距离结束时间还有'+toStr(iHour)+'小时'+toStr(iMin)+'分'+toStr(iSec)+'秒';
+	}
+	// 调用
+	endTime();
+	timer=setInterval(endTime,1000);
+</script>
+</html>
