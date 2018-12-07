@@ -63,6 +63,7 @@
 			position: absolute;
 			top: 270px;
 			left: 600px;
+			/*z-index: 99;*/
 		}
 		div .xuanze li:nth-child(2){
 			position: absolute;
@@ -91,16 +92,16 @@
 </head>
 <body>
 	<div>
-		<ul class="carousel">
+		<ul class="carousel" id="carousel">
 			<li><img src="images/ad1.jpg"></li>
 			<li><img src="images/ad2.jpg"></li>
 			<li><img src="images/ad3.jpg"></li>
 			<li><img src="images/ad4.jpg"></li>
 			<li><img src="images/ad5.jpg"></li>
 		</ul>
-		<span>&gt;</span>
-		<span>&lt;</span>
-		<ul class="xuanze">
+		<span id="arrow-left">&gt;</span>
+		<span id="arrow-right">&lt;</span>
+		<ul class="xuanze" id="xuanze">
 			<li class="active"></li>
 			<li></li>
 			<li></li>
@@ -109,4 +110,28 @@
 		</ul>
 	</div>
 </body>
+<script type="text/javascript">
+	var aImg=document.getElementById('carousel').children;
+	var arrowLeft=document.getElementById('arrow-left');
+	var arrowRight=document.getElementById('arrow-right');
+	var oXuanze=document.getElementById('xuanze').children;
+	// console.log(aImg);
+	// console.log(arrowLeft);
+	// console.log(arrowRight);
+	// console.log(oLi);
+	var now=0;
+	arrowRight.onclick=function(){
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].style.zIndex='0';
+		}
+	}
+	arrowLeft.onclick=function(){
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].style.zIndex='0';
+		}
+	}
+	oXuanze.onclick=function(){
+		
+	}
+</script>
 </html>
