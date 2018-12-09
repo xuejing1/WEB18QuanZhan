@@ -25,9 +25,9 @@
 				// 定义初始速度
 				var iSpeed=0;
 				if(curr>iTarget){
-					iSpeed=-10;
+					iSpeed=-2;
 				}else{
-					iSpeed=10;
+					iSpeed=2;
 				}
 				// 绝对值函数
 				if(Math.abs(iTarget-curr)<=Math.abs(iSpeed)){
@@ -54,6 +54,7 @@
 	</script>
 </head>
 <body>
+	<button id="btn">改变透明度</button>
 	<div id="div1"></div>
 </body>
 </html>

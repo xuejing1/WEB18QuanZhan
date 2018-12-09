@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匀速动画</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 50px;
+			left: 100px;
+		}
+		.line{
+			width: 1px;
+			height: 500px;
+			background: black;
+			position: absolute;
+			top: 0px;
+			left: 500px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">到达500px</button>
+	<div id="box"></div>
+	<div class="line"></div>
+</body>
+<script type="text/javascript">
+	var oBtn=document.getElementById('btn');
+	var oBox=document.getElementById('box');
+	var timer=0;
+	oBtn.onclick=function(){
+		// 点击之前先关闭定时器，是为了关闭每一个上一次的定时器
+		clearInterval(timer);
+		var iSpeed=0;
+		
+		setInterval(function(){
+			// 为了判断盒子此时此刻与目标值的位置
+			if(oBox.offsetLeft>500){
+				iSpeed=-7;
+			}else{
+				iSpeed=7;
+			}
+			if(Math.abs(500-oBox.offsetLeft)<Math.abs(iSpeed)){
+				clearInterval(timer);
+				oBox.style.left="500px";
+			}else{
+				oBox.style.left=oBox.offsetLeft+iSpeed+"px";
+			}
+		},30);
+	}
+</script>
+</html>
