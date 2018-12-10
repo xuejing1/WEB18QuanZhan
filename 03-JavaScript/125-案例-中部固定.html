@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>底部固定</title>
+	<title>中部固定</title>
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -27,7 +27,7 @@
 <script type="text/javascript">
 	var oBox=document.getElementById('box');
 	window.onload=window.onresize=window.onscroll=function(){
-		var iTarget=window.innerHeight-oBox.offsetHeight+getScrollTop();
+		var iTarget=(window.innerHeight-oBox.offsetHeight)/2+getScrollTop();
 		anmation(oBox,'top',iTarget);
 	}
 </script>

@@ -30,18 +30,19 @@
 		window.onload=function(){
 			var oBtn=document.getElementById('btn');
 			var oBox=document.getElementById('box1');
-			var timer=null;
+			var timer=0;
 			oBtn.onclick=function(){
 				clearInterval(timer);
 				timer=setInterval(function(){
-					var curr=parseFloat(getComputedStyle(oBox,false)['opacity'])*100;
-					curr=Math.round(curr);
-					var iSpeed=(30-curr)/6;
+					var current=parseFloat(getComputedStyle(oBox,false)['opacity'])*100;
+					current=Math.round(current);
+					var iSpeed=(30-current)/6;
 					iSpeed=iSpeed>0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+					// 非0是真,这里是判断目标值与当前值是否相等
 					if(!iSpeed){
 						clearInterval(timer)
 					}else{
-						oBox.style.opacity=(curr+iSpeed)/100 ;
+						oBox.style.opacity=(current+iSpeed)/100 ;
 					}
 				},30)
 			}

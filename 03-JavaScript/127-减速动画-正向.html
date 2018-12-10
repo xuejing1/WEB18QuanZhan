@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>减速动画基础</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 50px;
+			left: 100px;
+		}
+		.line{
+			width: 1px;
+			height: 500px;
+			background: black;
+			position: absolute;
+			top: 0px;
+			left: 500px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">到达500px</button>
+	<div id="box"></div>
+	<div class="line"></div>
+</body>
+<script type="text/javascript">
+	var oBtn=document.getElementById('btn');
+	var oBox=document.getElementById('box');
+	var timer=0;
+	oBtn.onclick=function(){
+		// 点击之前先关闭定时器，是为了关闭每一个上一次的定时器
+		clearInterval(timer);
+
+		timer=setInterval(function(){
+			// iSpeed是减速运动的要素
+			// Math.ceil向上取整
+			var iSpeed=Math.ceil((500-oBox.offsetLeft)/10);
+			// 每30ms都执行一次，直到达到目标值之后此时iSpeed的值是0
+			// 而0是假,而在0之前每一次iSpeed都不是0
+			// 也就是在iSpeed为0之前，isPeed≠0，所以iSpeed是真
+			// 也就是在iSpeed为0之前,!iSpeed就是假，不关闭定时器
+			// 所以当iSpeed是0的时候，iSpeed就是假，！iSpeed就是真
+			if(!iSpeed){
+				clearInterval(timer);
+			}else{
+				oBox.style.left=oBox.offsetLeft+iSpeed+"px";
+			}
+		},30);
+	}
+</script>
+</html>

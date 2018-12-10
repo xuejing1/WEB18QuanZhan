@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>减速动画基础</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 50px;
+			left: 600px;
+		}
+		.line{
+			width: 1px;
+			height: 500px;
+			background: black;
+			position: absolute;
+			top: 0px;
+			left: 500px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">到达500px</button>
+	<div id="box"></div>
+	<div class="line"></div>
+</body>
+<script type="text/javascript">
+	var oBtn=document.getElementById('btn');
+	var oBox=document.getElementById('box');
+	var timer=0;
+	oBtn.onclick=function(){
+		// 点击之前先关闭定时器，是为了关闭每一个上一次的定时器
+		clearInterval(timer);
+
+		timer=setInterval(function(){
+			// iSpeed是减速运动的要素
+			// Math.ceil向上取整
+			var iSpeed=(500-oBox.offsetLeft)/10;
+			iSpeed=iSpeed>0 ?  Math.ceil(iSpeed):Math.floor(iSpeed);
+			if(Math.abs(500-oBox.offsetLeft)<Math.abs(iSpeed)){
+				clearInterval(timer);
+				// oBox.style.left="500px";
+			}else{
+				oBox.style.left=oBox.offsetLeft+iSpeed+"px";
+			}
+		},30);
+	}
+</script>
+</html>
