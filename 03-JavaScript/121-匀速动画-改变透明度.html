@@ -21,26 +21,33 @@
 	<div class="box" id="box"></div>
 </body>
 <script type="text/javascript">
-	var oBtn=document.getElementById('box');
-	var oBox=document.getElementById('box');
+	var oBtn =document.getElementById('btn');
+	var oBox =document.getElementById('box');
+	var timer=0;
 	oBtn.onclick=function(){
 		clearInterval(timer);
 		var iSpeed=0;
-		var current=getComputedStyle(oBox,false)['opacity']*100;
-		
-		setInterval(function(){
-			// 为了判断盒子此时此刻与目标值的位置
+		// getComputedStyle(哪个元素，false)['属性']这个获取到的是字符串，
+		// 所以需要转化为数字
+		// 并且*100，数值变大，让其渐变比较容易操控
+		timer=setInterval(function(){
+			// 注意获取透明度的时候这个值应该在定时器里面
+			// Math.round是对其值取得的是整数，进行了四舍五入
+			var current=Math.round(parseFloat(getComputedStyle(oBox,false)['opacity'])*100);
 			if(current>100){
-				iSpeed=-7;
+				iSpeed=-2;
 			}else{
-				iSpeed=7;
+				iSpeed=2;
 			}
 			if(Math.abs(100-current)<Math.abs(iSpeed)){
-				clearInterval(timer);
+				
 				oBox.style.opacity=1;
+				clearInterval(timer);
 			}else{
+				// 每30ms进行了一次计算
 				oBox.style.opacity=(current+iSpeed)/100;
 			}
+			
 		},30);
 	}
 </script>

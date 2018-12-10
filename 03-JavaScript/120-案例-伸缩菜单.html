@@ -35,19 +35,21 @@
 	var oFather=document.getElementById('father');
 	var oSon=document.getElementById('son');
 	var timer=0;
-	oSon.onmouseover=function(){
-		
+	// oSon也属于OFather，所以应该触发OFather
+	oFather.onmouseover=function(){
+		// 任何事件执行之前弦清除定时器
 		clearInterval(timer);
 		var iSpeed=0;
 		
-		setInterval(function(){
+		timer=setInterval(function(){
 			// 此时父亲的目标值是0;
-			if(oFather.offsetLeft<0){
-				iSpeed=5;
-			}else{
+			if(oFather.offsetLeft>0){
 				iSpeed=-5;
+			}else{
+				iSpeed=5;
 			}
 			if(Math.abs(0-oFather.offsetLeft)<Math.abs(iSpeed)){
+				// 这个时候应该清除定时器，让其直接等于目标值，防止定时器对其产生困扰
 				clearInterval(timer);
 				oFather.style.left="0px";
 			}else{
@@ -55,19 +57,20 @@
 			}
 		},30);
 	}
-	oSon.onmouseout=function(){
+	oFather.onmouseout=function(){
 		clearInterval(timer);
 		var iSpeed=0;
-		
-		setInterval(function(){
+		timer=setInterval(function(){
+			// 为了判断盒子此时此刻与目标值的位置
 			if(oFather.offsetLeft>-300){
-				iSpeed=-5;
+				iSpeed=-7;
 			}else{
-				iSpeed=5;
+				iSpeed=7;
 			}
 			if(Math.abs(-300-oFather.offsetLeft)<Math.abs(iSpeed)){
 				
 				oFather.style.left="-300px";
+				// 这个时候应该清除定时器，让其直接等于目标值，防止定时器对其产生困扰
 				clearInterval(timer);
 			}else{
 				oFather.style.left=oFather.offsetLeft+iSpeed+"px";
