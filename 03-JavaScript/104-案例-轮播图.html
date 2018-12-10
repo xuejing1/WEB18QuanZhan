@@ -11,7 +11,6 @@
 		div{
 			width: 800px;
 			height: 300px;
-			background: red;
 			margin: 50px auto;
 			position: relative;
 		}
@@ -23,6 +22,7 @@
 			position: absolute;
 			top: 0;
 			left: 0;
+			transition: all 1s;
 		}
 		div .carousel img{
 			width: 100%;
@@ -36,34 +36,41 @@
 			background: gray;
 			color: black;
 			font-size: 30px;
+			user-select: none;
 		}
 		div span:nth-of-type(2){
 			position: absolute;
 			top: 50%;
 			left: 0px;
 			margin-top: -25px;
+			background:  #96938a;
+			color: white;
+			z-index: 100;
 		}
 		div span:nth-of-type(1){
 			position: absolute;
 			top: 50%;
 			right: 0px;
 			margin-top: -25px;
+			background:  #96938a;
+			color: white;
+			z-index: 100;
 		}
 		div span:hover{
 			cursor: pointer;
 		}
 		div .xuanze li{
-			width: 10px;
-			height: 10px;
-			border: 1px solid gray;
+			width: 7px;
+			height: 7px;
+			border: 2px solid #b5b3ab;
 			border-radius: 50%;
-			
+			background: #96938a;	
+			z-index: 100;
 		}
 		div .xuanze li:nth-child(1){
 			position: absolute;
 			top: 270px;
 			left: 600px;
-			/*z-index: 99;*/
 		}
 		div .xuanze li:nth-child(2){
 			position: absolute;
@@ -85,22 +92,23 @@
 			top: 270px;
 			left: 680px;
 		}
-		.active{
+		#xuanze li:hover, 
+		.xuanze li.active{
 			background: white;
 		}
 	</style>
 </head>
 <body>
-	<div>
+	<div id="container">
 		<ul class="carousel" id="carousel">
-			<li><img src="images/ad1.jpg"></li>
+			<li style="z-index: 99"><img src="images/ad1.jpg"></li>
 			<li><img src="images/ad2.jpg"></li>
 			<li><img src="images/ad3.jpg"></li>
 			<li><img src="images/ad4.jpg"></li>
 			<li><img src="images/ad5.jpg"></li>
 		</ul>
-		<span id="arrow-left">&gt;</span>
-		<span id="arrow-right">&lt;</span>
+		<span id="arrow-right">&gt;</span>
+		<span id="arrow-left">&lt;</span>
 		<ul class="xuanze" id="xuanze">
 			<li class="active"></li>
 			<li></li>
@@ -115,23 +123,55 @@
 	var arrowLeft=document.getElementById('arrow-left');
 	var arrowRight=document.getElementById('arrow-right');
 	var oXuanze=document.getElementById('xuanze').children;
-	// console.log(aImg);
-	// console.log(arrowLeft);
-	// console.log(arrowRight);
-	// console.log(oLi);
+	var oContain=document.getElementById('container');
+	var timer=0;
 	var now=0;
-	arrowRight.onclick=function(){
+	// 封装成一个函数，进行调用
+	function tab(){
 		for(var i=0;i<aImg.length;i++){
+			// 再设置样式之前先把所有的样式统一清空
 			aImg[i].style.zIndex='0';
+			oXuanze[i].className='';
+			aImg[i].style.opacity='0';
 		}
+		aImg[now].style.zIndex='99';
+		oXuanze[now].className='active';
+		aImg[now].style.opacity='1';
+	}
+	arrowRight.onclick=function(){
+		now++;
+		if(now>=aImg.length){
+			now=0;
+		}
+		// 调用
+		tab();
 	}
 	arrowLeft.onclick=function(){
-		for(var i=0;i<aImg.length;i++){
-			aImg[i].style.zIndex='0';
+		now--;
+		if(now<0){
+			// 对于的照片数
+			now=aImg.length-1;
+		}
+		// 调用
+		tab();
+	}
+	for(var i=0;i<oXuanze.length;i++){
+		// 应该给数组具体的每一个i中绑定当前的i值，而不是给整个数组添加i值
+		oXuanze[i].index=i;
+		oXuanze[i].onclick=function(){
+			now=this.index;
+			tab();
 		}
 	}
-	oXuanze.onclick=function(){
-		
+	// 自动播放效果
+	timer=setInterval(arrowRight.onclick,5000);
+	oContain.onmouseover=function(){
+		//需要清除定时器
+		clearInterval(timer);
+	}
+	oContain.onmouseout=function(){
+		// 定时器一旦清除无法重新开启，所以只能够再重新打开一个
+		setInterval(arrowRight.onclick,5000);
 	}
 </script>
 </html>
