@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标拖动物体</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 3000px;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script type="text/javascript" src="js/动画-uniform.js"></script>
+<script type="text/javascript">
+	var oBox=document.getElementById('box');
+	document.onmousemove=function(ev){
+		console.log(ev.clientX);
+		console.log(ev.clientY);
+		oBox.style.left=getScrollLeft()+ev.clientX+'px';
+		oBox.style.top=getScrollTop()+ev.clientY+'px';
+	}
+</script>
+</html>

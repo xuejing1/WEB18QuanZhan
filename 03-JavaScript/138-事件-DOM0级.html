@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加事件</title>
+</head>
+<body>
+	<button id="btn" onclick="show()">添加</button>
+</body>
+<script type="text/javascript">
+	var oBtn=document.getElementById('btn');
+	function show(){
+		alert('show');
+	}
+	oBtn.onclick=function(){
+		alert('1');
+	}
+	oBtn.onclick=function(){
+		alert('2');
+	}
+	// 注意0级只能够一个事件只能执行一个
+</script>
+</html>

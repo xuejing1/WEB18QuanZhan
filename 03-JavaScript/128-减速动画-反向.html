@@ -43,9 +43,8 @@
 			// iSpeed是减速运动的要素
 			// Math.ceil向上取整
 			var iSpeed=Math.floor((500-oBox.offsetLeft)/10);
-			if(Math.abs(500-oBox.offsetLeft)<Math.abs(iSpeed)){
+			if(!iSpeed){
 				clearInterval(timer);
-				oBox.style.left="500px";
 			}else{
 				oBox.style.left=oBox.offsetLeft+iSpeed+"px";
 			}

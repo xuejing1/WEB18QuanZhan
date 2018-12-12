@@ -41,7 +41,7 @@
 			}else{
 				iSpeed=2;
 			}
-			if(Math.abs(target-current)<=Math.abs(iSpeed)){
+			if(Math.abs(target-current)<Math.abs(iSpeed)){
 				if(attr=='opacity'){
 					obj.style.opacity=1;
 				}else{
@@ -55,7 +55,7 @@
 					obj.style[attr]=current+iSpeed+'px';
 				}
 			}
-			console.log(current+iSpeed);
+		
 		},30);
 	}
 

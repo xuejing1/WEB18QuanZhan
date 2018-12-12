@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数作为参数</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	//传进去的参数是一个函数
+	function show(fn){
+		alert('show');
+
+		fn();//调用传进来的参数(函数)
+	}
+	show(function fn(){
+		alert('fn');
+	})
+</script>
+</html>
